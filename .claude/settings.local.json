@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:darkorchid-pigeon-320340.hostingersite.com)",
+      "WebFetch(domain:amazonpublishingspros.com)",
+      "Bash(npm run *)"
+    ]
+  }
+}
