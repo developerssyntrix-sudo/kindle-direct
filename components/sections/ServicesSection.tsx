@@ -1,3 +1,5 @@
+import Image from "next/image";
+import bookAsset from "@/app/assets/images/Book-assets-1.png";
 import {
   PenLine,
   FileEdit,
@@ -7,6 +9,7 @@ import {
   Headphones,
   ArrowUpRight,
 } from "lucide-react";
+import { OpenBookOutline, QuillPen } from "@/components/ui/book-arts";
 
 const services = [
   {
@@ -55,8 +58,8 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-10 md:py-15 bg-amazon-dark">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <section id="services" className="py-10 md:py-15 bg-amazon-dark relative overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
           <div>
@@ -82,15 +85,25 @@ export default function ServicesSection() {
             return (
               <div
                 key={s.num}
-                className="group relative bg-amazon-navy/50 hover:bg-amazon-navy border border-white/5 hover:border-amazon-orange/30 rounded-2xl p-6 transition-all duration-300 cursor-pointer"
+                className="group relative bg-amazon-orange/7 hover:bg-amazon-orange/20 border border-amazon-orange/20 hover:border-amazon-orange/55 rounded-2xl p-6 transition-all duration-300 cursor-pointer"
               >
+                {/* Book asset — hidden at rest, appears + tilts right on hover */}
+                <div className="absolute -top-10 -right-10 w-36 h-44 opacity-0 rotate-6 scale-90 pointer-events-none group-hover:opacity-50 group-hover:rotate-18 group-hover:scale-100 transition-all duration-500 ease-out">
+                  <Image
+                    src={bookAsset}
+                    alt=""
+                    fill
+                    className="object-contain object-top"
+                  />
+                </div>
+
                 {/* Number */}
-                <span className="absolute top-5 right-5 text-5xl font-black text-white/5 group-hover:text-amazon-orange/10 transition-colors leading-none select-none">
+                <span className="absolute top-5 right-5 text-5xl font-black text-amazon-orange/[0.07] group-hover:text-amazon-orange/20 transition-colors leading-none select-none">
                   {s.num}
                 </span>
 
                 {/* Icon */}
-                <div className="w-11 h-11 rounded-xl bg-amazon-orange/10 border border-amazon-orange/20 flex items-center justify-center mb-4 group-hover:bg-amazon-orange group-hover:border-amazon-orange transition-all">
+                <div className="w-11 h-11 rounded-xl bg-amazon-orange/15 border border-amazon-orange/30 flex items-center justify-center mb-4 group-hover:bg-amazon-orange group-hover:border-amazon-orange transition-all">
                   <Icon
                     size={20}
                     className="text-amazon-orange group-hover:text-amazon-dark transition-colors"
@@ -100,7 +113,7 @@ export default function ServicesSection() {
                 <h3 className="text-white font-bold text-base mb-2 group-hover:text-amazon-orange transition-colors">
                   {s.title}
                 </h3>
-                <p className="text-white/50 text-sm leading-relaxed mb-4">
+                <p className="text-white/55 text-sm leading-relaxed mb-4">
                   {s.desc}
                 </p>
 
@@ -109,7 +122,7 @@ export default function ServicesSection() {
                   {s.tags.map((t) => (
                     <span
                       key={t}
-                      className="text-[10px] font-semibold text-white/40 border border-white/10 px-2 py-0.5 rounded-full"
+                      className="text-[10px] font-semibold text-amazon-orange/60 border border-amazon-orange/20 px-2 py-0.5 rounded-full"
                     >
                       {t}
                     </span>

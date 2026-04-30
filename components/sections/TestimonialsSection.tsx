@@ -1,4 +1,5 @@
 import { Star, Quote } from "lucide-react";
+import { OpenBookOutline } from "@/components/ui/book-arts";
 
 const testimonials = [
   {
@@ -32,8 +33,8 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-10 md:py-15 bg-amazon-dark">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <section id="testimonials" className="py-10 md:py-15 bg-amazon-dark relative overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center mb-10">
           <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-2">
@@ -58,11 +59,7 @@ export default function TestimonialsSection() {
               {/* Stars */}
               <div className="flex gap-0.5">
                 {[...Array(t.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={14}
-                    className="text-amazon-orange fill-amazon-orange"
-                  />
+                  <Star key={i} size={14} className="text-amazon-orange fill-amazon-orange" />
                 ))}
               </div>
 
@@ -76,9 +73,7 @@ export default function TestimonialsSection() {
 
               {/* Author */}
               <div className="flex items-center gap-3 pt-3 border-t border-white/5">
-                <div
-                  className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center text-white font-bold text-sm flex-shrink-0`}
-                >
+                <div className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center text-white font-bold text-sm shrink-0`}>
                   {t.initials}
                 </div>
                 <div>
@@ -98,9 +93,7 @@ export default function TestimonialsSection() {
             { value: "97%", label: "Recommend Us" },
           ].map((s) => (
             <div key={s.label} className="py-5 text-center">
-              <p className="text-amazon-orange font-extrabold text-2xl leading-none">
-                {s.value}
-              </p>
+              <p className="text-amazon-orange font-extrabold text-2xl leading-none">{s.value}</p>
               <p className="text-white/40 text-xs mt-1.5">{s.label}</p>
             </div>
           ))}

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { SmallOpenBook } from "@/components/ui/book-arts";
 
 const faqs = [
   {
@@ -41,7 +42,7 @@ export default function FaqsSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faqs" className="py-10 md:py-15 bg-white">
+    <section id="faqs" className="py-10 md:py-15 bg-white relative overflow-hidden">
       <div className="max-w-3xl mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center mb-10">
@@ -82,7 +83,7 @@ export default function FaqsSection() {
                     {faq.q}
                   </span>
                   <span
-                    className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${
+                    className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${
                       isOpen
                         ? "bg-amazon-orange text-amazon-dark"
                         : "bg-amazon-surface text-amazon-dark/40"
@@ -115,7 +116,7 @@ export default function FaqsSection() {
           </div>
           <a
             href="tel:+18005551234"
-            className="flex-shrink-0 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-2.5 rounded transition-colors"
+            className="shrink-0 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-2.5 rounded transition-colors"
           >
             Talk to Us →
           </a>

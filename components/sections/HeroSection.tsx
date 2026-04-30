@@ -1,3 +1,5 @@
+import Image from "next/image";
+import heroBg from "@/app/assets/images/hero-bg.jpg";
 import { ArrowRight, Star, BookCheck, Users, Trophy, BadgeCheck } from "lucide-react";
 
 const stats = [
@@ -13,18 +15,34 @@ export default function HeroSection() {
       id="home"
       className="relative overflow-hidden bg-white py-10 md:py-15"
     >
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={heroBg}
+          alt=""
+          fill
+          className="object-cover object-center"
+          priority
+        />
+      </div>
+
+      {/* Gradient overlay: white at top, transparent at bottom */}
+      <div className="absolute inset-0 z-1 bg-linear-to-b from-white via-white to-transparent pointer-events-none" />
+
       {/* Subtle dot grid pattern */}
       <div
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="absolute inset-0 z-2 opacity-20 pointer-events-none"
         style={{
           backgroundImage: "radial-gradient(circle, #D5D9D9 1px, transparent 1px)",
           backgroundSize: "22px 22px",
         }}
       />
-      {/* Orange glow — centred */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-72 bg-amazon-orange/8 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-4xl mx-auto px-4 md:px-6 text-center">
+      {/* Orange glow — centred */}
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-72 bg-amazon-orange/8 rounded-full blur-3xl pointer-events-none z-2" />
+
+
+      <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-6 text-center">
         {/* Badge */}
         <span className="inline-flex items-center gap-1.5 bg-amazon-orange/10 border border-amazon-orange/30 text-amazon-orange text-xs font-bold px-3 py-1.5 rounded-full mb-6 tracking-wide uppercase">
           <Star size={11} fill="currentColor" />
@@ -93,18 +111,20 @@ export default function HeroSection() {
         </div>
 
         {/* ── Stats Bar ── */}
-        <div className="mt-14 pt-8 border-t border-border grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="flex items-center justify-center gap-3">
-              <div className="w-10 h-10 rounded-lg bg-amazon-orange/10 border border-amazon-orange/20 flex items-center justify-center flex-shrink-0">
-                <Icon size={18} className="text-amazon-orange" />
+        <div className="mt-14">
+          <div className="bg-white/95 backdrop-blur-sm rounded-2xl border border-border shadow-sm px-4 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {stats.map(({ icon: Icon, value, label }) => (
+              <div key={label} className="flex items-center justify-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-amazon-orange/10 border border-amazon-orange/20 flex items-center justify-center shrink-0">
+                  <Icon size={18} className="text-amazon-orange" />
+                </div>
+                <div className="text-left">
+                  <p className="text-amazon-dark font-extrabold text-2xl leading-none">{value}</p>
+                  <p className="text-muted-foreground text-xs mt-0.5">{label}</p>
+                </div>
               </div>
-              <div className="text-left">
-                <p className="text-amazon-dark font-extrabold text-2xl leading-none">{value}</p>
-                <p className="text-muted-foreground text-xs mt-0.5">{label}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

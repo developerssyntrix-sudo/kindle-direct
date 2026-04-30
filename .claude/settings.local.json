@@ -3,7 +3,10 @@
     "allow": [
       "WebFetch(domain:darkorchid-pigeon-320340.hostingersite.com)",
       "WebFetch(domain:amazonpublishingspros.com)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "WebFetch(domain:www.amazon.com)",
+      "WebSearch",
+      "WebFetch(domain:www.goodreads.com)"
     ]
   }
 }
