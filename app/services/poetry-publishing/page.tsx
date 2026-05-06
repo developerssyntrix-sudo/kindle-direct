@@ -56,6 +56,7 @@ export default function PoetryPublishingPage() {
           highlight="the Stage It Deserves"
           description="We treat poetry with the reverence it deserves. From editorial curation and artful typesetting to cover design and Amazon distribution — we help poets publish collections that readers actually discover, buy, and love."
           serviceName="Poetry Publishing"
+          bgImage="https://images.unsplash.com/photo-1591079071536-b005da4a9677?q=80&w=1170&auto=format&fit=crop"
           stats={[
             { value: "200+", label: "Poetry Collections Published" },
             { value: "40+", label: "Distribution Platforms" },

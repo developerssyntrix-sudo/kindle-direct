@@ -2,65 +2,7 @@
 import { useState } from "react";
 import { Star, ExternalLink } from "lucide-react";
 import Image from "next/image";
-
-const books = [
-  {
-    title: "Rites of the Starling",
-    author: "Devney Perry",
-    genre: "Fantasy",
-    rating: "4.5",
-    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1762603861i/241058997.jpg",
-    amazonUrl: "https://www.amazon.com/dp/B0FQ6HYW9Z",
-    year: "2025",
-  },
-  {
-    title: "Shadowborne: Reckoning",
-    author: "Aimee Lynn",
-    genre: "Fantasy",
-    rating: "4.5",
-    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1772768275i/249347846.jpg",
-    amazonUrl: "https://www.amazon.com/dp/B0GRF8DTDN",
-    year: "2025",
-  },
-  {
-    title: "The Price of Honey",
-    author: "Liane Moriarty",
-    genre: "Fiction",
-    rating: "3.5",
-    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1770321051i/247357777.jpg",
-    amazonUrl: "https://www.amazon.com/dp/B0FXBCK15V",
-    year: "2025",
-  },
-  {
-    title: "Knowing",
-    author: "Touré Roberts",
-    genre: "Self-Help",
-    rating: "5.0",
-    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1750947735i/237353655.jpg",
-    amazonUrl: "https://www.amazon.com/dp/0310371120",
-    year: "2026",
-  },
-  {
-    title: "This Vast Enterprise",
-    author: "Craig Fehrman",
-    genre: "Non-Fiction",
-    rating: "4.6",
-    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1749394055i/235992948.jpg",
-    amazonUrl: "https://www.amazon.com/dp/1982174242",
-    year: "2025",
-  },
-  {
-    title: "The Hybrid Prince",
-    author: "Tui T. Sutherland",
-    genre: "Children's",
-    rating: "4.5",
-    cover: "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1746381007i/232700898.jpg",
-    amazonUrl: "https://www.amazon.com/dp/1546129545",
-    year: "2025",
-  },
-];
-
-const filters = ["All", "Children's", "Fantasy", "Fiction", "Non-Fiction", "Self-Help"];
+import { books, bookFilters } from "@/data/books";
 
 export default function PortfolioGrid() {
   const [active, setActive] = useState("All");
@@ -71,7 +13,7 @@ export default function PortfolioGrid() {
     <div>
       {/* Filter tabs */}
       <div className="flex flex-wrap gap-2 mb-8">
-        {filters.map((f) => (
+        {bookFilters.map((f) => (
           <button
             key={f}
             onClick={() => setActive(f)}
@@ -87,23 +29,23 @@ export default function PortfolioGrid() {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
         {filtered.map((book) => (
           <a
-            key={book.title}
+            key={`${book.title}-${book.author}`}
             href={book.amazonUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative rounded-xl overflow-hidden cursor-pointer block"
           >
             {/* Book cover */}
-            <div className="relative aspect-[2/3] bg-amazon-surface rounded-xl overflow-hidden">
+            <div className="relative aspect-2/3 bg-amazon-surface rounded-xl overflow-hidden">
               <Image
                 src={book.cover}
                 alt={book.title}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes="(max-width: 640px) 50vw, 33vw"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
               />
 
               {/* Genre + year badges */}

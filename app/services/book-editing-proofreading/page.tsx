@@ -73,6 +73,7 @@ export default function BookEditingPage() {
           highlight="That Elevates Every Page"
           description="Our genre-matched editors work at every level — from structural developmental editing to final-pass proofreading. The difference between a good book and a great one is great editing."
           serviceName="Book Editing & Proofreading"
+          bgImage="https://images.unsplash.com/photo-1616711642010-f7822e169fb5?q=80&w=1170&auto=format&fit=crop"
           stats={[
             { value: "3,000+", label: "Manuscripts Edited" },
             { value: "48 Hrs", label: "Sample Edit Turnaround" },

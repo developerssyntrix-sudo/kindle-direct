@@ -46,6 +46,7 @@ export default function BookWritingPage() {
           highlight="By Expert Ghostwriters"
           description="From a rough idea to a market-ready manuscript — our seasoned ghostwriters craft compelling books in your voice, across every genre. You get full credit, full rights, and a book you're proud of."
           serviceName="Book Writing"
+          bgImage="https://images.unsplash.com/photo-1462642109801-4ac2971a3a51?q=80&w=1073&auto=format&fit=crop"
           stats={[
             { value: "800+", label: "Manuscripts Delivered" },
             { value: "60+", label: "Genres Covered" },

@@ -72,6 +72,7 @@ export default function BookTrailerPage() {
           highlight="That Stop the Scroll"
           description="A great book trailer turns browsers into buyers. We produce genre-matched, emotionally compelling video content — from the concept and script to the final cut delivered in every social format."
           serviceName="Book Trailer"
+          bgImage="https://images.unsplash.com/photo-1773009732035-34790a7c2b36?q=80&w=1170&auto=format&fit=crop"
           stats={[
             { value: "400+", label: "Trailers Produced" },
             { value: "5M+", label: "Combined Views" },

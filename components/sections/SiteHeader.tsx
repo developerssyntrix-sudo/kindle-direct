@@ -14,6 +14,14 @@ import {
   BookMarked,
   Feather,
 } from "lucide-react";
+import { contactInfo } from "@/data/contact";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const services = [
   { label: "Book Writing", href: "/services/book-writing", icon: PenLine, desc: "Professional ghostwriting in any genre" },
@@ -33,7 +41,6 @@ const navLinks = [
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   return (
@@ -56,49 +63,42 @@ export default function SiteHeader() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-1">
-          {/* Services dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
-            <button className="flex items-center gap-1 text-white/70 hover:text-amazon-orange px-3 py-1.5 rounded text-sm font-medium transition-colors hover:bg-amazon-navy/50">
-              Services
-              <ChevronDown
-                size={14}
-                className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`}
-              />
-            </button>
-
-            {servicesOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1.5 w-[580px] bg-white rounded-2xl shadow-2xl border border-border p-4 grid grid-cols-2 gap-2">
-                {services.map((s) => {
-                  const Icon = s.icon;
-                  return (
-                    <Link
-                      key={s.href}
-                      href={s.href}
-                      className="flex items-start gap-3 p-3 rounded-xl hover:bg-amazon-surface transition-colors group"
-                      onClick={() => setServicesOpen(false)}
-                    >
-                      <div className="w-9 h-9 rounded-lg bg-amazon-orange/10 border border-amazon-orange/20 flex items-center justify-center flex-shrink-0 group-hover:bg-amazon-orange group-hover:border-amazon-orange transition-all">
-                        <Icon
-                          size={16}
-                          className="text-amazon-orange group-hover:text-amazon-dark transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-amazon-dark font-bold text-sm leading-tight group-hover:text-amazon-orange transition-colors">
-                          {s.label}
-                        </p>
-                        <p className="text-muted-foreground text-xs mt-0.5">{s.desc}</p>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            )}
-          </div>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-white/70 hover:text-amazon-orange hover:bg-amazon-navy/50 data-popup-open:bg-amazon-navy/50 data-popup-open:text-amazon-orange data-open:bg-amazon-navy/50 data-open:text-amazon-orange text-sm font-medium h-auto px-3 py-1.5">
+                  Services
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-[580px] p-4 grid grid-cols-2 gap-2">
+                    {services.map((s) => {
+                      const Icon = s.icon;
+                      return (
+                        <Link
+                          key={s.href}
+                          href={s.href}
+                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-amazon-surface transition-colors group"
+                        >
+                          <div className="w-9 h-9 rounded-lg bg-amazon-orange/10 border border-amazon-orange/20 flex items-center justify-center flex-shrink-0 group-hover:bg-amazon-orange group-hover:border-amazon-orange transition-all">
+                            <Icon
+                              size={16}
+                              className="text-amazon-orange group-hover:text-amazon-dark transition-colors"
+                            />
+                          </div>
+                          <div>
+                            <p className="text-amazon-dark font-bold text-sm leading-tight group-hover:text-amazon-orange transition-colors">
+                              {s.label}
+                            </p>
+                            <p className="text-muted-foreground text-xs mt-0.5">{s.desc}</p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
           {navLinks.map((l) => (
             <Link
@@ -114,11 +114,11 @@ export default function SiteHeader() {
         {/* CTA */}
         <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
           <a
-            href="tel:+18005551234"
+            href={contactInfo.phoneTel}
             className="flex items-center gap-1.5 text-white/60 hover:text-white text-sm transition-colors"
           >
             <Phone size={13} />
-            +1 (800) 555-1234
+            {contactInfo.phone}
           </a>
           <Link
             href="/contact"

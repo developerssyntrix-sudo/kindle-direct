@@ -45,6 +45,7 @@ export default function BookPublishingPage() {
           highlight="Like a Pro"
           description="We handle every technical detail of Amazon KDP publishing — from formatting and ISBN assignment to metadata optimization and global distribution. Your book, live in 14 days or less."
           serviceName="Book Publishing"
+          bgImage="https://images.unsplash.com/photo-1775554817370-dc293d7e526d?q=80&w=1170&auto=format&fit=crop"
           stats={[
             { value: "2,500+", label: "Books Published" },
             { value: "40+", label: "Distribution Platforms" },

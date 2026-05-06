@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { SmallOpenBook } from "@/components/ui/book-arts";
+import { contactInfo } from "@/data/contact";
 
 const faqs = [
   {
@@ -115,7 +116,7 @@ export default function FaqsSection() {
             </p>
           </div>
           <a
-            href="tel:+18005551234"
+            href={contactInfo.phoneTel}
             className="shrink-0 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-2.5 rounded transition-colors"
           >
             Talk to Us →

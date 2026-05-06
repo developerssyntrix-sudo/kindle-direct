@@ -27,7 +27,7 @@ export default function HeroSection() {
       </div>
 
       {/* Gradient overlay: white at top, transparent at bottom */}
-      <div className="absolute inset-0 z-1 bg-linear-to-b from-white via-white to-transparent pointer-events-none" />
+      <div className="absolute inset-0 z-1 bg-linear-to-b from-white via-white/90 to-transparent pointer-events-none" />
 
       {/* Subtle dot grid pattern */}
       <div

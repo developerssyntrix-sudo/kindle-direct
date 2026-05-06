@@ -4,6 +4,7 @@ import SiteHeader from "@/components/sections/SiteHeader";
 import SiteFooter from "@/components/sections/SiteFooter";
 import ContactForm from "@/components/contact/ContactForm";
 import { Phone, Mail, MapPin, Clock, ChevronRight, Star, MessageCircle, BookOpen, ArrowRight } from "lucide-react";
+import { contactInfo } from "@/data/contact";
 
 export const metadata: Metadata = {
   title: "Contact Us — Free Consultation | Amazon Books Publishing",
@@ -14,9 +15,9 @@ const contactCards = [
   {
     icon: Phone,
     label: "Call Us",
-    value: "+1 (800) 555-1234",
-    sub: "Mon–Fri, 9am–6pm EST",
-    href: "tel:+18005551234",
+    value: contactInfo.phone,
+    sub: contactInfo.hours,
+    href: contactInfo.phoneTel,
     color: "bg-amazon-orange/10 border-amazon-orange/20",
     iconColor: "text-amazon-orange",
   },

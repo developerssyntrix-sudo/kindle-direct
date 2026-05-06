@@ -52,6 +52,7 @@ export default function ChildrensBookWritingPage() {
           highlight="Kids Actually Love"
           description="We write, illustrate (coordination), format, and publish children's books that parents buy and kids request again and again — from cozy board books to adventurous middle grade novels."
           serviceName="Children's Book Writing"
+          bgImage="https://images.unsplash.com/photo-1549737221-bef65e2604a6?q=80&w=1170&auto=format&fit=crop"
           stats={[
             { value: "350+", label: "Children's Books Published" },
             { value: "4 Age", label: "Groups Covered" },

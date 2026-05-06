@@ -45,6 +45,7 @@ export default function BookMarketingPage() {
           highlight="That Actually Sells Books"
           description="We build and execute data-driven Amazon marketing campaigns — AMS ads, ARC programs, BookTok outreach, email launches, and review generation strategies that turn new releases into bestsellers."
           serviceName="Book Marketing"
+          bgImage="https://images.unsplash.com/photo-1647529735399-c922b8c3f7c5?q=80&w=1170&auto=format&fit=crop"
           stats={[
             { value: "150+", label: "Bestseller Launches" },
             { value: "4.2x", label: "Average ROAS on AMS" },

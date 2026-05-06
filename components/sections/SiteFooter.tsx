@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BookOpen, Phone, Mail, MapPin } from "lucide-react";
+import { contactInfo } from "@/data/contact";
 
 const services = [
   { label: "Book Writing", href: "/services/book-writing" },
@@ -64,8 +65,8 @@ export default function SiteFooter() {
             <ul className="space-y-2.5">
               <li className="flex items-start gap-2.5">
                 <Phone size={13} className="text-amazon-orange mt-0.5 flex-shrink-0" />
-                <a href="tel:+18005551234" className="text-white/50 hover:text-white text-sm transition-colors">
-                  +1 (800) 555-1234
+                <a href={contactInfo.phoneTel} className="text-white/50 hover:text-white text-sm transition-colors">
+                  {contactInfo.phone}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">

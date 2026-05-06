@@ -12,6 +12,16 @@ interface ServiceFaqsProps {
   heading?: string;
 }
 
+const accentColors = [
+  "border-l-indigo-400",
+  "border-l-teal-400",
+  "border-l-amazon-orange",
+  "border-l-rose-400",
+  "border-l-purple-400",
+  "border-l-emerald-400",
+  "border-l-amber-400",
+];
+
 export default function ServiceFaqs({
   faqs,
   heading = "Frequently Asked Questions",
@@ -19,8 +29,10 @@ export default function ServiceFaqs({
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-10 md:py-15 bg-amazon-surface">
-      <div className="max-w-3xl mx-auto px-4 md:px-6">
+    <section className="py-10 md:py-15 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-72 h-72 bg-indigo-50 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-3xl mx-auto px-4 md:px-6">
         <div className="text-center mb-9">
           <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-2">
             FAQs
@@ -33,33 +45,24 @@ export default function ServiceFaqs({
         <div className="space-y-2.5">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
+            const accent = accentColors[i % accentColors.length];
             return (
               <div
                 key={i}
-                className={`rounded-xl border bg-white transition-all ${
+                className={`rounded-xl border bg-white transition-all border-l-4 ${
                   isOpen
-                    ? "border-amazon-orange/40 shadow-sm shadow-amazon-orange/10"
-                    : "border-border hover:border-amazon-dark/20"
+                    ? `${accent} shadow-sm border-t-transparent border-r-transparent border-b-transparent`
+                    : "border-border hover:border-l-amazon-orange/40"
                 }`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                   className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
                 >
-                  <span
-                    className={`text-sm font-bold leading-snug ${
-                      isOpen ? "text-amazon-orange" : "text-amazon-dark"
-                    }`}
-                  >
+                  <span className={`text-sm font-bold leading-snug ${isOpen ? "text-amazon-dark" : "text-amazon-dark"}`}>
                     {faq.q}
                   </span>
-                  <span
-                    className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${
-                      isOpen
-                        ? "bg-amazon-orange text-amazon-dark"
-                        : "bg-border text-amazon-dark/40"
-                    }`}
-                  >
+                  <span className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${isOpen ? "bg-amazon-orange text-amazon-dark" : "bg-border text-amazon-dark/40"}`}>
                     {isOpen ? <Minus size={12} /> : <Plus size={12} />}
                   </span>
                 </button>
@@ -75,19 +78,12 @@ export default function ServiceFaqs({
           })}
         </div>
 
-        <div className="mt-8 bg-white rounded-2xl border border-border p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 bg-gradient-to-r from-indigo-50 to-teal-50 rounded-2xl border border-indigo-100 p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <p className="text-amazon-dark font-bold text-sm">
-              Still have questions?
-            </p>
-            <p className="text-muted-foreground text-xs mt-0.5">
-              Call or chat — we reply within 1 business hour.
-            </p>
+            <p className="text-amazon-dark font-bold text-sm">Still have questions?</p>
+            <p className="text-muted-foreground text-xs mt-0.5">Call or chat — we reply within 1 business hour.</p>
           </div>
-          <a
-            href="#contact"
-            className="flex-shrink-0 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-2.5 rounded transition-colors"
-          >
+          <a href="#contact" className="flex-shrink-0 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-2.5 rounded transition-colors">
             Talk to Us →
           </a>
         </div>

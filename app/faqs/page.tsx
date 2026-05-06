@@ -4,6 +4,7 @@ import Link from "next/link";
 import SiteHeader from "@/components/sections/SiteHeader";
 import SiteFooter from "@/components/sections/SiteFooter";
 import { Plus, Minus, ChevronRight, Star, ArrowRight, Phone, MessageCircle } from "lucide-react";
+import { contactInfo } from "@/data/contact";
 
 const categories = [
   {
@@ -110,6 +111,8 @@ export default function FaqsPage() {
       <main>
         {/* ── Hero ── */}
         <section className="bg-amazon-dark py-10 md:py-15 relative overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1170&auto=format&fit=crop')" }} />
+          <div className="absolute inset-0 bg-amazon-dark/80 pointer-events-none" />
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #FF9900 1px, transparent 1px)", backgroundSize: "26px 26px" }} />
           <div className="relative max-w-7xl mx-auto px-4 md:px-6">
             <nav className="flex items-center gap-1.5 text-xs text-white/30 mb-7">
@@ -177,8 +180,8 @@ export default function FaqsPage() {
                   <Link href="/contact" className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-6 py-3 rounded text-sm transition-colors">
                     <MessageCircle size={15} /> Contact Us <ArrowRight size={14} />
                   </Link>
-                  <a href="tel:+18005551234" className="inline-flex items-center gap-2 border-2 border-white/20 text-white hover:border-amazon-orange hover:text-amazon-orange font-bold px-6 py-3 rounded text-sm transition-colors">
-                    <Phone size={15} /> Call +1 (800) 555-1234
+                  <a href={contactInfo.phoneTel} className="inline-flex items-center gap-2 border-2 border-white/20 text-white hover:border-amazon-orange hover:text-amazon-orange font-bold px-6 py-3 rounded text-sm transition-colors">
+                    <Phone size={15} /> Call {contactInfo.phone}
                   </a>
                 </div>
               </div>

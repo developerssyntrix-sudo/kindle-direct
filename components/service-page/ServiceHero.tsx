@@ -12,6 +12,7 @@ interface ServiceHeroProps {
   description: string;
   stats: Stat[];
   serviceName: string;
+  bgImage?: string;
 }
 
 export default function ServiceHero({
@@ -21,9 +22,17 @@ export default function ServiceHero({
   description,
   stats,
   serviceName,
+  bgImage,
 }: ServiceHeroProps) {
   return (
     <section className="bg-amazon-dark py-10 md:py-15 relative overflow-hidden">
+      {bgImage && (
+        <div
+          className="absolute inset-0 bg-cover bg-center pointer-events-none"
+          style={{ backgroundImage: `url('${bgImage}')` }}
+        />
+      )}
+      <div className="absolute inset-0 bg-amazon-dark/80 pointer-events-none" />
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{

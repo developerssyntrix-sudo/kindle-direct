@@ -52,6 +52,8 @@ export default function AboutPage() {
       <main>
         {/* ── Hero ── */}
         <section className="bg-amazon-dark py-10 md:py-15 relative overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?q=80&w=1170&auto=format&fit=crop')" }} />
+          <div className="absolute inset-0 bg-amazon-dark/80 pointer-events-none" />
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, #FF9900 1px, transparent 1px)", backgroundSize: "26px 26px" }} />
           <div className="absolute top-0 right-0 w-96 h-96 bg-amazon-orange/5 rounded-full blur-3xl pointer-events-none" />
 

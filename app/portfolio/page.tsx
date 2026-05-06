@@ -35,6 +35,8 @@ export default function PortfolioPage() {
       <main>
         {/* ── Hero ── */}
         <section className="bg-amazon-dark py-10 md:py-15 relative overflow-hidden">
+          <div className="absolute inset-0 bg-cover bg-center pointer-events-none" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1550399105-c4db5fb85c18?q=80&w=1171&auto=format&fit=crop')" }} />
+          <div className="absolute inset-0 bg-amazon-dark/80 pointer-events-none" />
           <div
             className="absolute inset-0 opacity-[0.04] pointer-events-none"
             style={{ backgroundImage: "radial-gradient(circle, #FF9900 1px, transparent 1px)", backgroundSize: "26px 26px" }}
@@ -61,11 +63,10 @@ export default function PortfolioPage() {
               </p>
             </div>
 
-            {/* Stats */}
             <div className="flex flex-wrap gap-x-10 gap-y-5 pt-7 border-t border-white/10">
               {stats.map(({ icon: Icon, value, label }) => (
                 <div key={label} className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-amazon-orange/10 border border-amazon-orange/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-lg bg-amazon-orange/10 border border-amazon-orange/20 flex items-center justify-center shrink-0">
                     <Icon size={16} className="text-amazon-orange" />
                   </div>
                   <div>
