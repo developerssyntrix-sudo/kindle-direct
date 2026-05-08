@@ -68,7 +68,7 @@ export default function ManuscriptToWork() {
             <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
                 {/* Header */}
                 <div className="text-center mb-14">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white leading-snug">
+                    <h2 className="text-3xl md:text-4xl text-white leading-snug">
                         Turning{" "}
                         <span className="text-amazon-orange">your manuscript</span>{" "}
                         into
@@ -111,7 +111,7 @@ export default function ManuscriptToWork() {
                                         </div>
                                         {/* Text */}
                                         <div className="flex flex-col gap-1">
-                                            <h3 className="text-amazon-orange font-bold text-base">
+                                            <h3 className="text-amazon-orange font-bold font-sans text-base">
                                                 {step.title}
                                             </h3>
                                             <p className="text-white/80 text-sm leading-relaxed">

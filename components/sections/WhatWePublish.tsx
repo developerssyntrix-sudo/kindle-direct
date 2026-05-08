@@ -60,7 +60,7 @@ export default function WhatWePublish() {
 
                 {/* Header */}
                 <div className="text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-secondary">
+                    <h2 className="text-3xl md:text-4xl text-secondary">
                         What kinds of book genres do we publish?
                     </h2>
                     <p className="text-muted-foreground text-sm mt-2">

@@ -50,7 +50,7 @@ export default function FaqsSection() {
           <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-2">
             FAQs
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-amazon-dark tracking-tight mb-3">
+          <h2 className="text-3xl md:text-4xl text-amazon-dark tracking-tight mb-3">
             Questions We Get{" "}
             <span className="text-amazon-orange">All the Time</span>
           </h2>
@@ -117,7 +117,7 @@ export default function FaqsSection() {
           </div>
           <a
             href={contactInfo.phoneTel}
-            className="shrink-0 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-2.5 rounded transition-colors outline outline-2 outline-offset-2 outline-amazon-orange/60"
+            className="shrink-0 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-2.5 rounded transition-colors outline-2 outline-offset-2 outline-amazon-orange/60"
           >
             Talk to Us →
           </a>

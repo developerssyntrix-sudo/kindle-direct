@@ -77,7 +77,7 @@ export default function AboutSection() {
             <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-3">
               About Us
             </p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-amazon-dark leading-tight tracking-tight mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-amazon-dark leading-tight tracking-tight mb-4">
               The Publishing Partner
               <br />
               <span className="text-amazon-orange">Authors Actually Trust</span>

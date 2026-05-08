@@ -42,7 +42,7 @@ export default function KindleDirectPublishing() {
 
                 {/* Right — content */}
                 <div className="flex flex-col gap-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-secondary leading-snug">
+                    <h2 className="text-3xl md:text-4xl text-secondary leading-snug">
                         Earn more with Kindle Direct Publishing
                     </h2>
 
@@ -53,7 +53,7 @@ export default function KindleDirectPublishing() {
                                 <div className="mt-1.5 shrink-0 w-3 h-3 rounded-full bg-amazon-orange" />
 
                                 <div className="flex flex-col gap-1.5">
-                                    <h3 className="text-amazon-dark font-bold text-base">{title}</h3>
+                                    <h3 className="text-amazon-dark font-bold text-base font-sans">{title}</h3>
                                     <p className="text-muted-foreground text-sm leading-relaxed">
                                         {description}
                                     </p>

@@ -40,7 +40,7 @@ export default function PublishedAuthor() {
 
             <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col items-center gap-12">
                 {/* Heading */}
-                <h2 className="text-3xl md:text-4xl font-bold text-white text-center">
+                <h2 className="text-3xl md:text-4xl text-white text-center">
                     What Awaits You as a Published Author
                 </h2>
 
@@ -52,7 +52,7 @@ export default function PublishedAuthor() {
                             className="bg-white rounded-md p-7 flex flex-col gap-4 border-5 border-amazon-orange"
                         >
                             <div className="flex items-start justify-between gap-4">
-                                <h3 className="text-amazon-dark font-bold text-lg leading-snug">
+                                <h3 className="text-amazon-dark font-sans font-bold text-lg leading-snug">
                                     {title}
                                 </h3>
                                 <Icon

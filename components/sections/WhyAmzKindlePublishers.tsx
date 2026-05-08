@@ -44,7 +44,7 @@ export default function WhyAmzKindlePublishers() {
 
             <div className="relative z-10 max-w-6xl mx-auto flex flex-col gap-10">
                 {/* Heading */}
-                <h2 className="text-3xl md:text-4xl font-bold text-white text-center ">
+                <h2 className="text-3xl md:text-4xl text-white text-center ">
                     Why Amz Kindle Publishers?
                 </h2>
 
@@ -53,8 +53,8 @@ export default function WhyAmzKindlePublishers() {
                     {stats.map(({ icon: Icon, title, description }) => (
                         <div key={title} className="flex flex-col items-center gap-4">
                             <Icon size={36} className="text-amazon-orange" strokeWidth={1.5} />
-                            <h3 className="text-white font-bold text-sm leading-snug text-center w-full">{title}</h3>
-                            <p className="text-white/60 text-sm leading-relaxed text-center w-full">{description}</p>
+                            <h3 className="text-white font-bold text-sm leading-snug text-center w-full font-sans">{title}</h3>
+                            <p className="text-white/60 text-sm leading-relaxed text-center w-full font-sans">{description}</p>
                         </div>
                     ))}
                 </div>

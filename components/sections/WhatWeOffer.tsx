@@ -87,7 +87,7 @@ export default function WhatWeOffer() {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-10">
-                    <h2 className="text-4xl font-bold text-secondary mb-2">What We Offer</h2>
+                    <h2 className="text-4xl text-secondary mb-2">What We Offer</h2>
                     <p className="text-secondary font-semibold text-lg">Turn Your Manuscript into a Masterpiece</p>
                     <p className="text-muted-foreground text-sm mt-1">Discover Our Book Publishing Services!</p>
 
@@ -134,7 +134,7 @@ export default function WhatWeOffer() {
                                     </div>
                                 </div>
 
-                                <h3 className="text-amazon-dark font-bold text-lg leading-snug">{title}</h3>
+                                <h3 className="text-amazon-dark font-bold text-lg leading-snug font-sans">{title}</h3>
                                 <p className="text-amazon-dark font-semibold text-sm">{subtitle}</p>
                                 <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
                             </div>

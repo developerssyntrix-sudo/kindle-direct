@@ -51,7 +51,7 @@ export default function HeroSection() {
         </span> */}
 
         {/* Heading */}
-        <h1 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-amazon-dark leading-[1.08] tracking-tight mb-5">
+        <h1 className="text-4xl md:text-5xl xl:text-6xl text-amazon-dark leading-[1.08] tracking-tight mb-5">
           Your Story Deserves{" "}
           <span className="text-amazon-orange relative inline-block">
             to Be Heard
@@ -82,7 +82,7 @@ export default function HeroSection() {
         <div className="mt-10 bg-white border border-border rounded-md shadow-md overflow-hidden">
           {/* Form header bar */}
           <div className="bg-secondary px-6 py-4">
-            <h3 className="text-white font-bold text-base">
+            <h3 className="text-white text-base">
               Start Your Publishing Journey
             </h3>
             <p className="text-white/60 text-xs mt-0.5">
