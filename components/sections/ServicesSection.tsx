@@ -228,7 +228,7 @@ export default function ServicesSection() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-8 py-3 rounded text-sm transition-colors whitespace-nowrap flex-shrink-0"
+            className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-8 py-3 rounded text-sm transition-colors whitespace-nowrap flex-shrink-0 outline outline-2 outline-offset-2 outline-amazon-orange/60"
           >
             Get a Free Consultation →
           </Link>

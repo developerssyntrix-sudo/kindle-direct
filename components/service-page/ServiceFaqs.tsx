@@ -83,7 +83,7 @@ export default function ServiceFaqs({
             <p className="text-amazon-dark font-bold text-sm">Still have questions?</p>
             <p className="text-muted-foreground text-xs mt-0.5">Call or chat — we reply within 1 business hour.</p>
           </div>
-          <a href="#contact" className="flex-shrink-0 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-2.5 rounded transition-colors">
+          <a href="#contact" className="flex-shrink-0 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-2.5 rounded transition-colors outline outline-2 outline-offset-2 outline-amazon-orange/60">
             Talk to Us →
           </a>
         </div>

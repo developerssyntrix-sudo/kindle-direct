@@ -13,31 +13,31 @@ import luluPressLogo from "@/app/assets/svgs/brands/Lulu-Press.svg";
 import koboLogo from "@/app/assets/svgs/brands/Kobo.svg";
 
 const brands: { name: string; src: string }[] = [
-  { name: "Amazon KDP",     src: amazonKdpLogo.src },
-  { name: "Google Books",   src: googleBooksLogo.src },
-  { name: "IngramSpark",    src: ingramSparkLogo.src },
-  { name: "Draft2Digital",  src: draft2digitalLogo.src },
-  { name: "Scribd",         src: scribdLogo.src },
+  { name: "Amazon KDP", src: amazonKdpLogo.src },
+  { name: "Google Books", src: googleBooksLogo.src },
+  { name: "IngramSpark", src: ingramSparkLogo.src },
+  { name: "Draft2Digital", src: draft2digitalLogo.src },
+  { name: "Scribd", src: scribdLogo.src },
   { name: "Barnes & Noble", src: barnesNobleLogo.src },
-  { name: "Apple Books",    src: appleBooksLogo.src },
-  { name: "Lulu Press",     src: luluPressLogo.src },
-  { name: "Kobo",           src: koboLogo.src },
+  { name: "Apple Books", src: appleBooksLogo.src },
+  { name: "Lulu Press", src: luluPressLogo.src },
+  { name: "Kobo", src: koboLogo.src },
 ];
 
 // Card geometry (must match the className values below)
-const CARD_W    = 176; // w-44
-const CARD_GAP  = 12;  // gap-3
+const CARD_W = 176; // w-44
+const CARD_GAP = 12;  // gap-3
 const CARD_STEP = CARD_W + CARD_GAP; // 188 px per slot
-const SPEED     = 0.8; // px per animation frame (~48 px/s at 60 fps)
+const SPEED = 0.8; // px per animation frame (~48 px/s at 60 fps)
 
 // Scroll distance that equals exactly one full set of brands.
 // Jumping by this amount is invisible because set 2 == set 1 == set 3.
 const SINGLE_WIDTH = brands.length * CARD_STEP; // 9 × 188 = 1692 px
 
 export default function BrandsSection() {
-  const trackRef        = useRef<HTMLDivElement>(null);
-  const rafRef          = useRef<number>(0);
-  const hoverPausedRef  = useRef(false); // paused while the mouse is over the strip
+  const trackRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number>(0);
+  const hoverPausedRef = useRef(false); // paused while the mouse is over the strip
   const manualPausedRef = useRef(false); // paused briefly after a button click
 
   // Triple the list so we always have a full set on each side of the visible area.
@@ -79,15 +79,20 @@ export default function BrandsSection() {
 
   return (
     <section
-      className="py-4 md:py-6 bg-amazon-surface border-y border-border"
+      className="pt-5 bg-amazon-surface border-y border-border"
       onMouseEnter={() => { hoverPausedRef.current = true; }}
       onMouseLeave={() => { hoverPausedRef.current = false; }}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Label */}
-        <p className="text-center text-muted-foreground text-[10px] font-bold uppercase tracking-[0.18em] mb-4">
-          Distributed Across Leading Platforms
-        </p>
+        <div className="flex items-center flex-col justify-cen">
+          <h2 className="text-center text-4xl font-bold">
+            Distributors
+          </h2>
+          <p className="text-center text-muted-foreground text-sm font-normal mb-4">
+            We work with a wide array of online and physical distributors, working endlessly to ensure your work reaches the right audience.
+          </p>
+        </div>
 
         {/* Carousel row */}
         <div className="flex items-center gap-3">
@@ -95,7 +100,7 @@ export default function BrandsSection() {
           <button
             onClick={() => scroll("prev")}
             aria-label="Scroll left"
-            className="flex-shrink-0 w-9 h-9 rounded-full border border-border bg-white flex items-center justify-center text-muted-foreground hover:text-amazon-dark hover:border-amazon-orange/50 hover:shadow-sm transition-all"
+            className="shrink-0 w-9 h-9 rounded-full border border-border bg-white flex items-center justify-center text-muted-foreground hover:text-amazon-dark hover:border-amazon-orange/50 hover:shadow-sm transition-all"
           >
             <ChevronLeft size={16} />
           </button>
@@ -115,7 +120,7 @@ export default function BrandsSection() {
             {tripled.map((b, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 flex items-center justify-center px-5 rounded-md bg-white border border-border hover:border-amazon-orange/30 hover:shadow-md transition-all h-24 w-44"
+                className="shrink-0 flex items-center justify-center px-5 h-24 w-44"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -131,7 +136,7 @@ export default function BrandsSection() {
           <button
             onClick={() => scroll("next")}
             aria-label="Scroll right"
-            className="flex-shrink-0 w-9 h-9 rounded-full border border-border bg-white flex items-center justify-center text-muted-foreground hover:text-amazon-dark hover:border-amazon-orange/50 hover:shadow-sm transition-all"
+            className="shrink-0 w-9 h-9 rounded-full border border-border bg-white flex items-center justify-center text-muted-foreground hover:text-amazon-dark hover:border-amazon-orange/50 hover:shadow-sm transition-all"
           >
             <ChevronRight size={16} />
           </button>

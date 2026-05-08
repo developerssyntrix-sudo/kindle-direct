@@ -127,7 +127,7 @@ export default function PortfolioPage() {
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-7 py-3 rounded text-sm transition-colors shadow-lg shadow-amazon-orange/20"
+                className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-7 py-3 rounded text-sm transition-colors shadow-lg shadow-amazon-orange/20 outline outline-2 outline-offset-2 outline-amazon-orange/60"
               >
                 Start Your Publishing Journey <ArrowRight size={15} />
               </Link>

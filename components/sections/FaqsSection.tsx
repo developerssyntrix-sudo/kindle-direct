@@ -117,7 +117,7 @@ export default function FaqsSection() {
           </div>
           <a
             href={contactInfo.phoneTel}
-            className="shrink-0 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-2.5 rounded transition-colors"
+            className="shrink-0 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-2.5 rounded transition-colors outline outline-2 outline-offset-2 outline-amazon-orange/60"
           >
             Talk to Us →
           </a>

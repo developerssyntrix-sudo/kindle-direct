@@ -199,7 +199,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full flex items-center justify-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover disabled:opacity-70 text-amazon-dark font-bold text-sm px-6 py-3.5 rounded transition-colors shadow-md shadow-amazon-orange/20 mt-1"
+        className="w-full flex items-center justify-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover disabled:opacity-70 text-amazon-dark font-bold text-sm px-6 py-3.5 rounded transition-colors shadow-md shadow-amazon-orange/20 mt-1 outline outline-2 outline-offset-2 outline-amazon-orange/60"
       >
         {status === "loading" ? (
           <><Loader2 size={16} className="animate-spin" /> Sending…</>

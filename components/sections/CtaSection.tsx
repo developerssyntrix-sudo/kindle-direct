@@ -44,7 +44,7 @@ export default function CtaSection() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-8 py-3.5 rounded text-sm transition-colors shadow-lg shadow-amazon-orange/25"
+            className="inline-flex items-center justify-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-8 py-3.5 rounded text-sm transition-colors shadow-lg shadow-amazon-orange/25 outline-2 outline-offset-2 outline-amazon-orange/60"
           >
             <MessageCircle size={16} />
             Book Free Consultation

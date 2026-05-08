@@ -89,7 +89,7 @@ export default function ServicePackages({
                       </li>
                     ))}
                   </ul>
-                  <a href="#contact" className="mt-2 w-full inline-flex items-center justify-center gap-2 font-bold text-sm px-5 py-3 rounded transition-colors bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark">
+                  <a href="#contact" className="mt-2 w-full inline-flex items-center justify-center gap-2 font-bold text-sm px-5 py-3 rounded transition-colors bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark outline outline-2 outline-offset-2 outline-amazon-orange/60">
                     {pkg.ctaLabel ?? "Get Started"} <ArrowRight size={14} />
                   </a>
                 </div>

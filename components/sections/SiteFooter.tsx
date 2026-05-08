@@ -44,7 +44,7 @@ export default function SiteFooter() {
           {/* ── Brand ── */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-amazon-orange flex items-center justify-center flex-shrink-0">
+              <div className="w-9 h-9 rounded-lg bg-amazon-orange flex items-center justify-center shrink-0">
                 <BookOpen size={17} className="text-amazon-dark" />
               </div>
               <div className="leading-tight">
@@ -64,19 +64,19 @@ export default function SiteFooter() {
 
             <ul className="space-y-2.5">
               <li className="flex items-start gap-2.5">
-                <Phone size={13} className="text-amazon-orange mt-0.5 flex-shrink-0" />
+                <Phone size={13} className="text-amazon-orange mt-0.5 shrink-0" />
                 <a href={contactInfo.phoneTel} className="text-white/50 hover:text-white text-sm transition-colors">
                   {contactInfo.phone}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
-                <Mail size={13} className="text-amazon-orange mt-0.5 flex-shrink-0" />
+                <Mail size={13} className="text-amazon-orange mt-0.5 shrink-0" />
                 <a href="mailto:hello@amazonbookspublishing.com" className="text-white/50 hover:text-white text-sm transition-colors">
                   hello@amazonbookspublishing.com
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
-                <MapPin size={13} className="text-amazon-orange mt-0.5 flex-shrink-0" />
+                <MapPin size={13} className="text-amazon-orange mt-0.5 shrink-0" />
                 <span className="text-white/50 text-sm">Seattle, WA · New York, NY</span>
               </li>
             </ul>
@@ -131,27 +131,11 @@ export default function SiteFooter() {
             </p>
             <Link
               href="/contact"
-              className="block bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-3 rounded text-center transition-colors mb-4"
+              className="block bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm px-5 py-3 rounded text-center transition-colors mb-4 outline-2 outline-offset-2 outline-amazon-orange/60"
             >
               Book Free Consultation
             </Link>
             <p className="text-white/30 text-xs text-center">No commitment required</p>
-
-            {/* Socials */}
-            <div className="flex gap-2 mt-6">
-              {socials.map((s) => (
-                <a
-                  key={s.title}
-                  href={s.href}
-                  aria-label={s.title}
-                  className="w-8 h-8 rounded-lg bg-amazon-navy hover:bg-amazon-orange flex items-center justify-center transition-colors group"
-                >
-                  <span className="text-[10px] font-black text-white/50 group-hover:text-amazon-dark transition-colors uppercase leading-none">
-                    {s.label}
-                  </span>
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       </div>

@@ -72,7 +72,7 @@ export default function ServiceHero({
           <div className="flex flex-wrap gap-3 mb-10">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-6 py-3 rounded text-sm transition-colors shadow-lg shadow-amazon-orange/20"
+              className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-6 py-3 rounded text-sm transition-colors shadow-lg shadow-amazon-orange/20 outline outline-2 outline-offset-2 outline-amazon-orange/60"
             >
               Get Free Consultation <ArrowRight size={15} />
             </a>

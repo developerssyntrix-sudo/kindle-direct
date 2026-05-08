@@ -1,104 +1,55 @@
-import { Star, Quote } from "lucide-react";
-import { OpenBookOutline } from "@/components/ui/book-arts";
+import Image from "next/image"
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    role: "Author, Echoes of Tomorrow",
-    initials: "SM",
-    rating: 5,
-    color: "bg-purple-500",
+    name: "Tricia O'Malley",
+    meta: "USA / Romance",
     quote:
-      "I had a story in my head for years but no idea how to turn it into a real book. Amazon Books Publishing took my rough notes and delivered a polished sci-fi novel that hit #1 in its category within two weeks of launch. Absolutely blown away.",
+      '"Self-publishing through KDP and Amazon has changed my life. My books have made it to the New York Times, USA Today, and Wall Street Journal bestseller lists."',
+    link: { label: "Visit Tricia O'Malley's author page", href: "#" },
+    img: "https://m.media-amazon.com/images/G/01/Prelogin/img_author_TriciaOMalley_v1.png",
   },
   {
-    name: "David Lekowitz",
-    role: "Author, Zero to Seven Figures",
-    initials: "DL",
-    rating: 5,
-    color: "bg-amber-500",
+    name: "Jéssica Macedo",
+    meta: "Brazil / Fantasy",
     quote:
-      "As a business owner, I needed a book that actually reflected my expertise. The ghostwriting team nailed my voice on the first draft — and the Amazon Ads strategy they built drove 300+ sales in the first month. Worth every penny.",
+      '"I always dreamed of living off books, but it was something that seemed unattainable until I discovered Amazon KDP. With KDP, I gained readers in my country and even around the world."',
+    link: { label: "Visit Jéssica Macedo's author page", href: "#" },
+    img: "https://m.media-amazon.com/images/G/01/Prelogin/img_author_JessicaMacedo_v1.png",
   },
-  {
-    name: "Priya Rajan",
-    role: "Author, Bloom & Ashes",
-    initials: "PR",
-    rating: 5,
-    color: "bg-rose-500",
-    quote:
-      "The cover design alone was worth hiring them. My romance novel stands out on the shelf and the thumbnail converts like crazy. From manuscript to launch in just 8 weeks — and the team was responsive every single day.",
-  },
-];
+]
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-10 md:py-15 bg-amazon-dark relative overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-4 md:px-6">
-        {/* Header */}
-        <div className="text-center mb-10">
-          <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-2">
-            Success Stories
-          </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3">
-            Authors Who Took the{" "}
-            <span className="text-amazon-orange">Leap</span>
-          </h2>
-          <p className="text-white/40 text-sm max-w-sm mx-auto">
-            Real results from real authors — not cherry-picked outliers.
-          </p>
-        </div>
+    <section className="bg-background py-20 px-6">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+        {testimonials.map(({ name, meta, quote, link, img }) => (
+          <div key={name} className="flex flex-col items-center text-center gap-4">
+            {/* Author image (circles are baked into the image) */}
+            <Image
+              src={img}
+              alt={name}
+              width={320}
+              height={260}
+              className="object-contain"
+            />
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-3 gap-5">
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="bg-amazon-navy/60 border border-white/5 hover:border-amazon-orange/20 rounded-2xl p-6 flex flex-col gap-4 transition-all hover:bg-amazon-navy"
+            <h3 className="text-secondary font-semibold text-xl mt-2">{name}</h3>
+            <p className="text-muted-foreground text-sm">{meta}</p>
+
+            <p className="text-secondary/80 text-sm italic leading-relaxed max-w-2xl">
+              {quote}
+            </p>
+
+            <a
+              href={link.href}
+              className="text-amazon-teal text-sm hover:underline mt-1"
             >
-              {/* Stars */}
-              <div className="flex gap-0.5">
-                {[...Array(t.rating)].map((_, i) => (
-                  <Star key={i} size={14} className="text-amazon-orange fill-amazon-orange" />
-                ))}
-              </div>
-
-              {/* Quote icon */}
-              <Quote size={28} className="text-amazon-orange/20" />
-
-              {/* Quote text */}
-              <p className="text-white/70 text-sm leading-relaxed flex-1 italic">
-                &ldquo;{t.quote}&rdquo;
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-3 pt-3 border-t border-white/5">
-                <div className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center text-white font-bold text-sm shrink-0`}>
-                  {t.initials}
-                </div>
-                <div>
-                  <p className="text-white font-bold text-sm">{t.name}</p>
-                  <p className="text-white/40 text-xs">{t.role}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom stats */}
-        <div className="mt-10 grid grid-cols-3 divide-x divide-white/10 bg-amazon-navy/40 rounded-2xl border border-white/5 overflow-hidden">
-          {[
-            { value: "4.9/5", label: "Average Rating" },
-            { value: "500+", label: "Verified Reviews" },
-            { value: "97%", label: "Recommend Us" },
-          ].map((s) => (
-            <div key={s.label} className="py-5 text-center">
-              <p className="text-amazon-orange font-extrabold text-2xl leading-none">{s.value}</p>
-              <p className="text-white/40 text-xs mt-1.5">{s.label}</p>
-            </div>
-          ))}
-        </div>
+              {link.label}
+            </a>
+          </div>
+        ))}
       </div>
-    </section>
-  );
+    </section >
+  )
 }

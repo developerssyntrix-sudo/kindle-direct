@@ -177,7 +177,7 @@ export default function FaqsPage() {
                   Our team responds to every inquiry within 1 business hour. Call, email, or book a free consultation — whichever works best for you.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center">
-                  <Link href="/contact" className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-6 py-3 rounded text-sm transition-colors">
+                  <Link href="/contact" className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-6 py-3 rounded text-sm transition-colors outline outline-2 outline-offset-2 outline-amazon-orange/60">
                     <MessageCircle size={15} /> Contact Us <ArrowRight size={14} />
                   </Link>
                   <a href={contactInfo.phoneTel} className="inline-flex items-center gap-2 border-2 border-white/20 text-white hover:border-amazon-orange hover:text-amazon-orange font-bold px-6 py-3 rounded text-sm transition-colors">

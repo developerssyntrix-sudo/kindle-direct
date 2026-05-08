@@ -35,7 +35,7 @@ const steps: { num: string; img: StaticImageData; title: string; desc: string }[
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="py-10 md:py-15 bg-amazon-surface relative overflow-hidden">
+    <section id="process" className="pb-10 md:pb-15 pt-40 bg-amazon-surface relative overflow-hidden">
       <div className="relative max-w-7xl mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center mb-10">
@@ -101,7 +101,7 @@ export default function ProcessSection() {
         <div className="mt-10 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-8 py-3 rounded text-sm transition-colors shadow-md shadow-amazon-orange/20"
+            className="inline-flex items-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold px-8 py-3 rounded text-sm transition-colors shadow-md shadow-amazon-orange/20 outline-2 outline-offset-2 outline-amazon-orange/60"
           >
             Start Your Journey Today →
           </a>

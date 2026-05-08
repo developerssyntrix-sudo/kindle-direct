@@ -9,6 +9,15 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import CtaSection from "@/components/sections/CtaSection";
 import FaqsSection from "@/components/sections/FaqsSection";
 import SiteFooter from "@/components/sections/SiteFooter";
+import PublishedAuthor from "@/components/sections/PublishedAuthor";
+import WhatWeOffer from "@/components/sections/WhatWeOffer";
+import WhyAmzKindlePublishers from "@/components/sections/WhyAmzKindlePublishers";
+import ManuscriptToWork from "@/components/sections/ManuscriptToWork";
+import WhatWePublish from "@/components/sections/WhatWePublish";
+import KindleDirectPublishing from "@/components/sections/KindleDirectPublishing";
+import ReadyToJoinCTA from "@/components/sections/ReadyToJoinCTA";
+import ShareYourStory from "@/components/sections/ShareYourStory";
+import BeYourOwnPublisher from "@/components/sections/BeYourOwnPublisher";
 
 export default function HomePage() {
   return (
@@ -18,12 +27,21 @@ export default function HomePage() {
         <HeroSection />
         <BrandsSection />
         <AboutSection />
-        <ServicesSection />
-        <PortfolioSection />
-        <ProcessSection />
-        <TestimonialsSection />
-        <FaqsSection />
+        <BeYourOwnPublisher />
+        <KindleDirectPublishing />
+        <ShareYourStory />
+        {/* <ServicesSection /> */}
+        <PublishedAuthor />
+        {/* <PortfolioSection /> */}
+        <WhyAmzKindlePublishers />
+        <WhatWeOffer />
+        {/* <ProcessSection /> */}
+        <ManuscriptToWork />
+        <WhatWePublish />
         <CtaSection />
+        {/* <TestimonialsSection /> */}
+        <FaqsSection />
+        <ReadyToJoinCTA />
       </main>
       <SiteFooter />
     </>
