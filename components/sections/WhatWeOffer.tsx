@@ -83,11 +83,11 @@ export default function WhatWeOffer() {
     const next = () => setCurrent((c) => Math.min(c + 1, slides.length - 1))
 
     return (
-        <section className="bg-background pb-10 pt-40 px-6 relative">
+        <section className="bg-background py-10 px-6 relative">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
-                <div className="text-center mb-10">
-                    <h2 className="text-4xl text-secondary mb-2">What We Offer</h2>
+                <div className="text-center mb-5">
+                    <h2 className="text-4xl text-secondary mb-2 font-serif">What We Offer</h2>
                     <p className="text-secondary font-semibold text-lg">Turn Your Manuscript into a Masterpiece</p>
                     <p className="text-muted-foreground text-sm mt-1">Discover Our Book Publishing Services!</p>
 
@@ -152,7 +152,7 @@ export default function WhatWeOffer() {
                 </div>
 
                 {/* CTAs */}
-                <div className="flex justify-center gap-4 mt-5">
+                <div className="flex justify-center gap-4">
                     <Link href="/contact" className="bg-secondary hover:opacity-90 text-white font-semibold px-8 py-3 rounded-md transition-opacity duration-200 cursor-pointer">
                         Let's Talk
                     </Link>

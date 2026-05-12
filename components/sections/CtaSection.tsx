@@ -31,8 +31,8 @@ export default function CtaSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-2xl mx-auto px-4 md:px-6 text-center">
-        <h2 className="text-3xl md:text-5xl text-white leading-tight tracking-tight mb-4">
-          Ready to Become a{" "}
+        <h2 className="font-serif text-3xl md:text-5xl text-white mb-4">
+          Ready to Become a <br />
           <span className="text-amazon-orange">Published Author?</span>
         </h2>
 

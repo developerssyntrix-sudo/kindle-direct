@@ -24,7 +24,7 @@ export default function BeYourOwnPublisher() {
     ];
 
     return (
-        <section className="px-8 py-16 bg-[#F9F7F2]">
+        <section className="px-8 py-10 bg-[#F9F7F2]">
             <div className='flex flex-col-reverse lg:flex-row-reverse items-center justify-between gap-16 max-w-7xl mx-auto'>
                 {/* Left Side: Book Stack Image */}
                 <div className="flex-1 w-full max-w-xl">

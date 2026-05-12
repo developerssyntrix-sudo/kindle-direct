@@ -53,7 +53,7 @@ const steps = [
 
 export default function ManuscriptToWork() {
     return (
-        <section className="relative py-10 px-6 overflow-hidden min-h-screen">
+        <section className="relative pb-10 pt-40 px-6 overflow-hidden min-h-screen ">
             {/* BG Image */}
             <Image
                 src={SectionBg}
@@ -63,12 +63,12 @@ export default function ManuscriptToWork() {
                 priority
             />
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/75" />
+            <div className="absolute inset-0 bg-black/50" />
 
             <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
                 {/* Header */}
                 <div className="text-center mb-14">
-                    <h2 className="text-3xl md:text-4xl text-white leading-snug">
+                    <h2 className="font-serif text-4xl text-white">
                         Turning{" "}
                         <span className="text-amazon-orange">your manuscript</span>{" "}
                         into
@@ -98,23 +98,23 @@ export default function ManuscriptToWork() {
                                         }`}
                                 >
                                     <div
-                                        className={`flex items-start gap-4 max-w-xs ${!isLeft ? "md:text-right md:flex-row-reverse" : ""
+                                        className={`flex items-center gap-4 max-w-xs ${!isLeft ? "md:text-right md:flex-row-reverse" : ""
                                             }`}
                                     >
                                         {/* Icon */}
-                                        <div className="shrink-0 w-10 h-10 flex items-center justify-center">
+                                        <div className="shrink-0 w-20 h-20 flex items-center justify-center">
                                             <Icon
-                                                size={50}
+                                                size={60}
                                                 className="text-white"
                                                 strokeWidth={2}
                                             />
                                         </div>
                                         {/* Text */}
                                         <div className="flex flex-col gap-1">
-                                            <h3 className="text-amazon-orange font-bold font-sans text-base">
+                                            <h3 className="text-xl text-amazon-orange font-bold font-sans">
                                                 {step.title}
                                             </h3>
-                                            <p className="text-white/80 text-sm leading-relaxed">
+                                            <p className="text-white text-md">
                                                 {step.description}
                                             </p>
                                         </div>

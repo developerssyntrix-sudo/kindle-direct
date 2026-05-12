@@ -40,7 +40,7 @@ export default function PublishedAuthor() {
 
             <div className="relative z-10 max-w-6xl mx-auto px-6 flex flex-col items-center gap-12">
                 {/* Heading */}
-                <h2 className="text-3xl md:text-4xl text-white text-center">
+                <h2 className="font-serif text-4xl text-white text-center">
                     What Awaits You as a Published Author
                 </h2>
 

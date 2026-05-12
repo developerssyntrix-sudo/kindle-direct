@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 export default function ShareYourStory() {
     return (
-        <section className="p-8 bg-[#F9F7F2]">
-            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 font-sans text-slate-800">
+        <section className="px-8 py-10 bg-white">
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center justify-between gap-12 font-sans text-slate-800">
                 <div className="flex-1 space-y-6">
-                    <h2 className="text-4xl md:text-5xl text-slate-700">Share your story</h2>
+                    <h2 className="text-4xl text-secondary font-serif">Share your story</h2>
                     <p className="text-lg leading-relaxed">
                         Publish in different formats to reach more readers in their preferred way to read.
                     </p>

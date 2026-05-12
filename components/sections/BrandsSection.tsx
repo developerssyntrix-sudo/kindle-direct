@@ -86,7 +86,7 @@ export default function BrandsSection() {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Label */}
         <div className="flex items-center flex-col justify-cen">
-          <h2 className="text-center text-4xl font-bold">
+          <h2 className="text-center text-4xl font-serif">
             Distributors
           </h2>
           <p className="text-center text-muted-foreground text-sm font-normal mb-4">

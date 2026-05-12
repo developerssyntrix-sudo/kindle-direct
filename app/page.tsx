@@ -27,19 +27,15 @@ export default function HomePage() {
         <HeroSection />
         <BrandsSection />
         <AboutSection />
+        <WhatWeOffer />
+        <ShareYourStory />
         <BeYourOwnPublisher />
         <KindleDirectPublishing />
-        <ShareYourStory />
-        {/* <ServicesSection /> */}
         <PublishedAuthor />
-        {/* <PortfolioSection /> */}
         <WhyAmzKindlePublishers />
-        <WhatWeOffer />
-        {/* <ProcessSection /> */}
         <ManuscriptToWork />
         <WhatWePublish />
         <CtaSection />
-        {/* <TestimonialsSection /> */}
         <FaqsSection />
         <ReadyToJoinCTA />
       </main>

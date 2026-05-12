@@ -82,7 +82,7 @@ export default function HeroSection() {
         <div className="mt-10 bg-white border border-border rounded-md shadow-md overflow-hidden">
           {/* Form header bar */}
           <div className="bg-secondary px-6 py-4">
-            <h3 className="text-white text-base">
+            <h3 className="font-serif text-white text-base">
               Start Your Publishing Journey
             </h3>
             <p className="text-white/60 text-xs mt-0.5">
@@ -93,8 +93,8 @@ export default function HeroSection() {
           {/* Form body */}
           <div className="px-6 py-6 flex flex-col gap-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-amazon-dark uppercase tracking-wide">
+              <div className="flex flex-col items-start gap-1.5">
+                <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
                   Book Title
                 </label>
                 <input
@@ -104,8 +104,8 @@ export default function HeroSection() {
                 />
               </div>
 
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-amazon-dark uppercase tracking-wide">
+              <div className="flex flex-col items-start gap-1.5">
+                <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
                   Phone Number
                 </label>
                 <input
@@ -115,8 +115,8 @@ export default function HeroSection() {
                 />
               </div>
 
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-amazon-dark uppercase tracking-wide">
+              <div className="flex flex-col items-start gap-1.5">
+                <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
                   Email Address
                 </label>
                 <input
@@ -126,8 +126,8 @@ export default function HeroSection() {
                 />
               </div>
 
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-amazon-dark uppercase tracking-wide">
+              <div className="flex flex-col items-start gap-1.5">
+                <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
                   Service Interested In
                 </label>
                 <select

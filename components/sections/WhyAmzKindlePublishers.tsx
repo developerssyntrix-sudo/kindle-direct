@@ -44,7 +44,7 @@ export default function WhyAmzKindlePublishers() {
 
             <div className="relative z-10 max-w-6xl mx-auto flex flex-col gap-10">
                 {/* Heading */}
-                <h2 className="text-3xl md:text-4xl text-white text-center ">
+                <h2 className="font-serif text-4xl text-white text-center ">
                     Why Amz Kindle Publishers?
                 </h2>
 

@@ -50,7 +50,7 @@ export default function FaqsSection() {
           <p className="text-amazon-orange text-xs font-bold uppercase tracking-widest mb-2">
             FAQs
           </p>
-          <h2 className="text-3xl md:text-4xl text-amazon-dark tracking-tight mb-3">
+          <h2 className="font-serif text-3xl md:text-4xl text-amazon-dark tracking-tight mb-3">
             Questions We Get{" "}
             <span className="text-amazon-orange">All the Time</span>
           </h2>
@@ -66,29 +66,26 @@ export default function FaqsSection() {
             return (
               <div
                 key={i}
-                className={`rounded-xl border transition-all ${
-                  isOpen
+                className={`rounded-xl border transition-all ${isOpen
                     ? "border-amazon-orange/40 shadow-sm shadow-amazon-orange/10"
                     : "border-border hover:border-amazon-dark/20"
-                }`}
+                  }`}
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                   className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
                 >
                   <span
-                    className={`text-sm font-bold leading-snug ${
-                      isOpen ? "text-amazon-orange" : "text-amazon-dark"
-                    }`}
+                    className={`text-sm font-bold leading-snug ${isOpen ? "text-amazon-orange" : "text-amazon-dark"
+                      }`}
                   >
                     {faq.q}
                   </span>
                   <span
-                    className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${
-                      isOpen
+                    className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${isOpen
                         ? "bg-amazon-orange text-amazon-dark"
                         : "bg-amazon-surface text-amazon-dark/40"
-                    }`}
+                      }`}
                   >
                     {isOpen ? <Minus size={12} /> : <Plus size={12} />}
                   </span>

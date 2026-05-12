@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 const perks = [
     {
@@ -27,7 +28,7 @@ const perks = [
 export default function KindleDirectPublishing() {
     return (
         <section className="bg-background py-20 px-6">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
                 {/* Left — image */}
                 <div className="flex justify-center">
@@ -42,7 +43,7 @@ export default function KindleDirectPublishing() {
 
                 {/* Right — content */}
                 <div className="flex flex-col gap-8">
-                    <h2 className="text-3xl md:text-4xl text-secondary leading-snug">
+                    <h2 className="text-4xl text-secondary font-serif">
                         Earn more with Kindle Direct Publishing
                     </h2>
 
@@ -84,6 +85,16 @@ export default function KindleDirectPublishing() {
                                 </div>
                             </div>
                         ))}
+                        <div className="flex flex-wrap items-center gap-10 pt-4">
+                            <Link href="/contact">
+                                <button className="bg-[#FFA41C] hover:bg-[#F3A847] text-slate-900 font-medium py-2.5 px-8 rounded-md shadow-sm transition-colors text-sm">
+                                    Join KDP
+                                </button>
+                            </Link>
+                            <Link href="/about" className="text-cyan-700 hover:text-orange-700 hover:underline text-sm font-medium">
+                                Learn how to publish
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div >
