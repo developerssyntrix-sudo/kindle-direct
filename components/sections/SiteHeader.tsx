@@ -47,12 +47,11 @@ export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 shadow-lg">
+    <header className="sticky top-0 z-50">
       {/* Top Bar */}
-      <div className="bg-amazon-orange">
+      <div className="bg-[#FFF5E8]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-10 flex items-center justify-center gap-8">
           <a
             href={contactInfo.phoneTel}
@@ -72,7 +71,7 @@ export default function SiteHeader() {
       </div>
 
       {/* Main Nav */}
-      <div className="bg-[#2d3748] border-b border-white/10">
+      <div className="bg-[#222E3E] border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
@@ -91,22 +90,58 @@ export default function SiteHeader() {
             </div>
           </Link>
 
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
+            <Link
+              href="/contact"
+              className="bg-amazon-orange hover:bg-amazon-orange/80 text-white font-semibold text-sm px-5 py-2.5 rounded transition-colors outline-2 outline-offset-2 outline-amazon-orange"
+            >
+              Get Started
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-white hover:bg-white/80 text-amazon-dark font-semibold text-sm px-5 py-2.5 rounded border border-white/30 transition-colors flex items-center gap-2"
+            >
+              <MessageCircle size={15} />
+              Live Chat
+            </Link>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden text-white p-1.5 rounded hover:bg-white/10 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </div>
+      {/* Navigation links */}
+      <div className="bg-[#EAEDED]">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-6">
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1 h-full">
             {navLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-white hover:text-amazon-orange px-3 py-1.5 rounded text-sm font-medium transition-colors"
+                className={`px-3 py-1.5 text-sm transition-colors h-full flex items-center border-b-2 hover:border-[#008296] hover:text-[#008296] ${pathname === l.href
+                  ? "border-[#008296] text-black font-bold"
+                  : "border-transparent text-black"
+                  }`}
               >
                 {l.label}
               </Link>
             ))}
-            <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
+            <NavigationMenu className={"h-full"}>
+              <NavigationMenuList className={"h-full"}>
+                <NavigationMenuItem className="h-full">
                   <NavigationMenuTrigger
-                    className="bg-transparent text-white hover:text-amazon-orange data-popup-open:text-amazon-orange data-open:text-amazon-orange text-sm font-medium h-auto px-3 py-1.5"
+                    className={`bg-transparent hover:text-[#008296] data-popup-open:text-[#008296] data-open:text-amazon-orange text-sm font-medium h-full px-3 py-1.5 border-b-2 rounded-none ${pathname.startsWith("/services")
+                      ? "border-[#008296] text-black font-bold"
+                      : "border-transparent text-black hover:text-[#008296]"
+                      }`}
                   >
                     Services
                   </NavigationMenuTrigger>
@@ -141,32 +176,6 @@ export default function SiteHeader() {
               </NavigationMenuList>
             </NavigationMenu>
           </nav>
-
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <Link
-              href="/contact"
-              className="bg-amazon-orange hover:bg-amazon-orange/80 text-white font-semibold text-sm px-5 py-2.5 rounded transition-colors outline-2 outline-offset-2 outline-amazon-orange"
-            >
-              Get Started
-            </Link>
-            <Link
-              href="/contact"
-              className="bg-white hover:bg-white/80 text-amazon-dark font-semibold text-sm px-5 py-2.5 rounded border border-white/30 transition-colors flex items-center gap-2"
-            >
-              <MessageCircle size={15} />
-              Live Chat
-            </Link>
-          </div>
-
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="lg:hidden text-white p-1.5 rounded hover:bg-white/10 transition-colors"
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
         </div>
       </div>
 
