@@ -84,12 +84,12 @@ export default function ServicePackages({
                   <ul className="space-y-2.5 flex-1">
                     {pkg.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5">
-                        <CheckCircle2 size={15} className="flex-shrink-0 mt-0.5 text-amazon-orange" fill="currentColor" fillOpacity={0.15} />
+                        <CheckCircle2 size={15} className="shrink-0 mt-0.5 text-amazon-orange" fill="currentColor" fillOpacity={0.15} />
                         <span className="text-xs text-white/70">{f}</span>
                       </li>
                     ))}
                   </ul>
-                  <a href="#contact" className="mt-2 w-full inline-flex items-center justify-center gap-2 font-bold text-sm px-5 py-3 rounded transition-colors bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark outline outline-2 outline-offset-2 outline-amazon-orange/60">
+                  <a href="#contact" className="mt-2 w-full inline-flex items-center justify-center gap-2 font-bold text-sm px-5 py-3 rounded transition-colors bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark outline-2 outline-offset-2 outline-amazon-orange/60">
                     {pkg.ctaLabel ?? "Get Started"} <ArrowRight size={14} />
                   </a>
                 </div>
@@ -112,7 +112,7 @@ export default function ServicePackages({
                 <ul className="space-y-2.5 flex-1">
                   {pkg.features.map((f) => (
                     <li key={f} className="flex items-start gap-2.5">
-                      <CheckCircle2 size={15} className={`flex-shrink-0 mt-0.5 ${tier!.check}`} fill="currentColor" fillOpacity={0.15} />
+                      <CheckCircle2 size={15} className={`shrink-0 mt-0.5 ${tier!.check}`} fill="currentColor" fillOpacity={0.15} />
                       <span className="text-xs text-amazon-dark">{f}</span>
                     </li>
                   ))}

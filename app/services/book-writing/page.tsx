@@ -8,6 +8,10 @@ import BookWritingTestimonials from "@/components/services/book-writing/BookWrit
 import BookWritingKindleCreate from "@/components/services/book-writing/BookWritingKindleCreate";
 import BookWritingTools from "@/components/services/book-writing/BookWritingTools";
 import BookWritingCTA from "@/components/services/book-writing/BookWritingCTA";
+import BrandsSection from "@/components/sections/BrandsSection";
+import LogoMarquee from "@/components/sections/LogoMarquee";
+import PublishedAuthor from "@/components/sections/PublishedAuthor";
+import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export const metadata: Metadata = {
   title: "Book Writing & Ghostwriting Services | Amazon Books Publishing",
@@ -34,9 +38,12 @@ export default function BookWritingPage() {
             { value: "8 Wks", label: "Average Delivery" },
           ]}
         />
+        <BrandsSection />
         <BookWritingSteps />
+        <LogoMarquee />
         <BookWritingTestimonials />
         <BookWritingKindleCreate />
+        <PublishedAuthor />
         <BookWritingTools />
         <ServiceFaqs
           heading="Book Writing FAQs"
@@ -51,6 +58,7 @@ export default function BookWritingPage() {
           ]}
         />
         <BookWritingCTA />
+        <ContactFormSection />
       </main>
       <SiteFooter />
     </>

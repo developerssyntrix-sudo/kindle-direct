@@ -3,6 +3,10 @@ import SiteHeader from "@/components/sections/SiteHeader";
 import SiteFooter from "@/components/sections/SiteFooter";
 import ServiceHero from "@/components/service-page/ServiceHero";
 import ServiceFaqs from "@/components/service-page/ServiceFaqs";
+import BrandsSection from "../sections/BrandsSection";
+import LogoMarquee from "../sections/LogoMarquee";
+import PublishedAuthor from "../sections/PublishedAuthor";
+import ContactFormSection from "../sections/ContactFormSection";
 
 interface StepItem {
   step: string;
@@ -84,6 +88,7 @@ export default function ServicePageLayout({
           symbolVariant={symbolVariant}
           stats={stats}
         />
+        <BrandsSection />
 
         {/* Steps */}
         <section className="py-12 bg-white">
@@ -121,6 +126,8 @@ export default function ServicePageLayout({
             </div>
           </div>
         </section>
+
+        <LogoMarquee />
 
         {/* Testimonials */}
         <section className="py-12 bg-[#f0f2f2]">
@@ -175,6 +182,8 @@ export default function ServicePageLayout({
             </div>
           </div>
         </section>
+
+        <PublishedAuthor />
 
         {/* Free Tools */}
         <section className="py-12 bg-[#f0f2f2]">
@@ -233,6 +242,7 @@ export default function ServicePageLayout({
           </div>
         </section>
       </main>
+      <ContactFormSection />
       <SiteFooter />
     </>
   );

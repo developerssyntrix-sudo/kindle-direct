@@ -2,7 +2,7 @@ import Image from "next/image";
 import { CheckCircle2, Award, Globe, BookMarked } from "lucide-react";
 
 import ArrowBg from "@/app/assets/images/Arrow-About.webp"
-import AboutLady from "@/app/assets/images/About-Lady.webp"
+import AboutLady from "@/app/assets/images/about-lady.png"
 
 const features = [
   "Dedicated publishing consultant assigned to every project",

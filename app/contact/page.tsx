@@ -7,6 +7,7 @@ import ContactForm from "@/components/contact/ContactForm";
 import ContactSidebar from "@/components/contact/ContactSidebar";
 import ContactMap from "@/components/contact/ContactMap";
 import BrandsSection from "@/components/sections/BrandsSection";
+import WhyAmzKindlePublishers from "@/components/sections/WhyAmzKindlePublishers";
 
 export const metadata: Metadata = {
   title: "Contact Us — Free Consultation | Amazon Books Publishing",
@@ -21,6 +22,9 @@ export default function ContactPage() {
         <ContactHero />
         <BrandsSection />
         <ContactCards />
+        <div className="bg-white mb-30">
+          <WhyAmzKindlePublishers />
+        </div>
 
         <section className="py-10 bg-white">
           <div className="max-w-6xl mx-auto px-4 md:px-6">

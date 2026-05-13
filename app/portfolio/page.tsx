@@ -7,6 +7,11 @@ import PortfolioGenres from "@/components/portfolio/PortfolioGenres";
 import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
 import PortfolioCTA from "@/components/portfolio/PortfolioCTA";
 import BrandsSection from "@/components/sections/BrandsSection";
+import WhatWeOffer from "@/components/sections/WhatWeOffer";
+import WhyAmzKindlePublishers from "@/components/sections/WhyAmzKindlePublishers";
+import AboutSection from "@/components/sections/AboutSection";
+import WhatWePublish from "@/components/sections/WhatWePublish";
+import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export const metadata: Metadata = {
   title: "Portfolio — Published Books | Amazon Books Publishing",
@@ -20,6 +25,10 @@ export default function PortfolioPage() {
       <main className="bg-[#f5f2eb] text-[#1f2937]">
         <PortfolioHero />
         <BrandsSection />
+        <WhatWeOffer />
+        <div className="bg-[#f5f2eb] mb-30">
+          <WhyAmzKindlePublishers />
+        </div>
         <PortfolioGenres />
 
         <section id="portfolio-grid" className="py-10 bg-[#f5f2eb]">
@@ -35,6 +44,9 @@ export default function PortfolioPage() {
           </div>
         </section>
 
+        <AboutSection />
+        <WhatWePublish />
+        <ContactFormSection />
         <PortfolioCTA />
       </main>
       <SiteFooter />

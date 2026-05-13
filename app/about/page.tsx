@@ -7,6 +7,9 @@ import AboutTestimonials from "@/components/about/AboutTestimonials";
 import AboutTools from "@/components/about/AboutTools";
 import AboutCTA from "@/components/about/AboutCTA";
 import BrandsSection from "@/components/sections/BrandsSection";
+import AboutSection from "@/components/sections/AboutSection";
+import WhatWePublish from "@/components/sections/WhatWePublish";
+import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export const metadata: Metadata = {
   title: "About Us | Amazon Books Publishing",
@@ -20,6 +23,9 @@ export default function AboutPage() {
       <main className="bg-[#f5f2eb] text-[#1f2937]">
         <AboutHero />
         <BrandsSection />
+        <AboutSection />
+        <WhatWePublish />
+        <ContactFormSection />
         <AboutSteps />
         <AboutTestimonials />
         <AboutTools />
