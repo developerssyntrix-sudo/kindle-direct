@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import amazonKdpLogo from "@/app/assets/svgs/brands/Amazon-KDP.svg";
 import googleBooksLogo from "@/app/assets/svgs/brands/Google-Books.svg";
 import ingramSparkLogo from "@/app/assets/svgs/brands/Ingram-Spark.webp";
@@ -24,122 +24,34 @@ const brands: { name: string; src: string }[] = [
   { name: "Kobo", src: koboLogo.src },
 ];
 
-// Card geometry (must match the className values below)
-const CARD_W = 176; // w-44
-const CARD_GAP = 12;  // gap-3
-const CARD_STEP = CARD_W + CARD_GAP; // 188 px per slot
-const SPEED = 0.8; // px per animation frame (~48 px/s at 60 fps)
-
-// Scroll distance that equals exactly one full set of brands.
-// Jumping by this amount is invisible because set 2 == set 1 == set 3.
-const SINGLE_WIDTH = brands.length * CARD_STEP; // 9 × 188 = 1692 px
-
 export default function BrandsSection() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const rafRef = useRef<number>(0);
-  const hoverPausedRef = useRef(false); // paused while the mouse is over the strip
-  const manualPausedRef = useRef(false); // paused briefly after a button click
-
-  // Triple the list so we always have a full set on each side of the visible area.
-  const tripled = [...brands, ...brands, ...brands];
-
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-
-    // Start in the middle set so scrolling backward is immediately possible.
-    el.scrollLeft = SINGLE_WIDTH;
-
-    const tick = () => {
-      if (el && !hoverPausedRef.current && !manualPausedRef.current) {
-        el.scrollLeft += SPEED;
-
-        // Seamlessly jump when we cross into the third set → back to second set.
-        if (el.scrollLeft >= SINGLE_WIDTH * 2) el.scrollLeft -= SINGLE_WIDTH;
-
-        // Seamlessly jump when we cross below the first set → back to second set.
-        if (el.scrollLeft <= 0) el.scrollLeft += SINGLE_WIDTH;
-      }
-      rafRef.current = requestAnimationFrame(tick);
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current);
-  }, []);
-
-  const scroll = (dir: "prev" | "next") => {
-    const el = trackRef.current;
-    if (!el) return;
-
-    // Pause auto-scroll while the smooth scroll animation plays, then resume.
-    manualPausedRef.current = true;
-    el.scrollBy({ left: dir === "next" ? CARD_STEP : -CARD_STEP, behavior: "smooth" });
-    setTimeout(() => { manualPausedRef.current = false; }, 1500);
-  };
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, dragFree: true, align: "start" },
+    [AutoScroll({ speed: 1.5, stopOnInteraction: false, stopOnMouseEnter: true })]
+  );
 
   return (
-    <section
-      className="pt-5 bg-amazon-surface border-y border-border"
-      onMouseEnter={() => { hoverPausedRef.current = true; }}
-      onMouseLeave={() => { hoverPausedRef.current = false; }}
-    >
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
-        {/* Label */}
-        <div className="flex items-center flex-col justify-cen">
-          <h2 className="text-center text-4xl font-serif">
-            Distributors
-          </h2>
-          <p className="text-center text-muted-foreground text-sm font-normal mb-4">
-            We work with a wide array of online and physical distributors, working endlessly to ensure your work reaches the right audience.
-          </p>
-        </div>
+    <section className="pt-5 pb-2 bg-amazon-surface border-y border-border">
+      <div className="flex items-center flex-col mb-4 px-4 md:px-6">
+        <h2 className="text-center text-4xl font-serif">Distributors</h2>
+        <p className="text-center text-muted-foreground text-sm font-normal">
+          We work with a wide array of online and physical distributors, working endlessly to ensure your work reaches the right audience.
+        </p>
+      </div>
 
-        {/* Carousel row */}
-        <div className="flex items-center gap-3">
-          {/* Prev */}
-          <button
-            onClick={() => scroll("prev")}
-            aria-label="Scroll left"
-            className="shrink-0 w-9 h-9 rounded-full border border-border bg-white flex items-center justify-center text-muted-foreground hover:text-amazon-dark hover:border-amazon-orange/50 hover:shadow-sm transition-all"
-          >
-            <ChevronLeft size={16} />
-          </button>
-
-          {/* Scrollable track — edge fade via CSS mask so no overflow-hidden wrapper needed */}
-          <div
-            ref={trackRef}
-            className="flex-1 flex gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden"
-            style={{
-              scrollbarWidth: "none",
-              maskImage:
-                "linear-gradient(to right, transparent, black 48px, black calc(100% - 48px), transparent)",
-              WebkitMaskImage:
-                "linear-gradient(to right, transparent, black 48px, black calc(100% - 48px), transparent)",
-            }}
-          >
-            {tripled.map((b, i) => (
-              <div
-                key={i}
-                className="shrink-0 flex items-center justify-center px-5 h-24 w-44"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={b.src}
-                  alt={b.name}
-                  className="h-20 w-auto max-w-[140px] object-contain"
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Next */}
-          <button
-            onClick={() => scroll("next")}
-            aria-label="Scroll right"
-            className="shrink-0 w-9 h-9 rounded-full border border-border bg-white flex items-center justify-center text-muted-foreground hover:text-amazon-dark hover:border-amazon-orange/50 hover:shadow-sm transition-all"
-          >
-            <ChevronRight size={16} />
-          </button>
+      <div ref={emblaRef} className="overflow-hidden">
+        <div className="flex gap-3">
+          {[...brands, ...brands].map((b, i) => (
+            <div key={i} className="shrink-0 flex items-center justify-center px-5 h-24 w-44">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={b.src}
+                alt={b.name}
+                className="h-20 w-auto max-w-[140px] object-contain"
+                draggable={false}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

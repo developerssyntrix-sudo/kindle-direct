@@ -2,36 +2,19 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-import HeroImg from "@/app/assets/images/hero-images/Quote.png";
+import FaqsImg from "@/app/assets/images/hero-images/Faqs.png";
 
-interface Stat {
-  value: string;
-  label: string;
-}
-
-interface ServiceHeroProps {
-  badge: string;
-  title: string;
-  highlight: string;
-  description: string;
-  stats: Stat[];
-  serviceName: string;
-  bgImage?: string;
-  symbolVariant?: string;
-}
-
-export default function ServiceHero({ title, highlight, description }: ServiceHeroProps) {
+export default function FaqsHero() {
   return (
     <section className="pb-10 relative bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh]">
-          <div>
+          <div className="">
             <h1 className="text-4xl font-serif md:text-6xl tracking-tight text-[#131a22] leading-tight mb-4">
-              {title}{" "}
-              <span className="text-[#f59e0b]">{highlight}</span>
+              Frequently Asked Questions
             </h1>
             <p className="text-[#3a4553] text-base md:text-lg leading-relaxed max-w-xl mb-7">
-              {description}
+              We believe in radical transparency. If something&apos;s not covered here, call us — we&apos;d rather answer a hard question than lose your trust.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -49,8 +32,8 @@ export default function ServiceHero({ title, highlight, description }: ServiceHe
             </div>
           </div>
 
-          <div className="absolute -top-20 right-0">
-            <Image src={HeroImg} height={100} width={700} alt="Service Hero" />
+          <div className="absolute top-0 right-0">
+            <Image src={FaqsImg} height={100} width={600} alt="FAQs Hero Image" />
           </div>
         </div>
       </div>

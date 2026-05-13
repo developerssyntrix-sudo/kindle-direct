@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Star } from "lucide-react";
+import Link from "next/link";
 import SiteHeader from "@/components/sections/SiteHeader";
 import SiteFooter from "@/components/sections/SiteFooter";
 import ServiceHero from "@/components/service-page/ServiceHero";
@@ -40,22 +40,19 @@ const defaultTestimonials: Testimonial[] = [
   {
     name: "Laura Rocca",
     sub: "Italy | Romance",
-    quote:
-      "Becoming a KDP author allowed me to finally live my childhood dream. The writer captured my voice and helped me launch a polished romance novel in months.",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop",
+    quote: "Becoming a KDP author allowed me to finally live my childhood dream. The writer captured my voice and helped me launch a polished romance novel in months.",
+    avatar: "https://m.media-amazon.com/images/G/01/Kindle/dp/design/author/img_author_LauraRocca_v1.png",
   },
   {
     name: "Sundari Venkatraman",
-    sub: "India | Memoir",
-    quote:
-      "My memoir was in pieces until the ghostwriter organized my story and made it feel true. I now have a book I can proudly share.",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop",
+    sub: "India | Romance",
+    quote: "My memoir was in pieces until the ghostwriter organized my story and made it feel true. I now have a book I can proudly share.",
+    avatar: "https://m.media-amazon.com/images/G/01/Kindle/dp/design/author/img_author_SundariVenkatraman_v1.png",
   },
   {
     name: "Marah Woolf",
     sub: "Germany | Fantasy",
-    quote:
-      "I had no idea where to start. The team turned my idea into a real book and guided me all the way from outline to final manuscript.",
+    quote: "I had no idea where to start. The team turned my idea into a real book and guided me all the way from outline to final manuscript.",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop",
   },
 ];
@@ -76,7 +73,7 @@ export default function ServicePageLayout({
   return (
     <>
       <SiteHeader />
-      <main className="bg-[#ffffff] text-[#1f2937]">
+      <main className="bg-white text-[#131a22]">
         <ServiceHero
           badge={badge}
           title={title}
@@ -88,61 +85,36 @@ export default function ServicePageLayout({
           stats={stats}
         />
 
-        <section className="bg-[#ffffff] py-16">
-          <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <div className="max-w-3xl mx-auto text-center mb-14">
-              <p className="text-[#b45309] uppercase tracking-[0.28em] text-[11px] font-semibold mb-4">
-                Publish with Kindle Direct Publishing in 3 simple steps
-              </p>
-              <h2 className="text-3xl md:text-4xl font-semibold text-[#0f172a] tracking-tight leading-tight">
+        {/* Steps */}
+        <section className="py-12 bg-white">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <div className="max-w-2xl mb-10">
+              <p className="text-[#008296] text-xs font-semibold uppercase tracking-widest mb-2">How it works</p>
+              <h2 className="text-2xl md:text-3xl font-serif text-[#131a22] tracking-tight">
                 Publish with Kindle Direct Publishing in 3 simple steps
               </h2>
-              <p className="mt-4 text-[#475569] text-sm md:text-base leading-relaxed">
+              <p className="mt-3 text-[#565959] text-sm leading-relaxed">
                 We guide your project from idea through delivery with the same clean, easy flow used by top KDP authors.
               </p>
             </div>
 
-            <div className="space-y-12">
+            <div className="space-y-10">
               {steps.map((item, idx) => (
                 <div key={item.step} className="grid gap-8 items-center lg:grid-cols-2">
-                  <div className={idx % 2 === 1 ? "space-y-6 lg:order-last" : "space-y-6"}>
-                    <div className="inline-flex items-center gap-3">
-                      <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#7c3aed]">
-                        {item.step}
-                      </span>
-                      <span className="h-8 w-px bg-[#e5e7eb]" />
-                      <div className="text-xs font-semibold text-[#f59e0b] uppercase tracking-[0.24em]">
-                        {serviceName}
-                      </div>
-                    </div>
-
-                    <h3 className="text-2xl font-semibold text-[#0f172a] max-w-xl">
-                      {item.title}
-                    </h3>
-
-                    <ul className="space-y-3 text-[#475569] text-sm leading-6">
+                  <div className={`space-y-4 ${idx % 2 === 1 ? "lg:order-last" : ""}`}>
+                    <p className="text-[#008296] text-xs font-semibold uppercase tracking-widest">{item.step}</p>
+                    <h3 className="text-xl font-serif text-[#131a22]">{item.title}</h3>
+                    <ul className="space-y-2">
                       {item.bullets.map((bullet) => (
-                        <li key={bullet} className="flex gap-3">
-                          <CheckCircle2 size={18} className="mt-1 text-[#f59e0b] shrink-0" />
-                          <span>{bullet}</span>
+                        <li key={bullet} className="flex gap-3 text-[#565959] text-sm leading-relaxed">
+                          <span className="mt-1.5 w-2 h-2 rounded-full bg-[#008296] shrink-0" />
+                          {bullet}
                         </li>
                       ))}
                     </ul>
-
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-xs font-semibold uppercase tracking-[0.24em] text-[#f59e0b] bg-white border border-[#e5e7eb] px-3 py-2 rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
                   </div>
-
-                  <div className={idx % 2 === 1 ? "rounded-[2rem] overflow-hidden border border-[#e5e7eb] bg-white shadow-sm lg:order-first" : "rounded-[2rem] overflow-hidden border border-[#e5e7eb] bg-white shadow-sm"}>
-                    <img src={item.image} alt={item.title} className="w-[700px] h-[500px] object-cover" />
+                  <div className={`overflow-hidden rounded border border-[#d5d9d9] ${idx % 2 === 1 ? "lg:order-first" : ""}`}>
+                    <img src={item.image} alt={item.title} className="w-full h-64 md:h-80 object-cover" />
                   </div>
                 </div>
               ))}
@@ -150,115 +122,116 @@ export default function ServicePageLayout({
           </div>
         </section>
 
-        <section className="bg-white py-16">
-          <div className="max-w-7xl mx-auto px-4 md:px-6">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <p className="text-[#f59e0b] text-xs font-semibold uppercase tracking-[0.35em] mb-3">
-                Real author stories
-              </p>
-              <h2 className="text-3xl md:text-4xl font-semibold text-[#0f172a] tracking-tight">
-                Authors who trusted us with their story
-              </h2>
+        {/* Testimonials */}
+        <section className="py-12 bg-[#f0f2f2]">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <div className="mb-8">
+              <p className="text-[#008296] text-xs font-semibold uppercase tracking-widest mb-2">Real author stories</p>
+              <h2 className="text-2xl md:text-3xl font-serif text-[#131a22]">Authors who trusted us with their story</h2>
             </div>
-
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-3">
               {testimonials.map((author) => (
-                <div key={author.name} className="rounded-[2rem] border border-[#e5e7eb] bg-[#fffdf8] p-8 text-center shadow-sm">
-                  <div className="relative mx-auto mb-6 h-24 w-24 overflow-hidden rounded-full border-4 border-white bg-[#fef3c7] shadow-sm">
-                    <img src={author.avatar} alt={author.name} className="h-full w-full object-cover" />
+                <div key={author.name} className="bg-white border border-[#d5d9d9] rounded p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <img src={author.avatar} alt={author.name} className="h-12 w-12 rounded-full object-cover border border-[#d5d9d9]" />
+                    <div>
+                      <p className="text-[#131a22] font-semibold text-sm">{author.name}</p>
+                      <p className="text-[#565959] text-xs">{author.sub}</p>
+                    </div>
                   </div>
-                  <p className="text-[#475569] text-sm leading-relaxed mb-6">“{author.quote}”</p>
-                  <div>
-                    <p className="font-semibold text-[#0f172a]">{author.name}</p>
-                    <p className="text-[#94a3b8] text-xs uppercase tracking-[0.3em] mt-1">{author.sub}</p>
-                  </div>
+                  <p className="text-[#565959] text-sm leading-relaxed italic">&ldquo;{author.quote}&rdquo;</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-[#fff8ed] py-16">
-          <div className="max-w-7xl mx-auto px-4 md:px-6 grid gap-10 lg:grid-cols-[0.95fr_0.85fr] items-center">
-            <div className="space-y-6">
-              <p className="text-[#b45309] text-xs font-semibold uppercase tracking-[0.35em] mb-2">
-                Prepare beautifully
-              </p>
-              <h2 className="text-3xl md:text-4xl font-semibold text-[#0f172a] tracking-tight">
-                We can help you get started with Kindle Create
-              </h2>
-              <p className="text-[#475569] text-sm md:text-base leading-relaxed max-w-2xl">
-                Turn your manuscript into a beautiful book. Whether you're writing a comic book, cookbook, or novel, our formatting support helps prepare your manuscript for publication.
-              </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-md bg-[#f59e0b] px-6 py-3 text-sm font-semibold text-[#0f172a] shadow-md shadow-[#f59e0b]/20 transition-colors hover:bg-[#d97706]"
-              >
-                Learn more about Kindle Create
-                <ArrowRight size={16} />
-              </a>
-            </div>
-            <div className="rounded-[2rem] overflow-hidden border border-[#e5e7eb] bg-white shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1200&auto=format&fit=crop"
-                alt="Kindle Create preview"
-                className="w-[700px] h-[500px] object-cover"
-              />
+        {/* Kindle Create */}
+        <section className="py-12 bg-white">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <div className="grid gap-10 lg:grid-cols-2 items-center">
+              <div className="space-y-4">
+                <p className="text-[#008296] text-xs font-semibold uppercase tracking-widest">Prepare beautifully</p>
+                <h2 className="text-2xl md:text-3xl font-serif text-[#131a22]">
+                  We can help you get started with Kindle Create
+                </h2>
+                <p className="text-[#565959] text-sm leading-relaxed">
+                  Turn your manuscript into a beautiful book. Whether you&apos;re writing a comic book, cookbook, or novel, our formatting support helps prepare your manuscript for publication.
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 border border-[#008296] text-[#008296] hover:bg-[#008296] hover:text-white font-medium px-6 py-2.5 rounded text-sm transition-colors"
+                >
+                  Learn more about Kindle Create
+                </Link>
+              </div>
+              <div className="border-2 border-[#008296] rounded overflow-hidden">
+                <img
+                  src="https://m.media-amazon.com/images/G/01/Prelogin/img_publish_KC_lipsum.png"
+                  alt="Kindle Create preview"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-white py-16">
-          <div className="max-w-7xl mx-auto px-4 md:px-6 grid gap-10 lg:grid-cols-[0.95fr_0.85fr] items-center">
-            <div className="rounded-[2rem] overflow-hidden border border-[#e5e7eb] bg-[#f7f2e8] shadow-sm">
-              <img
-                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop"
-                alt="Publishing tools"
-                className="w-[700px] h-[500px] object-cover"
-              />
-            </div>
-            <div className="space-y-6">
-              <p className="text-[#b45309] text-xs font-semibold uppercase tracking-[0.35em] mb-2">
-                Free tools
-              </p>
-              <h2 className="text-3xl md:text-4xl font-semibold text-[#0f172a] tracking-tight">
-                More free KDP tools to help publish your book
-              </h2>
-              <div className="space-y-4 text-[#475569] text-sm md:text-base leading-relaxed">
-                {[
-                  {
-                    title: "Kindle Previewer",
-                    desc: "See how your eBook will look before you publish it.",
-                  },
-                  {
-                    title: "Kindle Kids’ Book Creator",
-                    desc: "Turn your illustrated children’s books into great-looking eBooks.",
-                  },
-                  {
-                    title: "KDP Community",
-                    desc: "Join the conversation with new and accomplished KDP authors.",
-                  },
-                  {
-                    title: "Kindle Create",
-                    desc: "Convert your manuscript into a beautifully formatted eBook.",
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="flex gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#f59e0b]/10 text-[#b45309]">
-                      <Star size={18} />
+        {/* Free Tools */}
+        <section className="py-12 bg-[#f0f2f2]">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <div className="grid gap-10 lg:grid-cols-2 items-center">
+              <div className="overflow-hidden rounded border border-[#d5d9d9]">
+                <img
+                  src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop"
+                  alt="Publishing tools"
+                  className="w-full h-64 md:h-80 object-cover"
+                />
+              </div>
+              <div className="space-y-4">
+                <p className="text-[#008296] text-xs font-semibold uppercase tracking-widest">Free tools</p>
+                <h2 className="text-2xl md:text-3xl font-serif text-[#131a22]">
+                  More free KDP tools to help publish your book
+                </h2>
+                <div className="space-y-4 pt-2">
+                  {[
+                    { title: "Kindle Previewer", desc: "See how your eBook will look before you publish it." },
+                    { title: "Kindle Kids' Book Creator", desc: "Turn your illustrated children's books into great-looking eBooks." },
+                    { title: "KDP Community", desc: "Join the conversation with new and accomplished KDP authors." },
+                    { title: "Kindle Create", desc: "Convert your manuscript into a beautifully formatted eBook." },
+                  ].map((item) => (
+                    <div key={item.title} className="flex gap-3">
+                      <span className="mt-1.5 w-2 h-2 rounded-full bg-[#008296] shrink-0" />
+                      <div>
+                        <p className="text-[#131a22] font-semibold text-sm">{item.title}</p>
+                        <p className="text-[#565959] text-sm mt-0.5">{item.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="font-semibold text-[#0f172a]">{item.title}</p>
-                      <p className="mt-1 text-[#475569]">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         <ServiceFaqs heading={`${serviceName} FAQs`} faqs={faqItems} />
+
+        {/* CTA */}
+        <section className="py-12 bg-white border-t border-[#d5d9d9]">
+          <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
+            <h2 className="text-2xl md:text-3xl font-serif text-[#131a22] mb-3">
+              Join our community of authors
+            </h2>
+            <p className="text-[#565959] text-sm leading-relaxed mb-7 max-w-md mx-auto">
+              Have a question about your account or how to market your book? Ask for help from fellow publishers or lend a hand to someone new.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center border border-[#008296] text-[#008296] hover:bg-[#008296] hover:text-white font-medium px-8 py-3 rounded transition-colors text-sm"
+            >
+              Connect with experts and fellow authors
+            </Link>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </>

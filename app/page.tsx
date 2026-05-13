@@ -15,9 +15,10 @@ import WhyAmzKindlePublishers from "@/components/sections/WhyAmzKindlePublishers
 import ManuscriptToWork from "@/components/sections/ManuscriptToWork";
 import WhatWePublish from "@/components/sections/WhatWePublish";
 import KindleDirectPublishing from "@/components/sections/KindleDirectPublishing";
-import ReadyToJoinCTA from "@/components/sections/ReadyToJoinCTA";
 import ShareYourStory from "@/components/sections/ShareYourStory";
 import BeYourOwnPublisher from "@/components/sections/BeYourOwnPublisher";
+import ContactFormSection from "@/components/sections/ContactFormSection";
+import LogoMarquee from "@/components/sections/LogoMarquee";
 
 export default function HomePage() {
   return (
@@ -28,6 +29,7 @@ export default function HomePage() {
         <BrandsSection />
         <AboutSection />
         <WhatWeOffer />
+        <LogoMarquee />
         <ShareYourStory />
         <BeYourOwnPublisher />
         <KindleDirectPublishing />
@@ -37,7 +39,7 @@ export default function HomePage() {
         <WhatWePublish />
         <CtaSection />
         <FaqsSection />
-        <ReadyToJoinCTA />
+        <ContactFormSection />
       </main>
       <SiteFooter />
     </>

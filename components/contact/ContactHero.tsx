@@ -2,36 +2,20 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-import HeroImg from "@/app/assets/images/hero-images/Quote.png";
+import Quote from "@/app/assets/images/hero-images/Contact.png"
 
-interface Stat {
-  value: string;
-  label: string;
-}
 
-interface ServiceHeroProps {
-  badge: string;
-  title: string;
-  highlight: string;
-  description: string;
-  stats: Stat[];
-  serviceName: string;
-  bgImage?: string;
-  symbolVariant?: string;
-}
-
-export default function ServiceHero({ title, highlight, description }: ServiceHeroProps) {
+export default function ContactHero() {
   return (
-    <section className="pb-10 relative bg-white overflow-hidden">
+    <section className="pb-10 relative bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[70vh]">
-          <div>
+          <div className="">
             <h1 className="text-4xl font-serif md:text-6xl tracking-tight text-[#131a22] leading-tight mb-4">
-              {title}{" "}
-              <span className="text-[#f59e0b]">{highlight}</span>
+              Contact Us
             </h1>
             <p className="text-[#3a4553] text-base md:text-lg leading-relaxed max-w-xl mb-7">
-              {description}
+              Whether you&apos;re just exploring or ready to start, we&apos;re here to help. Reach out through any of the channels below.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -41,7 +25,7 @@ export default function ServiceHero({ title, highlight, description }: ServiceHe
                 Start now <ArrowRight size={15} />
               </Link>
               <Link
-                href="/contact"
+                href="https://kdp.amazon.com/en_US/publish"
                 className="inline-flex items-center bg-transparent border border-[#c9d2de] hover:border-[#8b99ab] text-[#131a22] font-semibold px-6 py-3 rounded-md transition-colors"
               >
                 Learn more
@@ -49,8 +33,8 @@ export default function ServiceHero({ title, highlight, description }: ServiceHe
             </div>
           </div>
 
-          <div className="absolute -top-20 right-0">
-            <Image src={HeroImg} height={100} width={700} alt="Service Hero" />
+          <div className="absolute top-0 right-0">
+            <Image src={Quote} height={"100"} width={600} alt="Hero Image" />
           </div>
         </div>
       </div>

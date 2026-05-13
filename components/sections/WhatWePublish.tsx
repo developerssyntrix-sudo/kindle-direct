@@ -31,24 +31,24 @@ import SpeechImg from "@/app/assets/images/services/speech.webp"
 import ScreenPlayImg from "@/app/assets/images/services/screen-play.webp"
 
 const genres = [
-    { label: "Song", img: SongImg },
-    { label: "Autobiography", img: AutobiographyImg },
-    { label: "Comedy", img: ComedyImg },
-    { label: "Wiki", img: WikiImg },
-    { label: "Business", img: BusinessImg },
-    { label: "Biography", img: BiographyImg },
-    { label: "Children's", img: ChildrensImg },
-    { label: "Crime Fiction", img: CrimeFictionImg },
-    { label: "Comics", img: ComicsImg },
-    { label: "Fiction", img: FictionImg },
-    { label: "Hip Hop", img: HipHopImg },
-    { label: "Memoir", img: MemoirImg },
-    { label: "Novel", img: NovelImg },
-    { label: "Military Fiction", img: MilitaryFictionImg },
-    { label: "Narrative", img: NarrativeImg },
-    { label: "Rhyme", img: RhymeImg },
-    { label: "Speech", img: SpeechImg },
-    { label: "Screen Play", img: ScreenPlayImg },
+    { label: "Song", img: SongImg, filter: "All" },
+    { label: "Autobiography", img: AutobiographyImg, filter: "Biography" },
+    { label: "Comedy", img: ComedyImg, filter: "All" },
+    { label: "Wiki", img: WikiImg, filter: "Non-Fiction" },
+    { label: "Business", img: BusinessImg, filter: "Non-Fiction" },
+    { label: "Biography", img: BiographyImg, filter: "Biography" },
+    { label: "Children's", img: ChildrensImg, filter: "Children's" },
+    { label: "Crime Fiction", img: CrimeFictionImg, filter: "Sci-Fi & Fantasy" },
+    { label: "Comics", img: ComicsImg, filter: "All" },
+    { label: "Fiction", img: FictionImg, filter: "Sci-Fi & Fantasy" },
+    { label: "Hip Hop", img: HipHopImg, filter: "All" },
+    { label: "Memoir", img: MemoirImg, filter: "Biography" },
+    { label: "Novel", img: NovelImg, filter: "All" },
+    { label: "Military Fiction", img: MilitaryFictionImg, filter: "Sci-Fi & Fantasy" },
+    { label: "Narrative", img: NarrativeImg, filter: "Non-Fiction" },
+    { label: "Rhyme", img: RhymeImg, filter: "All" },
+    { label: "Speech", img: SpeechImg, filter: "All" },
+    { label: "Screen Play", img: ScreenPlayImg, filter: "All" },
 ]
 
 const PER_PAGE = 6
@@ -82,10 +82,10 @@ export default function WhatWePublish() {
                         {pages.map((pageGenres, pageIdx) => (
                             <CarouselItem key={pageIdx}>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                                    {pageGenres.map(({ label, img }) => (
-                                        <Link href="/contact" key={label}>
+                                    {pageGenres.map(({ label, img, filter }) => (
+                                        <Link href={`/portfolio?genre=${encodeURIComponent(filter)}#portfolio-grid`} key={label}>
                                             <div className="group flex flex-col items-center gap-3">
-                                                <div className="relative w-full h-[250px] aspect-5/2 rounded-xl overflow-hidden">
+                                                <div className="relative w-full h-[220px] aspect-5/2 rounded-xl overflow-hidden">
                                                     <Image
                                                         src={img}
                                                         alt={label}

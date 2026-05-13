@@ -117,11 +117,11 @@ export default function SiteHeader() {
           </button>
         </div>
       </div>
-      {/* Navigation links */}
-      <div className="bg-[#EAEDED]">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-6">
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1 h-full">
+
+      {/* Navigation links — desktop only */}
+      <div className="hidden lg:block bg-[#EAEDED]">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-4">
+          <nav className="flex items-center gap-1 h-full min-w-max">
             {navLinks.map((l) => (
               <Link
                 key={l.href}
@@ -134,47 +134,48 @@ export default function SiteHeader() {
                 {l.label}
               </Link>
             ))}
-            <NavigationMenu className={"h-full"}>
-              <NavigationMenuList className={"h-full"}>
-                <NavigationMenuItem className="h-full">
-                  <NavigationMenuTrigger
-                    className={`bg-transparent hover:text-[#008296] data-popup-open:text-[#008296] data-open:text-amazon-orange text-sm font-medium h-full px-3 py-1.5 border-b-2 rounded-none ${pathname.startsWith("/services")
-                      ? "border-[#008296] text-black font-bold"
-                      : "border-transparent text-black hover:text-[#008296]"
-                      }`}
-                  >
-                    Services
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="w-[580px] p-4 grid grid-cols-2 gap-2">
-                      {services.map((s) => {
-                        const Icon = s.icon;
-                        return (
-                          <Link
-                            key={s.href}
-                            href={s.href}
-                            className="flex items-start gap-3 p-3 rounded-xl hover:bg-amazon-surface transition-colors group"
-                          >
-                            <div className="w-9 h-9 rounded-lg bg-amazon-orange/10 border border-amazon-orange/20 flex items-center justify-center shrink-0 group-hover:bg-amazon-orange group-hover:border-amazon-orange transition-all">
-                              <Icon
-                                size={16}
-                                className="text-amazon-orange group-hover:text-amazon-dark transition-colors"
-                              />
-                            </div>
-                            <div>
-                              <p className="text-amazon-dark font-bold text-sm leading-tight group-hover:text-amazon-orange transition-colors">
-                                {s.label}
-                              </p>
-                              <p className="text-muted-foreground text-xs mt-0.5">{s.desc}</p>
-                            </div>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+            {/* Services — shadcn dropdown on lg+, custom on smaller screens */}
+            <div className="hidden lg:block h-full">
+              <NavigationMenu className="h-full">
+                <NavigationMenuList className="h-full">
+                  <NavigationMenuItem className="h-full">
+                    <NavigationMenuTrigger
+                      className={`bg-transparent hover:text-[#008296] data-popup-open:text-[#008296] data-open:text-amazon-orange text-sm font-medium h-full px-3 py-1.5 border-b-2 rounded-none ${pathname.startsWith("/services")
+                        ? "border-[#008296] text-black font-bold"
+                        : "border-transparent text-black hover:text-[#008296]"
+                        }`}
+                    >
+                      Services
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="w-[580px] p-4 grid grid-cols-2 gap-2">
+                        {services.map((s) => {
+                          const Icon = s.icon;
+                          return (
+                            <Link
+                              key={s.href}
+                              href={s.href}
+                              className="flex items-start gap-3 p-3 rounded-xl hover:bg-amazon-surface transition-colors group"
+                            >
+                              <div className="w-9 h-9 rounded-lg bg-amazon-orange/10 border border-amazon-orange/20 flex items-center justify-center shrink-0 group-hover:bg-amazon-orange group-hover:border-amazon-orange transition-all">
+                                <Icon size={16} className="text-amazon-orange group-hover:text-amazon-dark transition-colors" />
+                              </div>
+                              <div>
+                                <p className="text-amazon-dark font-bold text-sm leading-tight group-hover:text-amazon-orange transition-colors">
+                                  {s.label}
+                                </p>
+                                <p className="text-muted-foreground text-xs mt-0.5">{s.desc}</p>
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
+
           </nav>
         </div>
       </div>
@@ -192,8 +193,6 @@ export default function SiteHeader() {
               {l.label}
             </Link>
           ))}
-
-          {/* Services accordion */}
           <button
             onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
             className="flex items-center justify-between text-white/80 hover:text-amazon-orange px-3 py-2 rounded text-sm font-medium transition-colors hover:bg-white/10"
