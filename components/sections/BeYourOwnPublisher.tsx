@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import ImageContent from "@/app/assets/images/web-images-02.png"
+
+
 export default function BeYourOwnPublisher() {
+
     const features = [
-        {
-            title: "Self-publish easily",
-            desc: "Publish print and digital formats in three simple steps, and see your book appear on Amazon stores around the world in 72 hours."
-        },
         {
             title: "Earn more",
             desc: (
@@ -29,7 +29,7 @@ export default function BeYourOwnPublisher() {
                 {/* Left Side: Book Stack Image */}
                 <div className="flex-1 w-full max-w-xl">
                     <Image
-                        src="https://m.media-amazon.com/images/G/01/Prelogin/img_bookCollect_USv1.png"
+                        src={ImageContent}
                         alt="Stack of published books"
                         width={600}
                         height={400}

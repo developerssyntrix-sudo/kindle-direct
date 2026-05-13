@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import ImageContent from "@/app/assets/images/web-images-03.png"
+
 const perks = [
     {
         title: "Get paid for each page read with Kindle Unlimited",
@@ -27,13 +29,14 @@ const perks = [
 
 export default function KindleDirectPublishing() {
     return (
+
         <section className="bg-background py-20 px-6">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
                 {/* Left — image */}
                 <div className="flex justify-center">
                     <Image
-                        src="https://m.media-amazon.com/images/G/01/Prelogin/img_formats_v2.png"
+                        src={ImageContent}
                         alt="Kindle Direct Publishing formats"
                         width={520}
                         height={420}

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-
+import ImageContent from "@/app/assets/images/web-images-04.png"
+import Image from "next/image";
 const budgetRanges = [
   "Under $500",
   "$500 – $1,000",
@@ -119,8 +120,8 @@ export default function ContactFormSection() {
 
         {/* ── Right: Trust badges image ── */}
         <div className="flex items-center justify-center">
-          <img
-            src="https://amzsite.vercel.app/assets/images/mix/2.webp"
+          <Image
+            src={ImageContent}
             alt="Our trusted partners and ratings — Google Partner, Clutch 4.9/5.0, Yelp, Crunchbase, Trustpilot"
             className="w-full max-w-2xl object-contain"
           />
