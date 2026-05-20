@@ -30,7 +30,7 @@ const stats = [
 
 export default function WhyAmzKindlePublishers() {
     return (
-        <section className="relative pt-10 px-6 h-[40vh]">
+        <section className="relative pt-10 pb-10 md:pb-0 px-6 h-auto md:h-[40vh]">
             {/* BG Image */}
             <Image
                 src={SectionBg}

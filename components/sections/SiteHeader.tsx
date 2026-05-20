@@ -52,19 +52,19 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50">
       {/* Top Bar */}
       <div className="bg-[#FFF5E8]">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 h-10 flex items-center justify-center gap-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 h-10 flex items-center justify-center gap-4 md:gap-8">
           <a
             href={contactInfo.phoneTel}
-            className="flex items-center gap-2 text-amazon-dark font-semibold text-sm hover:opacity-80 transition-opacity"
+            className="flex items-center gap-1.5 text-amazon-dark font-semibold text-xs md:text-sm hover:opacity-80 transition-opacity whitespace-nowrap"
           >
-            <Phone size={14} />
+            <Phone size={13} />
             {contactInfo.phone}
           </a>
           <a
             href={`mailto:${contactInfo.email}`}
-            className="flex items-center gap-2 text-amazon-dark font-semibold text-sm hover:opacity-80 transition-opacity"
+            className="hidden sm:flex items-center gap-1.5 text-amazon-dark font-semibold text-xs md:text-sm hover:opacity-80 transition-opacity whitespace-nowrap"
           >
-            <Mail size={14} />
+            <Mail size={13} />
             {contactInfo.email}
           </a>
         </div>

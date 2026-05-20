@@ -53,7 +53,7 @@ const steps = [
 
 export default function ManuscriptToWork() {
     return (
-        <section className="relative pb-10 pt-40 px-6 overflow-hidden min-h-screen ">
+        <section className="relative pb-10 pt-10 md:pt-40 px-6 overflow-hidden min-h-screen ">
             {/* BG Image */}
             <Image
                 src={SectionBg}
@@ -91,7 +91,7 @@ export default function ManuscriptToWork() {
                         const arrowImg = i % 2 === 0 ? ArrowLeftToRight : ArrowRightToLeft
 
                         return (
-                            <div key={step.title} className="flex flex-col">
+                            <div key={step.title} className="flex flex-col items-center md:items-stretch">
                                 {/* Step row */}
                                 <div
                                     className={`flex flex-col md:flex-row items-start gap-4 ${isLeft ? "md:justify-start" : "md:justify-end"

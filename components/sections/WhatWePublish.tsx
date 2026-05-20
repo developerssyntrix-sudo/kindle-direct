@@ -103,8 +103,8 @@ export default function WhatWePublish() {
                             </CarouselItem>
                         ))}
                     </CarouselContent>
-                    <CarouselPrevious className="text-amazon-orange border-amazon-orange hover:text-amazon-orange hover:bg-amazon-orange/10 -left-10" />
-                    <CarouselNext className="text-amazon-orange border-amazon-orange hover:text-amazon-orange hover:bg-amazon-orange/10 -right-10" />
+                    <CarouselPrevious className="md:flex hidden text-amazon-orange border-amazon-orange hover:text-amazon-orange hover:bg-amazon-orange/10 -left-10" />
+                    <CarouselNext className="md:flex hidden text-amazon-orange border-amazon-orange hover:text-amazon-orange hover:bg-amazon-orange/10 -right-10" />
                 </Carousel>
 
                 {/* CTA */}
