@@ -74,7 +74,7 @@ export default function AboutSteps() {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl font-serif text-[#131a22] tracking-tight mb-3">
-            Publish with Amazon Books Publishing in 3 simple steps
+            Publish with Kindle Publisher House in 3 simple steps
           </h2>
         </div>
 

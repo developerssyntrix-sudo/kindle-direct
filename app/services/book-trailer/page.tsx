@@ -2,7 +2,7 @@
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Book Trailer Production Services | Amazon Books Publishing",
+  title: "Book Trailer Production Services | Kindle Publisher House",
   description:
     "Cinematic book trailers that stop the scroll — concept, script, voiceover, motion graphics, and social media cuts included. Starting at $599.",
 };

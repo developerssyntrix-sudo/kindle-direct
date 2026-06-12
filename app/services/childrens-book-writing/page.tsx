@@ -2,7 +2,7 @@
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Children's Book Writing & Publishing Services | Amazon Books Publishing",
+  title: "Children's Book Writing & Publishing Services | Kindle Publisher House",
   description:
     "Expert children's book writing, illustration coordination, and Amazon KDP publishing. From picture books to middle grade — we handle everything.",
 };

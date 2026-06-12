@@ -14,7 +14,7 @@ import PublishedAuthor from "@/components/sections/PublishedAuthor";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export const metadata: Metadata = {
-  title: "Book Writing & Ghostwriting Services | Amazon Books Publishing",
+  title: "Book Writing & Ghostwriting Services | Kindle Publisher House",
   description: "Professional ghostwriting services for fiction, non-fiction, memoirs, and business books. 800+ manuscripts delivered. NDA protected. You own all rights.",
 };
 

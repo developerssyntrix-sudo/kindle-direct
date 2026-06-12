@@ -1,4 +1,4 @@
-# Amazon Books Publishing
+# Kindle Publisher House
 
 A professional full-service book publishing agency website built with Next.js 16, React 19, and Tailwind CSS v4. Designed with the Amazon color palette and a compact, conversion-focused layout.
 

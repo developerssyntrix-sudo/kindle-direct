@@ -28,13 +28,13 @@ const stats = [
     },
 ]
 
-export default function WhyAmzKindlePublishers() {
+export default function WhyKindlePublisherHouse() {
     return (
         <section className="relative pt-10 pb-10 md:pb-0 px-6 h-auto md:h-[40vh]">
             {/* BG Image */}
             <Image
                 src={SectionBg}
-                alt="Why Amz Kindle Publishers background"
+                alt="Why Kindle Publisher House background"
                 fill
                 className="object-cover object-center"
                 priority
@@ -45,7 +45,7 @@ export default function WhyAmzKindlePublishers() {
             <div className="relative z-10 max-w-6xl mx-auto flex flex-col gap-10">
                 {/* Heading */}
                 <h2 className="font-serif text-4xl text-white text-center ">
-                    Why Amz Kindle Publishers?
+                    Why Kindle Publisher House?
                 </h2>
 
                 {/* Dark card */}

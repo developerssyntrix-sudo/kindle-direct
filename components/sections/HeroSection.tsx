@@ -47,7 +47,7 @@ export default function HeroSection() {
         {/* Badge */}
         {/* <span className="inline-flex items-center gap-1.5 bg-amazon-orange/10 border border-amazon-orange/30 text-amazon-orange text-xs font-bold px-3 py-1.5 rounded-full mb-6 tracking-wide uppercase">
           <Star size={11} fill="currentColor" />
-          #1 Rated Amazon Publishing Agency
+          #1 Rated Kindle Publishing Agency
         </span> */}
 
         {/* Heading */}

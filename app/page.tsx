@@ -11,7 +11,7 @@ import FaqsSection from "@/components/sections/FaqsSection";
 import SiteFooter from "@/components/sections/SiteFooter";
 import PublishedAuthor from "@/components/sections/PublishedAuthor";
 import WhatWeOffer from "@/components/sections/WhatWeOffer";
-import WhyAmzKindlePublishers from "@/components/sections/WhyAmzKindlePublishers";
+import WhyKindlePublisherHouse from "@/components/sections/WhyKindlePublisherHouse";
 import ManuscriptToWork from "@/components/sections/ManuscriptToWork";
 import WhatWePublish from "@/components/sections/WhatWePublish";
 import KindleDirectPublishing from "@/components/sections/KindleDirectPublishing";
@@ -34,7 +34,7 @@ export default function HomePage() {
         <BeYourOwnPublisher />
         <KindleDirectPublishing />
         <PublishedAuthor />
-        <WhyAmzKindlePublishers />
+        <WhyKindlePublisherHouse />
         <ManuscriptToWork />
         <WhatWePublish />
         <CtaSection />

@@ -64,7 +64,7 @@ const slides = [
             title: "Book Marketing",
             subtitle: "Sometimes, a great marketing strategy is all you need!",
             description:
-                "You get what you require: book promotion, author publicity, or marketing. Amz has got you covered! Our experts spent years understanding the algorithm, discovering the secrets that drive the success of marketing campaigns.",
+                "You get what you require: book promotion, author publicity, or marketing. KPH has got you covered! Our experts spent years understanding the algorithm, discovering the secrets that drive the success of marketing campaigns.",
         },
         {
             icon: FileText,

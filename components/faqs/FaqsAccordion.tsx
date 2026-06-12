@@ -6,7 +6,7 @@ const categories = [
   {
     label: "General",
     faqs: [
-      { q: "What exactly does Amazon Books Publishing do?", a: "We're a full-service book publishing agency specializing in the Amazon marketplace. We ghostwrite, edit, design, publish, and market books across every genre — handling every step so authors can focus on their ideas, not the mechanics of publishing." },
+      { q: "What exactly does Kindle Publisher House do?", a: "We're a full-service book publishing agency specializing in the Amazon marketplace. We ghostwrite, edit, design, publish, and market books across every genre — handling every step so authors can focus on their ideas, not the mechanics of publishing." },
       { q: "Who are your typical clients?", a: "Our clients range from first-time authors with a great idea but no writing experience, to business owners wanting a book as a lead-generation tool, to seasoned authors looking to level up their production quality or marketing. Anyone with a story worth telling." },
       { q: "Are you affiliated with Amazon?", a: "No — we're an independent publishing agency that specializes in Amazon KDP (Kindle Direct Publishing). We're one of a small number of agencies with Amazon KDP Partner status, but we're not owned by or formally affiliated with Amazon the company." },
       { q: "Do you work with international authors?", a: "Absolutely. We work with authors from six continents. All communication is in English, and we publish books globally through Amazon's worldwide marketplaces and partner distribution networks." },

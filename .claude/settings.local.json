@@ -5,7 +5,8 @@
       "Bash(findstr -i favicon)",
       "Bash(findstr version *)",
       "Bash(dir \"app\\\\favicon.png\")",
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "Bash(npx tsc *)"
     ]
   }
 }

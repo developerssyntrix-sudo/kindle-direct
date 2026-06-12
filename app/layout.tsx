@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Amazon Books Publishing",
+  title: "Kindle Publisher House",
   description: "Professional book publishing services — from manuscript to market.",
 };
 

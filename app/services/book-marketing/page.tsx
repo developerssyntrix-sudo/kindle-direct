@@ -2,7 +2,7 @@
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Book Marketing Services — Amazon Ads & Launch Strategy | Amazon Books Publishing",
+  title: "Book Marketing Services — Amazon Ads & Launch Strategy | Kindle Publisher House",
   description:
     "Data-driven Amazon book marketing — AMS ads, ARC campaigns, BookTok strategy, and launch week execution. Turn your book into a bestseller.",
 };

@@ -7,7 +7,7 @@ import FaqsCTA from "@/components/faqs/FaqsCTA";
 import BrandsSection from "@/components/sections/BrandsSection";
 
 export const metadata: Metadata = {
-  title: "FAQs — Common Questions | Amazon Books Publishing",
+  title: "FAQs — Common Questions | Kindle Publisher House",
   description: "Everything you want to know about ghostwriting, publishing, editing, marketing, and pricing — answered honestly.",
 };
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, Phone, Mail, MapPin } from "lucide-react";
+import { BookOpen, Phone, Mail } from "lucide-react";
 import { contactInfo } from "@/data/contact";
 import { Facebook } from "@/app/assets/svgs/icons/facebook";
 import { Twitter } from "@/app/assets/svgs/icons/twitter";
@@ -35,11 +35,11 @@ const legal = [
 ];
 
 const socials = [
-  { icon: Facebook, title: "Facebook", href: "#" },
-  { icon: Twitter, title: "Twitter / X", href: "#" },
-  { icon: Instagram, title: "Instagram", href: "#" },
-  { icon: LinkedIn, title: "LinkedIn", href: "#" },
-  { icon: YouTube, title: "YouTube", href: "#" },
+  { icon: Facebook, title: "Facebook", href: "https://www.facebook.com/Amazon" },
+  { icon: Twitter, title: "Twitter / X", href: "https://twitter.com/amazon" },
+  { icon: Instagram, title: "Instagram", href: "https://www.instagram.com/amazon" },
+  { icon: LinkedIn, title: "LinkedIn", href: "https://www.linkedin.com/company/amazon" },
+  { icon: YouTube, title: "YouTube", href: "https://www.youtube.com/amazon" },
 ];
 
 const footerLinks = [
@@ -156,10 +156,10 @@ export default function SiteFooter() {
                 </div>
                 <div className="leading-tight">
                   <span className="text-white font-extrabold text-base tracking-tight">
-                    Amazon<span style={{ color: "#E47911" }}>Books</span>
+                    Kindle<span style={{ color: "#E47911" }}>Publisher</span>
                   </span>
                   <span className="block text-white/40 text-[10px] tracking-widest uppercase -mt-0.5">
-                    Publishing
+                    House
                   </span>
                 </div>
               </Link>
@@ -188,13 +188,9 @@ export default function SiteFooter() {
                 </li>
                 <li className="flex items-start gap-2">
                   <Mail size={12} className="mt-0.5 shrink-0" style={{ color: "#E47911" }} />
-                  <a href="mailto:hello@amazonbookspublishing.com" className="text-white/50 hover:text-white text-xs transition-colors">
-                    hello@amazonbookspublishing.com
+                  <a href={`mailto:${contactInfo.email}`} className="text-white/50 hover:text-white text-xs transition-colors">
+                    {contactInfo.email}
                   </a>
-                </li>
-                <li className="flex items-start gap-2">
-                  <MapPin size={12} className="mt-0.5 shrink-0" style={{ color: "#E47911" }} />
-                  <span className="text-white/50 text-xs">Seattle, WA · New York, NY</span>
                 </li>
               </ul>
             </div>
@@ -288,7 +284,7 @@ export default function SiteFooter() {
             </div>
             {/* Copyright */}
             <p className="text-white text-xs text-center">
-              © 1996-2026, Amazon.com, Inc. or its affiliates. All Rights Reserved. Amazon and Kindle are trademarks of Amazon.com Inc. or its affiliates.
+              © 2026 Kindle Publisher House. All Rights Reserved.
             </p>
           </div>
         </div>

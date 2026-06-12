@@ -12,7 +12,7 @@ import WhatWePublish from "@/components/sections/WhatWePublish";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export const metadata: Metadata = {
-  title: "About Us | Amazon Books Publishing",
+  title: "About Us | Kindle Publisher House",
   description: "Publish with us. Explore our 3-step publishing process, author support, and free tools inspired by the KDP experience.",
 };
 

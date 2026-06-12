@@ -90,7 +90,7 @@ export default function SiteHeader() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <img src={Logo.src} alt="Amazon Books Publishing Logo" className="h-13 md:h-17 w-auto" />
+            <img src={Logo.src} alt="Kindle Publisher House Logo" className="h-13 md:h-17 w-auto" />
           </Link>
 
           {/* CTA Buttons */}

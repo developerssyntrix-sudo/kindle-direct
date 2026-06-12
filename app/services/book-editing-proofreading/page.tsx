@@ -2,7 +2,7 @@
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Book Editing & Proofreading Services | Amazon Books Publishing",
+  title: "Book Editing & Proofreading Services | Kindle Publisher House",
   description:
     "Professional book editing and proofreading — developmental, line, copy editing, and final proofread. Genre-matched editors. Turnaround in 14–21 days.",
 };

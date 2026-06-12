@@ -27,7 +27,7 @@ export default function ServiceCta({
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
           <a
-            href="mailto:hello@amazonbookspublishing.com"
+            href={`mailto:${contactInfo.email}`}
             className="inline-flex items-center justify-center gap-2 bg-[#f7b731] hover:bg-[#f2aa1f] text-[#131a22] font-semibold px-7 py-3.5 rounded-md text-sm transition-colors"
           >
             <ArrowRight size={16} />

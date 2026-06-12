@@ -1,7 +1,6 @@
 export const contactInfo = {
-  phone: "+1 (800) 555-1234",
-  phoneTel: "tel:+18005551234",
-  email: "info@amazonbookspublishing.com",
-  address: "123 Publishing Ave, New York, NY 10001",
+  phone: "+1 (315) 239-0990",
+  phoneTel: "tel:+13152390990",
+  email: "info@kindlepublisherhouse.com",
   hours: "Mon – Fri, 9 AM – 6 PM EST",
 };

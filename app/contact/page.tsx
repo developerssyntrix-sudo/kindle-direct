@@ -2,15 +2,13 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/sections/SiteHeader";
 import SiteFooter from "@/components/sections/SiteFooter";
 import ContactHero from "@/components/contact/ContactHero";
-import ContactCards from "@/components/contact/ContactCards";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactSidebar from "@/components/contact/ContactSidebar";
-import ContactMap from "@/components/contact/ContactMap";
 import BrandsSection from "@/components/sections/BrandsSection";
-import WhyAmzKindlePublishers from "@/components/sections/WhyAmzKindlePublishers";
+import WhyKindlePublisherHouse from "@/components/sections/WhyKindlePublisherHouse";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Free Consultation | Amazon Books Publishing",
+  title: "Contact Us — Free Consultation | Kindle Publisher House",
   description: "Book your free 30-minute publishing consultation. We respond within 1 business hour. No pressure, no commitment — just clarity on your publishing path.",
 };
 
@@ -21,9 +19,8 @@ export default function ContactPage() {
       <main className="bg-white text-[#131a22]">
         <ContactHero />
         <BrandsSection />
-        <ContactCards />
         <div className="bg-white mb-30">
-          <WhyAmzKindlePublishers />
+          <WhyKindlePublisherHouse />
         </div>
 
         <section className="py-10 bg-white">
@@ -40,8 +37,6 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
-
-        <ContactMap />
       </main>
       <SiteFooter />
     </>

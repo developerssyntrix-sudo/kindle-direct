@@ -2,7 +2,7 @@
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Poetry Publishing Services | Amazon Books Publishing",
+  title: "Poetry Publishing Services | Kindle Publisher House",
   description:
     "Publish your poetry collection on Amazon KDP and globally. Editorial curation, interior typesetting, cover design, and marketing for poets who mean business.",
 };
