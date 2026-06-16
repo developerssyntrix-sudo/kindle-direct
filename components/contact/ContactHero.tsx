@@ -18,14 +18,14 @@ export default function ContactHero() {
               Whether you&apos;re just exploring or ready to start, we&apos;re here to help. Reach out through any of the channels below.
             </p>
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-              <Link
+              {/* <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#f7b731] hover:bg-[#f2aa1f] text-[#131a22] font-semibold px-6 py-3 rounded-md transition-colors"
               >
                 Start now <ArrowRight size={15} />
-              </Link>
+              </Link> */}
               <Link
-                href="https://kdp.amazon.com/en_US/publish"
+                href="/about"
                 className="inline-flex items-center bg-transparent border border-[#c9d2de] hover:border-[#8b99ab] text-[#131a22] font-semibold px-6 py-3 rounded-md transition-colors"
               >
                 Learn more

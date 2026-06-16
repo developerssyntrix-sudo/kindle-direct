@@ -166,7 +166,7 @@ export default function ServicePageLayout({
                   Turn your manuscript into a beautiful book. Whether you&apos;re writing a comic book, cookbook, or novel, our formatting support helps prepare your manuscript for publication.
                 </p>
                 <Link
-                  href="/contact"
+                  href="/about"
                   className="inline-flex items-center gap-2 border border-[#008296] text-[#008296] hover:bg-[#008296] hover:text-white font-medium px-6 py-2.5 rounded text-sm transition-colors"
                 >
                   Learn more about Kindle Create

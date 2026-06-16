@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import GetStartedModal from "@/components/sections/GetStartedModal";
 import { ArrowLeft, ArrowRight, FileText, Shield, PenLine, BookOpen, Palette, Megaphone } from "lucide-react"
 import Link from "next/link"
 
@@ -77,6 +78,7 @@ const slides = [
 ]
 
 export default function WhatWeOffer() {
+    const [isOpen, setIsOpen] = useState(false);
     const [current, setCurrent] = useState(0)
 
     const prev = () => setCurrent((c) => Math.max(c - 1, 0))
@@ -153,10 +155,11 @@ export default function WhatWeOffer() {
 
                 {/* CTAs */}
                 <div className="flex justify-center gap-4">
-                    <Link href="/contact" className="bg-secondary hover:opacity-90 text-white font-semibold px-8 py-3 rounded-md transition-opacity duration-200 cursor-pointer">
+                    <Link href="" onClick={() => setIsOpen(true)} className="bg-secondary hover:opacity-90 text-white font-semibold px-8 py-3 rounded-md transition-opacity duration-200 cursor-pointer">
                         Let's Talk
                     </Link>
                 </div>
+                {isOpen && <GetStartedModal onClose={() => setIsOpen(false)} />}
             </div>
         </section>
     )

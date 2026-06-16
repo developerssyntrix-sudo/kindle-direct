@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import GetStartedModal from "@/components/sections/GetStartedModal";
 
 export interface PricingPackage {
   name: string;
@@ -45,8 +49,12 @@ export default function ServicePackages({
   heading = "Transparent Pricing",
   subheading = "No hidden fees. No surprises. Pick the package that fits your project.",
 }: ServicePackagesProps) {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section id="packages" className="py-10 md:py-15 bg-white">
+      {showModal && <GetStartedModal onClose={() => setShowModal(false)} />}
+
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-10">
           <p className="text-[#b45309] text-xs font-semibold uppercase tracking-widest mb-2">
@@ -89,9 +97,12 @@ export default function ServicePackages({
                       </li>
                     ))}
                   </ul>
-                  <a href="#contact" className="mt-2 w-full inline-flex items-center justify-center gap-2 font-bold text-sm px-5 py-3 rounded transition-colors bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark outline-2 outline-offset-2 outline-amazon-orange/60">
+                  <button
+                    onClick={() => setShowModal(true)}
+                    className="mt-2 w-full inline-flex items-center justify-center gap-2 font-bold text-sm px-5 py-3 rounded transition-colors bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark outline-2 outline-offset-2 outline-amazon-orange/60 cursor-pointer"
+                  >
                     {pkg.ctaLabel ?? "Get Started"} <ArrowRight size={14} />
-                  </a>
+                  </button>
                 </div>
               );
             }
@@ -117,9 +128,12 @@ export default function ServicePackages({
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" className={`mt-2 w-full inline-flex items-center justify-center gap-2 font-bold text-sm px-5 py-3 rounded transition-colors ${tier!.cta}`}>
+                <button
+                  onClick={() => setShowModal(true)}
+                  className={`mt-2 w-full inline-flex items-center justify-center gap-2 font-bold text-sm px-5 py-3 rounded transition-colors cursor-pointer ${tier!.cta}`}
+                >
                   {pkg.ctaLabel ?? "Get Started"} <ArrowRight size={14} />
-                </a>
+                </button>
               </div>
             );
           })}
@@ -127,9 +141,12 @@ export default function ServicePackages({
 
         <p className="text-center text-muted-foreground text-xs mt-7">
           Need something custom?{" "}
-          <a href="#contact" className="text-amazon-orange font-semibold hover:underline">
+          <button
+            onClick={() => setShowModal(true)}
+            className="text-amazon-orange font-semibold hover:underline cursor-pointer bg-transparent border-none p-0"
+          >
             Request a bespoke quote →
-          </a>
+          </button>
         </p>
       </div>
     </section>

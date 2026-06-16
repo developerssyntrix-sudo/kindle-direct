@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CheckCircle2, Award, Globe, BookMarked } from "lucide-react";
+import GetStartedModal from "@/components/sections/GetStartedModal"
 
 import ArrowBg from "@/app/assets/images/Arrow-About.webp"
 import AboutLady from "@/app/assets/images/about-lady.png"

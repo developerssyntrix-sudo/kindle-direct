@@ -24,7 +24,7 @@ export default function FaqsHero() {
                 Start now <ArrowRight size={15} />
               </Link>
               <Link
-                href="/contact"
+                href="/about"
                 className="inline-flex items-center bg-transparent border border-[#c9d2de] hover:border-[#8b99ab] text-[#131a22] font-semibold px-6 py-3 rounded-md transition-colors"
               >
                 Learn more

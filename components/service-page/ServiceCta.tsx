@@ -1,5 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import { ArrowRight, Phone } from "lucide-react";
 import { contactInfo } from "@/data/contact";
+import GetStartedModal from "@/components/sections/GetStartedModal";
 
 interface ServiceCtaProps {
   heading?: string;
@@ -14,8 +18,12 @@ export default function ServiceCta({
   primaryLabel = "Book Free Consultation",
   note = "Free consultation · No commitment · 100% confidential",
 }: ServiceCtaProps) {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section id="contact" className="py-12 md:py-14 bg-[#dfe6ea]">
+      {showModal && <GetStartedModal onClose={() => setShowModal(false)} />}
+
       <div className="relative max-w-2xl mx-auto px-4 md:px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-semibold text-[#131a22] leading-tight tracking-tight mb-4">
           {heading}
@@ -26,13 +34,13 @@ export default function ServiceCta({
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-5">
-          <a
-            href={`mailto:${contactInfo.email}`}
-            className="inline-flex items-center justify-center gap-2 bg-[#f7b731] hover:bg-[#f2aa1f] text-[#131a22] font-semibold px-7 py-3.5 rounded-md text-sm transition-colors"
+          <button
+            onClick={() => setShowModal(true)}
+            className="inline-flex items-center justify-center gap-2 bg-[#f7b731] hover:bg-[#f2aa1f] text-[#131a22] font-semibold px-7 py-3.5 rounded-md text-sm transition-colors cursor-pointer"
           >
             <ArrowRight size={16} />
             {primaryLabel}
-          </a>
+          </button>
           <a
             href={contactInfo.phoneTel}
             className="inline-flex items-center justify-center gap-2 border border-[#c9d2de] hover:border-[#8b99ab] text-[#131a22] font-semibold px-7 py-3.5 rounded-md text-sm transition-colors"

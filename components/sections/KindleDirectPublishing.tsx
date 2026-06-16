@@ -1,5 +1,9 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import GetStartedModal from "@/components/sections/GetStartedModal"
 
 import ImageContent from "@/app/assets/images/web-images-03.png"
 
@@ -28,9 +32,12 @@ const perks = [
 ]
 
 export default function KindleDirectPublishing() {
-    return (
+    const [showModal, setShowModal] = useState(false)
 
+    return (
         <section className="bg-background py-20 px-6">
+            {showModal && <GetStartedModal onClose={() => setShowModal(false)} />}
+
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
                 {/* Left — image */}
@@ -89,18 +96,19 @@ export default function KindleDirectPublishing() {
                             </div>
                         ))}
                         <div className="flex flex-wrap items-center gap-10 pt-4">
-                            <Link href="/contact">
-                                <button className="bg-[#FFA41C] hover:bg-[#F3A847] text-slate-900 font-medium py-2.5 px-8 rounded-md shadow-sm transition-colors text-sm">
-                                    Join KDP
-                                </button>
-                            </Link>
+                            <button
+                                onClick={() => setShowModal(true)}
+                                className="bg-[#FFA41C] hover:bg-[#F3A847] text-slate-900 font-medium py-2.5 px-8 rounded-md shadow-sm transition-colors text-sm cursor-pointer"
+                            >
+                                Join KDP
+                            </button>
                             <Link href="/about" className="text-cyan-700 hover:text-orange-700 hover:underline text-sm font-medium">
                                 Learn how to publish
                             </Link>
                         </div>
                     </div>
                 </div>
-            </div >
-        </section >
+            </div>
+        </section>
     )
 }

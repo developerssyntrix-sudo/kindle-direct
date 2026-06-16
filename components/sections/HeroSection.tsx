@@ -145,6 +145,17 @@ export default function HeroSection() {
               </div>
             </div>
 
+            <div className="flex flex-col items-start gap-1.5">
+                <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
+                  Tell Us About Your Project
+                </label>
+                <textarea
+                  className="w-full border border-border rounded-sm py-2.5 px-3 text-sm text-amazon-dark placeholder:text-muted-foreground focus:outline-none focus:border-amazon-orange bg-amazon-surface"
+                  placeholder="Enter your email"
+                >
+                </textarea>
+              </div>
+
             <button className="w-full bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-bold text-sm py-3 rounded-sm transition-colors duration-150 uppercase tracking-wide cursor-pointer">
               Get a Free Consultation →
             </button>

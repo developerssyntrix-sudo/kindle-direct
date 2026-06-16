@@ -27,7 +27,7 @@ export default function AboutTools() {
 
         {/* CTA button */}
         <Link
-          href="/services/book-writing"
+          href="/about"
           className="inline-flex items-center justify-center border border-[#008296] text-[#008296] hover:bg-[#008296] hover:text-white font-medium px-8 py-3 rounded transition-colors text-sm"
         >
           Learn more about Kindle Create

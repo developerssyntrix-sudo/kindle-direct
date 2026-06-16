@@ -1,7 +1,9 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import GetStartedModal from "@/components/sections/GetStartedModal"
 import {
     Carousel,
     CarouselContent,
@@ -59,8 +61,12 @@ const pages = Array.from({ length: Math.ceil(genres.length / PER_PAGE) }, (_, i)
 )
 
 export default function WhatWePublish() {
+    const [showModal, setShowModal] = useState(false)
+
     return (
         <section className="bg-background py-10 px-6">
+            {showModal && <GetStartedModal onClose={() => setShowModal(false)} />}
+
             <div className="max-w-6xl mx-auto flex flex-col items-center gap-10">
 
                 {/* Header */}
@@ -109,11 +115,12 @@ export default function WhatWePublish() {
 
                 {/* CTA */}
                 <div className="flex gap-4">
-                    <Link href="/contact">
-                        <button className="bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-semibold px-8 py-3 rounded-md transition-colors duration-200 cursor-pointer">
-                            Get Started
-                        </button>
-                    </Link>
+                    <button
+                        onClick={() => setShowModal(true)}
+                        className="bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-semibold px-8 py-3 rounded-md transition-colors duration-200 cursor-pointer"
+                    >
+                        Get Started
+                    </button>
                 </div>
 
             </div>
