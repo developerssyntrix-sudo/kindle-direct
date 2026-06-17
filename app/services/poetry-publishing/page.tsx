@@ -1,10 +1,16 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Poetry Publishing Services | Kindle Publisher House",
+  title: "Poetry Publishing Services | Amazon Publisher House",
   description:
     "Publish your poetry collection on Amazon KDP and globally. Editorial curation, interior typesetting, cover design, and marketing for poets who mean business.",
+  keywords: ["poetry publishing services", "publish poetry book", "poetry collection formatting", "Amazon KDP poetry", "Amazon Publisher House poetry"],
+  openGraph: {
+    title: "Poetry Publishing Services | Amazon Publisher House",
+    description: "Publish your poetry collection on Amazon KDP and globally. Editorial curation, interior typesetting, cover design, and marketing.",
+    type: "website",
+  }
 };
 
 const steps = [

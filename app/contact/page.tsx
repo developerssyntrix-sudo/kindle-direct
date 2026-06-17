@@ -5,11 +5,17 @@ import ContactHero from "@/components/contact/ContactHero";
 import ContactForm from "@/components/contact/ContactForm";
 import ContactSidebar from "@/components/contact/ContactSidebar";
 import BrandsSection from "@/components/sections/BrandsSection";
-import WhyKindlePublisherHouse from "@/components/sections/WhyKindlePublisherHouse";
+import WhyAmazonPublisherHouse from "@/components/sections/WhyAmazonPublisherHouse";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Free Consultation | Kindle Publisher House",
+  title: "Contact Us — Free Consultation | Amazon Publisher House",
   description: "Book your free 30-minute publishing consultation. We respond within 1 business hour. No pressure, no commitment — just clarity on your publishing path.",
+  keywords: ["contact Amazon Publisher House", "book publishing consultation", "free publishing quote", "hire book publisher", "publish a book"],
+  openGraph: {
+    title: "Contact Us — Free Consultation | Amazon Publisher House",
+    description: "Book your free 30-minute publishing consultation. We respond within 1 business hour. No pressure, no commitment — just clarity on your publishing path.",
+    type: "website",
+  }
 };
 
 export default function ContactPage() {
@@ -20,7 +26,7 @@ export default function ContactPage() {
         <ContactHero />
         <BrandsSection />
         <div className="bg-white mb-30">
-          <WhyKindlePublisherHouse />
+          <WhyAmazonPublisherHouse />
         </div>
 
         <section className="py-10 bg-white">

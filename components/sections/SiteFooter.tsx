@@ -149,7 +149,7 @@ export default function SiteFooter() {
             {/* Left: Brand + socials */}
             <div className="shrink-0 md:w-56">
               <Link href="/" className="flex items-center gap-2 mb-5">
-                <img src={Logo.src} alt="Kindle Publisher House Logo" className="h-13 md:h-17 w-auto" />
+                <img src={Logo.src} alt="Amazon Publisher House Logo" className="h-13 md:h-17 w-auto" />
               </Link>
 
               {/* Social icons */}
@@ -272,7 +272,7 @@ export default function SiteFooter() {
             </div>
             {/* Copyright */}
             <p className="text-white text-xs text-center">
-              © 2026 Kindle Publisher House. All Rights Reserved.
+              © 2026 Amazon Publisher House. All Rights Reserved.
             </p>
           </div>
         </div>

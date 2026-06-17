@@ -7,8 +7,14 @@ import FaqsCTA from "@/components/faqs/FaqsCTA";
 import BrandsSection from "@/components/sections/BrandsSection";
 
 export const metadata: Metadata = {
-  title: "FAQs — Common Questions | Kindle Publisher House",
+  title: "FAQs — Common Questions | Amazon Publisher House",
   description: "Everything you want to know about ghostwriting, publishing, editing, marketing, and pricing — answered honestly.",
+  keywords: ["publishing FAQ", "book editing FAQ", "ghostwriting cost FAQ", "Amazon Publisher House FAQ"],
+  openGraph: {
+    title: "FAQs — Common Questions | Amazon Publisher House",
+    description: "Everything you want to know about ghostwriting, publishing, editing, marketing, and pricing — answered honestly.",
+    type: "website",
+  }
 };
 
 export default function FaqsPage() {

@@ -8,14 +8,20 @@ import PortfolioGrid from "@/components/portfolio/PortfolioGrid";
 import PortfolioCTA from "@/components/portfolio/PortfolioCTA";
 import BrandsSection from "@/components/sections/BrandsSection";
 import WhatWeOffer from "@/components/sections/WhatWeOffer";
-import WhyKindlePublisherHouse from "@/components/sections/WhyKindlePublisherHouse";
+import WhyAmazonPublisherHouse from "@/components/sections/WhyAmazonPublisherHouse";
 import AboutSection from "@/components/sections/AboutSection";
 import WhatWePublish from "@/components/sections/WhatWePublish";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export const metadata: Metadata = {
-  title: "Portfolio — Published Books | Kindle Publisher House",
+  title: "Portfolio — Published Books | Amazon Publisher House",
   description: "Browse 2,500+ books we've published across every genre — from Amazon #1 bestsellers to debut authors finding their first readers.",
+  keywords: ["Amazon book portfolio", "published books", "bestselling authors", "book publishing examples", "Amazon Publisher House portfolio"],
+  openGraph: {
+    title: "Portfolio — Published Books | Amazon Publisher House",
+    description: "Browse 2,500+ books we've published across every genre — from Amazon #1 bestsellers to debut authors finding their first readers.",
+    type: "website",
+  }
 };
 
 export default function PortfolioPage() {
@@ -27,7 +33,7 @@ export default function PortfolioPage() {
         <BrandsSection />
         <WhatWeOffer />
         <div className="bg-[#f5f2eb] mb-30">
-          <WhyKindlePublisherHouse />
+          <WhyAmazonPublisherHouse />
         </div>
         <PortfolioGenres />
 

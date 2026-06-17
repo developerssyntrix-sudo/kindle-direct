@@ -1,10 +1,16 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Book Trailer Production Services | Kindle Publisher House",
+  title: "Book Trailer Production Services | Amazon Publisher House",
   description:
     "Cinematic book trailers that stop the scroll — concept, script, voiceover, motion graphics, and social media cuts included. Starting at $599.",
+  keywords: ["book trailer production", "cinematic book trailer", "book video promo", "BookTok trailer", "Amazon Publisher House trailer"],
+  openGraph: {
+    title: "Book Trailer Production Services | Amazon Publisher House",
+    description: "Cinematic book trailers that stop the scroll — concept, script, voiceover, motion graphics, and social media cuts included.",
+    type: "website",
+  }
 };
 
 const steps = [

@@ -17,8 +17,39 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kindle Publisher House",
-  description: "Professional book publishing services — from manuscript to market.",
+  title: {
+    default: "Amazon Publisher House | Professional Book Publishing Services",
+    template: "%s | Amazon Publisher House"
+  },
+  description: "Amazon Publisher House provides professional book publishing, writing, editing, formatting, and marketing services to help authors publish on Amazon KDP.",
+  keywords: [
+    "Amazon Publisher House",
+    "book publishing services",
+    "Amazon KDP publishing",
+    "book writing services",
+    "ghostwriting",
+    "book marketing",
+    "book editing",
+    "proofreading",
+    "publish a book on Amazon"
+  ],
+  authors: [{ name: "Amazon Publisher House" }],
+  openGraph: {
+    title: "Amazon Publisher House | Professional Book Publishing Services",
+    description: "Professional book publishing services — from manuscript to market. We write, edit, design, format, publish, and market your book.",
+    type: "website",
+    locale: "en_US",
+    siteName: "Amazon Publisher House",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amazon Publisher House | Professional Book Publishing & Writing Services",
+    description: "Professional book publishing services — from manuscript to market. We write, edit, design, format, publish, and market your book.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({

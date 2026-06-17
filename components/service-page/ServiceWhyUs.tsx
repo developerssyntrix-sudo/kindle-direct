@@ -34,7 +34,7 @@ const statColors = [
 export default function ServiceWhyUs({
   points,
   heading = "Why Choose",
-  highlight = "Kindle Publisher House?",
+  highlight = "Amazon Publisher House?",
   body = "We don't just deliver a service — we become your publishing partner, invested in your success from day one.",
 }: ServiceWhyUsProps) {
   return (

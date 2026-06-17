@@ -14,8 +14,14 @@ import PublishedAuthor from "@/components/sections/PublishedAuthor";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export const metadata: Metadata = {
-  title: "Book Writing & Ghostwriting Services | Kindle Publisher House",
+  title: "Book Writing & Ghostwriting Services | Amazon Publisher House",
   description: "Professional ghostwriting services for fiction, non-fiction, memoirs, and business books. 800+ manuscripts delivered. NDA protected. You own all rights.",
+  keywords: ["book writing services", "ghostwriting services", "hire a ghostwriter", "memoir writing", "Amazon Publisher House ghostwriting"],
+  openGraph: {
+    title: "Book Writing & Ghostwriting Services | Amazon Publisher House",
+    description: "Professional ghostwriting services for fiction, non-fiction, memoirs, and business books. 800+ manuscripts delivered. NDA protected.",
+    type: "website",
+  }
 };
 
 export default function BookWritingPage() {

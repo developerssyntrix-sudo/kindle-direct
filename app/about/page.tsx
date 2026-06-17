@@ -12,8 +12,14 @@ import WhatWePublish from "@/components/sections/WhatWePublish";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export const metadata: Metadata = {
-  title: "About Us | Kindle Publisher House",
+  title: "About Us | Amazon Publisher House",
   description: "Publish with us. Explore our 3-step publishing process, author support, and free tools inspired by the KDP experience.",
+  keywords: ["about Amazon Publisher House", "book publishing process", "publishing history", "author support services"],
+  openGraph: {
+    title: "About Us | Amazon Publisher House",
+    description: "Publish with us. Explore our 3-step publishing process, author support, and free tools inspired by the KDP experience.",
+    type: "website",
+  }
 };
 
 export default function AboutPage() {

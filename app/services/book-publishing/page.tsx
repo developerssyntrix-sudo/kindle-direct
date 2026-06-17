@@ -1,10 +1,16 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Book Publishing Services — Amazon KDP Experts | Kindle Publisher House",
+  title: "Book Publishing Services — Amazon KDP Experts | Amazon Publisher House",
   description:
     "Professional Amazon KDP publishing services. ISBN assignment, metadata optimization, global distribution, and a live book in 14 days or less.",
+  keywords: ["Amazon KDP experts", "book publishing services", "ISBN assignment", "publish book on Amazon", "Amazon Publisher House publishing"],
+  openGraph: {
+    title: "Book Publishing Services — Amazon KDP Experts | Amazon Publisher House",
+    description: "Professional Amazon KDP publishing services. ISBN assignment, metadata optimization, global distribution, and a live book in 14 days or less.",
+    type: "website",
+  }
 };
 
 const steps = [

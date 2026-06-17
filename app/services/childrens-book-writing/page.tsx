@@ -1,10 +1,16 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Children's Book Writing & Publishing Services | Kindle Publisher House",
+  title: "Children's Book Writing & Publishing Services | Amazon Publisher House",
   description:
     "Expert children's book writing, illustration coordination, and Amazon KDP publishing. From picture books to middle grade — we handle everything.",
+  keywords: ["children's book writing", "children's book publishing", "picture book layout", "hire children's author", "Amazon Publisher House children's books"],
+  openGraph: {
+    title: "Children's Book Writing & Publishing Services | Amazon Publisher House",
+    description: "Expert children's book writing, illustration coordination, and Amazon KDP publishing. From picture books to middle grade.",
+    type: "website",
+  }
 };
 
 const steps = [
