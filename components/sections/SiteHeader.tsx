@@ -78,7 +78,7 @@ function GetStartedModal({ onClose }: { onClose: () => void }) {
   return (
     /* Backdrop */
     <div
-      className="fixed inset-0 z-[999] flex items-center justify-center p-4"
+      className="fixed inset-0 z-999 flex items-center justify-center p-4"
       style={{ backgroundColor: "rgba(0,0,0,0.65)", backdropFilter: "blur(4px)" }}
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
@@ -343,7 +343,7 @@ export default function SiteHeader() {
           <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-6">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 shrink-0">
-              <img src={Logo.src} alt="Kindle Publisher House Logo" className="h-13 md:h-17 w-auto" />
+              <img src={Logo.src} alt="Kindle Publisher House Logo" className="h-13 md:h-15 w-auto" />
             </Link>
 
             {/* CTA Buttons — desktop */}

@@ -4,7 +4,6 @@ import ImageContent from "@/app/assets/images/web-images-01.png"
 
 export default function ShareYourStory() {
     return (
-
         <section className="px-8 py-10 bg-white">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row-reverse items-center justify-between gap-12 font-sans text-slate-800">
                 <div className="flex-1 space-y-6">
@@ -33,7 +32,7 @@ export default function ShareYourStory() {
                 </div>
 
                 <div className="flex-1 flex justify-center relative">
-                    <div className="relative w-full max-w-5xl aspect-6/6">
+                    <div className="relative w-full max-w-xl aspect-6/6">
                         <Image
                             src={ImageContent}
                             alt="Kindle Device"
