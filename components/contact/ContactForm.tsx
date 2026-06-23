@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { CheckCircle2, Loader2, ChevronDown, AlertCircle } from "lucide-react";
+import { validateName, validateEmail, validatePhone, validateRequired, validateMessage } from "@/lib/formValidation";
 
 const services = [
   "Book Writing / Ghostwriting",
@@ -34,30 +35,39 @@ type FormData = {
   source: string;
 };
 
+type Errors = Partial<Record<keyof FormData, string>>;
+
 const empty: FormData = { name: "", email: "", phone: "", service: "", message: "", source: "" };
 
 const inputCls = (hasError: boolean) =>
   `w-full border rounded px-3 py-2 text-sm text-[#131a22] placeholder:text-[#adb5bd]
-   focus:outline-none focus:border-[#008296] focus:ring-1 focus:ring-[#008296]
-   transition-colors ${hasError ? "border-red-500 bg-red-50" : "border-[#d5d9d9] bg-white"}`;
+   focus:outline-none focus:ring-1 transition-colors
+   ${hasError
+     ? "border-red-400 bg-red-50 focus:border-red-400 focus:ring-red-200"
+     : "border-[#d5d9d9] bg-white focus:border-[#008296] focus:ring-[#008296]/30"
+   }`;
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>(empty);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [errors, setErrors] = useState<Errors>({});
   const [serverError, setServerError] = useState("");
 
+  // Update field value and clear its inline error immediately
   const set = (key: keyof FormData) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
-      setForm((prev) => ({ ...prev, [key]: e.target.value }));
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+      const value = e.target.value;
+      setForm((prev) => ({ ...prev, [key]: value }));
+      if (errors[key]) setErrors((prev) => ({ ...prev, [key]: "" }));
+    };
 
-  const validate = (): Partial<FormData> => {
-    const e: Partial<FormData> = {};
-    if (!form.name.trim()) e.name = "Name is required";
-    if (!form.email.trim()) e.email = "Email is required";
-    else if (!/^\S+@\S+\.\S+$/.test(form.email)) e.email = "Enter a valid email address";
-    if (!form.service) e.service = "Please select a service";
-    if (!form.message.trim()) e.message = "Tell us a bit about your project";
+  const validate = (): Errors => {
+    const e: Errors = {};
+    const name = validateName(form.name);           if (name) e.name = name;
+    const email = validateEmail(form.email);         if (email) e.email = email;
+    const phone = validatePhone(form.phone);         if (phone) e.phone = phone;
+    const service = validateRequired(form.service, "Service"); if (service) e.service = service;
+    const message = validateMessage(form.message);  if (message) e.message = message;
     return e;
   };
 
@@ -92,7 +102,7 @@ export default function ContactForm() {
           Our team will review your project and reach out within 1 business hour.
         </p>
         <button
-          onClick={() => { setForm(empty); setStatus("idle"); setServerError(""); }}
+          onClick={() => { setForm(empty); setStatus("idle"); setServerError(""); setErrors({}); }}
           className="text-[#008296] text-sm hover:underline"
         >
           Submit another inquiry
@@ -116,35 +126,56 @@ export default function ContactForm() {
           <label htmlFor="name" className="block text-[#131a22] text-xs font-semibold mb-1">
             Full Name <span className="text-red-500">*</span>
           </label>
-          <input id="name" type="text" placeholder="John Smith" value={form.name} onChange={set("name")} className={inputCls(!!errors.name)} />
-          {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+          <input
+            id="name" type="text" placeholder="John Smith"
+            value={form.name} onChange={set("name")}
+            className={inputCls(!!errors.name)}
+            autoComplete="name"
+          />
+          {errors.name && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><AlertCircle size={11} />{errors.name}</p>}
         </div>
         <div>
           <label htmlFor="email" className="block text-[#131a22] text-xs font-semibold mb-1">
             Email Address <span className="text-red-500">*</span>
           </label>
-          <input id="email" type="email" placeholder="john@example.com" value={form.email} onChange={set("email")} className={inputCls(!!errors.email)} />
-          {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+          <input
+            id="email" type="email" placeholder="john@example.com"
+            value={form.email} onChange={set("email")}
+            className={inputCls(!!errors.email)}
+            autoComplete="email"
+          />
+          {errors.email && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><AlertCircle size={11} />{errors.email}</p>}
         </div>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4 items-start">
         <div>
-          <label htmlFor="phone" className="block text-[#131a22] text-xs font-semibold mb-1">Phone Number</label>
-          <input id="phone" type="tel" placeholder="+1 (555) 000-0000" value={form.phone} onChange={set("phone")} className={inputCls(false)} />
+          <label htmlFor="phone" className="block text-[#131a22] text-xs font-semibold mb-1">
+            Phone Number <span className="text-[#565959] font-normal">(optional)</span>
+          </label>
+          <input
+            id="phone" type="tel" placeholder="+1 (555) 000-0000"
+            value={form.phone} onChange={set("phone")}
+            className={inputCls(!!errors.phone)}
+            autoComplete="tel"
+          />
+          {errors.phone && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><AlertCircle size={11} />{errors.phone}</p>}
         </div>
         <div>
           <label htmlFor="service" className="block text-[#131a22] text-xs font-semibold mb-1">
             Service Interested In <span className="text-red-500">*</span>
           </label>
           <div className="relative">
-            <select id="service" value={form.service} onChange={set("service")} className={`${inputCls(!!errors.service)} appearance-none pr-8 cursor-pointer`}>
+            <select
+              id="service" value={form.service} onChange={set("service")}
+              className={`${inputCls(!!errors.service)} appearance-none pr-8 cursor-pointer`}
+            >
               <option value="">Select a service…</option>
               {services.map((s) => <option key={s} value={s}>{s}</option>)}
             </select>
             <ChevronDown size={14} className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#565959] pointer-events-none" />
           </div>
-          {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service}</p>}
+          {errors.service && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><AlertCircle size={11} />{errors.service}</p>}
         </div>
       </div>
 
@@ -158,13 +189,18 @@ export default function ContactForm() {
           value={form.message} onChange={set("message")}
           className={`${inputCls(!!errors.message)} resize-none`}
         />
-        {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+        {errors.message && <p className="text-red-500 text-xs mt-1 flex items-center gap-1"><AlertCircle size={11} />{errors.message}</p>}
       </div>
 
       <div>
-        <label htmlFor="source" className="block text-[#131a22] text-xs font-semibold mb-1">How Did You Hear About Us?</label>
+        <label htmlFor="source" className="block text-[#131a22] text-xs font-semibold mb-1">
+          How Did You Hear About Us? <span className="text-[#565959] font-normal">(optional)</span>
+        </label>
         <div className="relative">
-          <select id="source" value={form.source} onChange={set("source")} className={`${inputCls(false)} appearance-none pr-8 cursor-pointer`}>
+          <select
+            id="source" value={form.source} onChange={set("source")}
+            className={`${inputCls(false)} appearance-none pr-8 cursor-pointer`}
+          >
             <option value="">Select…</option>
             {sources.map((s) => <option key={s} value={s}>{s}</option>)}
           </select>

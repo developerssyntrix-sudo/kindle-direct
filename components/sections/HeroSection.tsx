@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import heroBg from "@/app/assets/images/hero-bg.jpg";
 import { BookCheck, Users, Trophy, Star, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { validateEmail, validatePhone } from "@/lib/formValidation";
 
 const stats = [
   { icon: BookCheck, value: "2,500+", label: "Books Published" },
@@ -21,37 +22,50 @@ const services = [
   { value: "others", label: "Others" },
 ];
 
+type FormFields = { bookTitle: string; phone: string; email: string; service: string; message: string };
+type Errors = Partial<Record<keyof FormFields, string>>;
 type Status = "idle" | "loading" | "success" | "error";
 
-const fieldCls =
-  "w-full border border-border rounded-sm py-2.5 px-3 text-sm text-amazon-dark placeholder:text-muted-foreground focus:outline-none focus:border-amazon-orange bg-amazon-surface transition-colors";
+const fieldCls = (hasError?: boolean) =>
+  `w-full border rounded-sm py-2.5 px-3 text-sm text-amazon-dark placeholder:text-muted-foreground
+   focus:outline-none transition-colors bg-amazon-surface
+   ${hasError
+     ? "border-red-400 bg-red-50 focus:border-red-400 focus:ring-1 focus:ring-red-200"
+     : "border-border focus:border-amazon-orange focus:ring-1 focus:ring-amazon-orange/30"
+   }`;
 
 export default function HeroSection() {
-  const [form, setForm] = useState({
-    bookTitle: "",
-    phone: "",
-    email: "",
-    service: "",
-    message: "",
-  });
+  const [form, setForm] = useState<FormFields>({ bookTitle: "", phone: "", email: "", service: "", message: "" });
+  const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<Status>("idle");
   const [serverError, setServerError] = useState("");
 
-  const set = (field: keyof typeof form) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
-      setForm((prev) => ({ ...prev, [field]: e.target.value }));
+  const set = (field: keyof FormFields) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+      const value = e.target.value;
+      setForm((prev) => ({ ...prev, [field]: value }));
+      if (errors[field]) setErrors((prev) => ({ ...prev, [field]: "" }));
+    };
+
+  const validate = (): Errors => {
+    const e: Errors = {};
+    const email = validateEmail(form.email); if (email) e.email = email;
+    const phone = validatePhone(form.phone); if (phone) e.phone = phone;
+    return e;
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const errs = validate();
+    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
+    setErrors({});
     setServerError("");
     setStatus("loading");
 
     const fullMessage = [
       form.bookTitle.trim() ? `Book Title: ${form.bookTitle.trim()}` : "",
       form.message.trim(),
-    ]
-      .filter(Boolean)
-      .join("\n\n");
+    ].filter(Boolean).join("\n\n");
 
     try {
       const res = await fetch("/api/contact", {
@@ -86,10 +100,7 @@ export default function HeroSection() {
       {/* Dot grid */}
       <div
         className="absolute inset-0 z-2 opacity-20 pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(circle, #D5D9D9 1px, transparent 1px)",
-          backgroundSize: "22px 22px",
-        }}
+        style={{ backgroundImage: "radial-gradient(circle, #D5D9D9 1px, transparent 1px)", backgroundSize: "22px 22px" }}
       />
 
       {/* Orange glow */}
@@ -113,11 +124,11 @@ export default function HeroSection() {
         </p>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="mt-10 bg-white border border-border rounded-md shadow-md overflow-hidden">
+        <form onSubmit={handleSubmit} className="mt-10 bg-white border border-border rounded-md shadow-md overflow-hidden" noValidate>
           {/* Form header bar */}
           <div className="bg-secondary px-6 py-4 text-left">
             <h3 className="font-serif text-white text-base">Start Your Publishing Journey</h3>
-            <p className="text-white/60 text-xs mt-0.5">Fill out the form below and we'll get back to you within 24 hours</p>
+            <p className="text-white/60 text-xs mt-0.5">Fill out the form below and we&apos;ll get back to you within 24 hours</p>
           </div>
 
           {/* Success state */}
@@ -130,11 +141,7 @@ export default function HeroSection() {
               </p>
               <button
                 type="button"
-                onClick={() => {
-                  setForm({ bookTitle: "", phone: "", email: "", service: "", message: "" });
-                  setStatus("idle");
-                  setServerError("");
-                }}
+                onClick={() => { setForm({ bookTitle: "", phone: "", email: "", service: "", message: "" }); setStatus("idle"); setServerError(""); setErrors({}); }}
                 className="text-amazon-orange text-sm hover:underline"
               >
                 Submit another inquiry
@@ -151,58 +158,60 @@ export default function HeroSection() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {/* Book Title */}
-                <div className="flex flex-col items-start gap-1.5">
+                <div className="flex flex-col items-start gap-1">
                   <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
-                    Book Title
+                    Book Title 
                   </label>
                   <input
-                    type="text"
-                    value={form.bookTitle}
-                    onChange={set("bookTitle")}
-                    className={fieldCls}
+                    type="text" value={form.bookTitle} onChange={set("bookTitle")}
                     placeholder="Enter your book title"
+                    className={fieldCls()}
                   />
                 </div>
 
                 {/* Phone */}
-                <div className="flex flex-col items-start gap-1.5">
+                <div className="flex flex-col items-start gap-1">
                   <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
-                    Phone Number
+                    Phone Number 
                   </label>
                   <input
-                    type="tel"
-                    value={form.phone}
-                    onChange={set("phone")}
-                    className={fieldCls}
-                    placeholder="Enter your phone number"
+                    type="tel" value={form.phone} onChange={set("phone")}
+                    placeholder="Enter your phone number" autoComplete="tel"
+                    className={fieldCls(!!errors.phone)}
                   />
+                  {errors.phone && (
+                    <p className="text-red-500 text-xs flex items-center gap-1">
+                      <AlertCircle size={11} />{errors.phone}
+                    </p>
+                  )}
                 </div>
 
                 {/* Email */}
-                <div className="flex flex-col items-start gap-1.5">
+                <div className="flex flex-col items-start gap-1">
                   <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
-                    Email Address <span className="text-red-500 normal-case font-sans">*</span>
+                    Email Address <span className="text-red-500 font-sans">*</span>
                   </label>
                   <input
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={set("email")}
-                    className={fieldCls}
-                    placeholder="Enter your email"
+                    type="email" value={form.email} onChange={set("email")}
+                    placeholder="Enter your email" autoComplete="email"
+                    className={fieldCls(!!errors.email)}
                   />
+                  {errors.email && (
+                    <p className="text-red-500 text-xs flex items-center gap-1">
+                      <AlertCircle size={11} />{errors.email}
+                    </p>
+                  )}
                 </div>
 
                 {/* Service */}
-                <div className="flex flex-col items-start gap-1.5 w-full">
+                <div className="flex flex-col items-start gap-1 w-full">
                   <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
-                    Service Interested In
+                    Service Interested In <span className="text-muted-foreground font-sans normal-case">(optional)</span>
                   </label>
                   <div className="relative w-full">
                     <select
-                      value={form.service}
-                      onChange={set("service")}
-                      className={`${fieldCls} pr-10 appearance-none cursor-pointer`}
+                      value={form.service} onChange={set("service")}
+                      className={`${fieldCls()} pr-10 appearance-none cursor-pointer`}
                     >
                       <option value="">Select a service...</option>
                       {services.map((s) => (
@@ -219,15 +228,14 @@ export default function HeroSection() {
               </div>
 
               {/* Message */}
-              <div className="flex flex-col items-start gap-1.5">
+              <div className="flex flex-col items-start gap-1">
                 <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
-                  Tell Us About Your Project
+                  Tell Us About Your Project <span className="text-muted-foreground font-sans normal-case">(optional)</span>
                 </label>
                 <textarea
-                  value={form.message}
-                  onChange={set("message")}
-                  className={`${fieldCls} min-h-[100px] resize-none`}
+                  value={form.message} onChange={set("message")}
                   placeholder="Briefly describe your project (e.g., genre, estimated word count)..."
+                  className={`${fieldCls()} min-h-[100px] resize-none w-full`}
                 />
               </div>
 
@@ -235,13 +243,11 @@ export default function HeroSection() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full flex items-center justify-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover disabled:opacity-70 text-amazon-dark font-bold text-sm py-3 rounded-sm transition-colors duration-150 uppercase tracking-wide cursor-pointer"
+                className="w-full flex items-center justify-center gap-2 bg-amazon-orange hover:bg-amazon-orange-hover disabled:opacity-70 text-amazon-dark font-bold text-sm py-3 rounded-sm transition-colors duration-150 uppercase tracking-wide"
               >
                 {status === "loading" ? (
                   <><Loader2 size={15} className="animate-spin" /> Sending…</>
-                ) : (
-                  "Get a Free Consultation →"
-                )}
+                ) : "Get a Free Consultation →"}
               </button>
             </div>
           )}

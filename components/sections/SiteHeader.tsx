@@ -20,6 +20,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { contactInfo } from "@/data/contact";
+import { validateName, validateEmail, validatePhone, validateRequired } from "@/lib/formValidation";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -57,26 +58,47 @@ declare global {
 }
 
 /* ─────────────────────── Get Started Popup Modal ─────────────────────── */
+type ModalFormFields = { name: string; email: string; phone: string; service: string; message: string };
+type ModalErrors = Partial<Record<keyof ModalFormFields, string>>;
+type ModalStatus = "idle" | "loading" | "success" | "error";
+
+const modalFieldCls = (hasError?: boolean) =>
+  `w-full rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-all resize-none
+   ${hasError
+     ? "bg-red-900/25 border border-red-400/60"
+     : "bg-white/7 border border-white/12 focus:border-[#ff9900]"
+   }`;
+
 function GetStartedModal({ onClose }: { onClose: () => void }) {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
+  const [form, setForm] = useState<ModalFormFields>({ name: "", email: "", phone: "", service: "", message: "" });
+  const [errors, setErrors] = useState<ModalErrors>({});
+  const [status, setStatus] = useState<ModalStatus>("idle");
   const [serverError, setServerError] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  ) => {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+    if (errors[name as keyof ModalFormFields]) setErrors((prev) => ({ ...prev, [name]: "" }));
+  };
+
+  const validate = (): ModalErrors => {
+    const e: ModalErrors = {};
+    const name = validateName(form.name);           if (name) e.name = name;
+    const email = validateEmail(form.email);         if (email) e.email = email;
+    const phone = validatePhone(form.phone);         if (phone) e.phone = phone;
+    const service = validateRequired(form.service, "Service"); if (service) e.service = service;
+    return e;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const errs = validate();
+    if (Object.keys(errs).length > 0) { setErrors(errs); return; }
+    setErrors({});
     setServerError("");
-    setSubmitting(true);
+    setStatus("loading");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -85,11 +107,10 @@ function GetStartedModal({ onClose }: { onClose: () => void }) {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed to send message.");
-      setSubmitted(true);
+      setStatus("success");
     } catch (err) {
       setServerError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    } finally {
-      setSubmitting(false);
+      setStatus("error");
     }
   };
 
@@ -126,23 +147,11 @@ function GetStartedModal({ onClose }: { onClose: () => void }) {
         </button>
 
         <div className="px-8 pt-7 pb-8">
-          {submitted ? (
+          {status === "success" ? (
             /* ── Success state ── */
             <div className="text-center py-6">
-              <div
-                className="mx-auto mb-4 flex items-center justify-center w-16 h-16 rounded-full"
-                style={{
-                  background: "rgba(255,153,0,0.15)",
-                  border: "2px solid #ff9900",
-                }}
-              >
-                <svg
-                  className="w-8 h-8 text-[#ff9900]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
+              <div className="mx-auto mb-4 flex items-center justify-center w-16 h-16 rounded-full" style={{ background: "rgba(255,153,0,0.15)", border: "2px solid #ff9900" }}>
+                <svg className="w-8 h-8 text-[#ff9900]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
@@ -150,176 +159,102 @@ function GetStartedModal({ onClose }: { onClose: () => void }) {
               <p className="text-white/60 text-sm leading-relaxed mb-6">
                 Thanks for reaching out. Our publishing experts will contact you within 24&nbsp;hours.
               </p>
-              <button
-                onClick={onClose}
-                className="bg-[#ff9900] hover:bg-[#e68900] text-white font-semibold text-sm px-8 py-2.5 rounded-lg transition-colors"
-              >
+              <button onClick={onClose} className="bg-[#ff9900] hover:bg-[#e68900] text-white font-semibold text-sm px-8 py-2.5 rounded-lg transition-colors">
                 Close
               </button>
             </div>
           ) : (
             /* ── Form state ── */
             <>
-              <div className="mb-6">
-                <span className="inline-block text-[#ff9900] text-xs font-bold tracking-widest uppercase mb-2">
-                  Free Consultation
-                </span>
-                <h2 className="text-white text-2xl font-bold leading-tight">
-                  Start Your Publishing Journey
-                </h2>
-                <p className="text-white/50 text-sm mt-1">
-                  Fill in your details and we&apos;ll get back to you shortly.
-                </p>
+              <div className="mb-5">
+                <span className="inline-block text-[#ff9900] text-xs font-bold tracking-widest uppercase mb-2">Free Consultation</span>
+                <h2 className="text-white text-2xl font-bold leading-tight">Start Your Publishing Journey</h2>
+                <p className="text-white/50 text-sm mt-1">Fill in your details and we&apos;ll get back to you shortly.</p>
               </div>
 
-              <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
-                {serverError && (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-3" noValidate>
+                {status === "error" && serverError && (
                   <div className="flex items-start gap-2 bg-red-900/30 border border-red-500/40 text-red-300 rounded-lg px-4 py-3 text-xs">
-                    <AlertCircle size={14} className="shrink-0 mt-0.5" />
-                    <span>{serverError}</span>
+                    <AlertCircle size={13} className="shrink-0 mt-0.5" /><span>{serverError}</span>
                   </div>
                 )}
+
                 {/* Full Name */}
                 <div>
                   <label className="block text-white/70 text-xs font-semibold mb-1 tracking-wide uppercase">
-                    Full Name *
+                    Full Name <span className="text-red-400">*</span>
                   </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="John Smith"
-                    value={form.name}
-                    onChange={handleChange}
-                    className="w-full rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-all"
-                    style={{
-                      background: "rgba(255,255,255,0.07)",
-                      border: "1px solid rgba(255,255,255,0.12)",
-                    }}
-                    onFocus={(e) => (e.currentTarget.style.border = "1px solid #ff9900")}
-                    onBlur={(e) =>
-                      (e.currentTarget.style.border = "1px solid rgba(255,255,255,0.12)")
-                    }
+                  <input type="text" name="name" value={form.name} onChange={handleChange}
+                    placeholder="John Smith" autoComplete="name"
+                    className={modalFieldCls(!!errors.name)}
                   />
+                  {errors.name && <p className="text-red-400 text-xs mt-1 flex items-center gap-1"><AlertCircle size={11} />{errors.name}</p>}
                 </div>
 
                 {/* Email + Phone */}
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="block text-white/70 text-xs font-semibold mb-1 tracking-wide uppercase">
-                      Email *
+                      Email <span className="text-red-400">*</span>
                     </label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      placeholder="you@email.com"
-                      value={form.email}
-                      onChange={handleChange}
-                      className="w-full rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-all"
-                      style={{
-                        background: "rgba(255,255,255,0.07)",
-                        border: "1px solid rgba(255,255,255,0.12)",
-                      }}
-                      onFocus={(e) => (e.currentTarget.style.border = "1px solid #ff9900")}
-                      onBlur={(e) =>
-                        (e.currentTarget.style.border = "1px solid rgba(255,255,255,0.12)")
-                      }
+                    <input type="email" name="email" value={form.email} onChange={handleChange}
+                      placeholder="you@email.com" autoComplete="email"
+                      className={modalFieldCls(!!errors.email)}
                     />
+                    {errors.email && <p className="text-red-400 text-xs mt-1 flex items-center gap-1"><AlertCircle size={11} />{errors.email}</p>}
                   </div>
                   <div>
                     <label className="block text-white/70 text-xs font-semibold mb-1 tracking-wide uppercase">
-                      Phone
+                      Phone <span className="text-white/30 font-normal normal-case">(opt.)</span>
                     </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="+1 (555) 000-0000"
-                      value={form.phone}
-                      onChange={handleChange}
-                      className="w-full rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-all"
-                      style={{
-                        background: "rgba(255,255,255,0.07)",
-                        border: "1px solid rgba(255,255,255,0.12)",
-                      }}
-                      onFocus={(e) => (e.currentTarget.style.border = "1px solid #ff9900")}
-                      onBlur={(e) =>
-                        (e.currentTarget.style.border = "1px solid rgba(255,255,255,0.12)")
-                      }
+                    <input type="tel" name="phone" value={form.phone} onChange={handleChange}
+                      placeholder="+1 (555) 000-0000" autoComplete="tel"
+                      className={modalFieldCls(!!errors.phone)}
                     />
+                    {errors.phone && <p className="text-red-400 text-xs mt-1 flex items-center gap-1"><AlertCircle size={11} />{errors.phone}</p>}
                   </div>
                 </div>
 
                 {/* Service */}
                 <div>
                   <label className="block text-white/70 text-xs font-semibold mb-1 tracking-wide uppercase">
-                    Service Interested In *
+                    Service Interested In <span className="text-red-400">*</span>
                   </label>
-                  <select
-                    name="service"
-                    required
-                    value={form.service}
-                    onChange={handleChange}
-                    className="w-full rounded-lg px-4 py-2.5 text-sm outline-none transition-all appearance-none cursor-pointer"
-                    style={{
-                      background: "rgba(255,255,255,0.07)",
-                      border: "1px solid rgba(255,255,255,0.12)",
-                      color: form.service ? "#fff" : "rgba(255,255,255,0.3)",
-                    }}
-                    onFocus={(e) => (e.currentTarget.style.border = "1px solid #ff9900")}
-                    onBlur={(e) =>
-                      (e.currentTarget.style.border = "1px solid rgba(255,255,255,0.12)")
-                    }
+                  <select name="service" value={form.service} onChange={handleChange}
+                    className={`w-full rounded-lg px-4 py-2.5 text-sm outline-none transition-all appearance-none cursor-pointer
+                      ${errors.service ? "bg-red-900/25 border border-red-400/60" : "bg-white/7 border border-white/12 focus:border-[#ff9900]"}`}
+                    style={{ color: form.service ? "#fff" : "rgba(255,255,255,0.3)" }}
                   >
-                    <option value="" disabled style={{ background: "#222e3e" }}>
-                      Select a service…
-                    </option>
+                    <option value="" disabled style={{ background: "#222e3e" }}>Select a service…</option>
                     {services.map((s) => (
-                      <option
-                        key={s.href}
-                        value={s.label}
-                        style={{ background: "#222e3e", color: "#fff" }}
-                      >
-                        {s.label}
-                      </option>
+                      <option key={s.href} value={s.label} style={{ background: "#222e3e", color: "#fff" }}>{s.label}</option>
                     ))}
                   </select>
+                  {errors.service && <p className="text-red-400 text-xs mt-1 flex items-center gap-1"><AlertCircle size={11} />{errors.service}</p>}
                 </div>
 
                 {/* Message */}
                 <div>
                   <label className="block text-white/70 text-xs font-semibold mb-1 tracking-wide uppercase">
-                    Tell Us About Your Project
+                    Tell Us About Your Project <span className="text-white/30 font-normal normal-case">(optional)</span>
                   </label>
                   <textarea
-                    name="message"
-                    rows={3}
+                    name="message" rows={3}
                     placeholder="Briefly describe your book idea or project goals…"
-                    value={form.message}
-                    onChange={handleChange}
-                    className="w-full rounded-lg px-4 py-2.5 text-sm text-white placeholder-white/30 outline-none transition-all resize-none"
-                    style={{
-                      background: "rgba(255,255,255,0.07)",
-                      border: "1px solid rgba(255,255,255,0.12)",
-                    }}
-                    onFocus={(e) => (e.currentTarget.style.border = "1px solid #ff9900")}
-                    onBlur={(e) =>
-                      (e.currentTarget.style.border = "1px solid rgba(255,255,255,0.12)")
-                    }
+                    value={form.message} onChange={handleChange}
+                    className={`${modalFieldCls()} resize-none`}
                   />
                 </div>
 
                 <button
                   type="submit"
-                  disabled={submitting}
+                  disabled={status === "loading"}
                   className="mt-1 w-full flex items-center justify-center gap-2 rounded-lg py-3 font-bold text-sm text-white disabled:opacity-70 transition-all hover:scale-[1.02] active:scale-[0.98]"
                   style={{ background: "linear-gradient(90deg, #ff9900, #f0a500)" }}
                 >
-                  {submitting ? (
+                  {status === "loading" ? (
                     <><Loader2 size={14} className="animate-spin" /> Sending…</>
-                  ) : (
-                    "Submit — Get a Free Quote"
-                  )}
+                  ) : "Submit — Get a Free Quote"}
                 </button>
               </form>
             </>
