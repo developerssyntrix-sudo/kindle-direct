@@ -6,7 +6,15 @@
       "Bash(findstr version *)",
       "Bash(dir \"app\\\\favicon.png\")",
       "Bash(git mv *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(sshpass *)",
+      "Bash(apt-get install *)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(pip install *)",
+      "Bash(python3 *)",
+      "PowerShell(python \"C:\\\\Users\\\\Lenovo\\\\AppData\\\\Local\\\\Temp\\\\ssh_check.py\")",
+      "PowerShell(python \"C:\\\\Users\\\\Lenovo\\\\AppData\\\\Local\\\\Temp\\\\ssh_serverjs.py\" 2>&1; Write-Host \"DONE\")",
+      "PowerShell(python \"C:\\\\Users\\\\Lenovo\\\\AppData\\\\Local\\\\Temp\\\\ssh_build.py\" 2>&1; Write-Host \"DONE\")"
     ]
   }
 }

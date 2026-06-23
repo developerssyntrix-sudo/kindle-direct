@@ -64,6 +64,8 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
       <head>
+
+
         {/* <Script id="microsoft-clarity" strategy="afterInteractive">
           {`
 (function(c,l,a,r,i,t,y){
@@ -74,6 +76,8 @@ export default function RootLayout({
           `}
         </Script> */}
       </head>
+
+
       <body className="min-h-full flex flex-col">
         {children}
         <CookieConsent />
@@ -93,7 +97,7 @@ s0.parentNode.insertBefore(s1,s0);
   `}
         </Script>
 
-        
+
       </body>
     </html>
   );
