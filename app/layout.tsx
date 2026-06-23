@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
+import CookieConsent from "@/components/ui/CookieConsent";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -62,8 +63,20 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
+      <head>
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "xb9zjrp091");
+          `}
+        </Script>
+      </head>
       <body className="min-h-full flex flex-col">
         {children}
+        <CookieConsent />
 
         <Script id="tawk-to-chat" strategy="lazyOnload">
           {`
