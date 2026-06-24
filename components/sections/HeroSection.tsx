@@ -189,7 +189,7 @@ export default function HeroSection() {
                 {/* Email */}
                 <div className="flex flex-col items-start gap-1">
                   <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
-                    Email Address <span className="text-red-500 font-sans">*</span>
+                    Email Address <span className="text-red-500 font-sans"></span>
                   </label>
                   <input
                     type="email" value={form.email} onChange={set("email")}
@@ -206,7 +206,7 @@ export default function HeroSection() {
                 {/* Service */}
                 <div className="flex flex-col items-start gap-1 w-full">
                   <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
-                    Service Interested In <span className="text-muted-foreground font-sans normal-case">(optional)</span>
+                    Service Interested In <span className="text-muted-foreground font-sans normal-case"></span>
                   </label>
                   <div className="relative w-full">
                     <select
@@ -230,7 +230,7 @@ export default function HeroSection() {
               {/* Message */}
               <div className="flex flex-col items-start gap-1">
                 <label className="text-xs font-serif text-amazon-dark uppercase tracking-wide">
-                  Tell Us About Your Project <span className="text-muted-foreground font-sans normal-case">(optional)</span>
+                  Tell Us About Your Project <span className="text-muted-foreground font-sans normal-case"></span>
                 </label>
                 <textarea
                   value={form.message} onChange={set("message")}

@@ -205,7 +205,7 @@ function GetStartedModal({ onClose }: { onClose: () => void }) {
                   </div>
                   <div>
                     <label className="block text-white/70 text-xs font-semibold mb-1 tracking-wide uppercase">
-                      Phone <span className="text-white/30 font-normal normal-case">(opt.)</span>
+                      Phone <span className="text-white/30 font-normal normal-case"></span>
                     </label>
                     <input type="tel" name="phone" value={form.phone} onChange={handleChange}
                       placeholder="+1 (555) 000-0000" autoComplete="tel"
@@ -236,7 +236,7 @@ function GetStartedModal({ onClose }: { onClose: () => void }) {
                 {/* Message */}
                 <div>
                   <label className="block text-white/70 text-xs font-semibold mb-1 tracking-wide uppercase">
-                    Tell Us About Your Project <span className="text-white/30 font-normal normal-case">(optional)</span>
+                    Tell Us About Your Project <span className="text-white/30 font-normal normal-case"></span>
                   </label>
                   <textarea
                     name="message" rows={3}

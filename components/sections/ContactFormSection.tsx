@@ -161,7 +161,7 @@ export default function ContactFormSection() {
                   </select>
                   <input
                     type="tel" name="phone" value={form.phone} onChange={handleChange}
-                    placeholder="Enter Your Phone (optional)" autoComplete="tel"
+                    placeholder="Enter Your Phone" autoComplete="tel"
                     className="flex-1 px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none bg-transparent"
                   />
                 </div>
@@ -177,14 +177,14 @@ export default function ContactFormSection() {
                 name="budget" value={form.budget} onChange={handleChange}
                 className={`${inputCls()} text-gray-500`}
               >
-                <option value="" disabled>Select Budget Range (optional)</option>
+                <option value="" disabled>Select Budget Range</option>
                 {budgetRanges.map((r) => <option key={r} value={r}>{r}</option>)}
               </select>
 
               {/* Message */}
               <textarea
                 name="message" value={form.message} onChange={handleChange}
-                placeholder="Message (optional)"
+                placeholder="Message"
                 rows={4}
                 className={`${inputCls()} resize-y`}
               />

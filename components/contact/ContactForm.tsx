@@ -151,7 +151,7 @@ export default function ContactForm() {
       <div className="grid sm:grid-cols-2 gap-4 items-start">
         <div>
           <label htmlFor="phone" className="block text-[#131a22] text-xs font-semibold mb-1">
-            Phone Number <span className="text-[#565959] font-normal"></span>
+            Phone Number <span className="text-[#565959] font-normal">*</span>
           </label>
           <input
             id="phone" type="tel" placeholder="+1 (555) 000-0000"
