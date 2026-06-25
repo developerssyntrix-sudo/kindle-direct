@@ -272,8 +272,13 @@ export default function SiteFooter() {
               ))}
             </div>
             {/* Copyright */}
-            <p className="text-white text-xs text-center">
+            
+            <p className="text-white text-xs text-center mb-5">
               © 2026 Kindle Direct Publishing House. All Rights Reserved.
+            </p>
+            <p className="text-white text-xs text-center">
+              DISCLAIMER
+Please Note: All company logos and trademarks appearing on our website are the property of their respective owners. We are not affiliated, associated, endorsed by, or in any way officially connected with these companies or their trademarks. The use of these logos and trademarks does not imply any endorsement, affiliation, or relationship between us and the respective companies. We solely use these logos and trademarks for identification purposes only. All information and content provided on our website is for informational purposes only and should not be construed as professional advice. We do not guarantee the accuracy or completeness of any information provided on our website. We are not responsible for any errors or omissions, or for the results obtained from the use of this information. We encourage our clients to consider the information independently before making a decision.
             </p>
           </div>
         </div>
