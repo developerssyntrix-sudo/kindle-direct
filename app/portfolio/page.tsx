@@ -14,11 +14,11 @@ import WhatWePublish from "@/components/sections/WhatWePublish";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export const metadata: Metadata = {
-  title: "Portfolio — Published Books | Amazon Publisher House",
+  title: "Portfolio — Published Books | Kindle Direct Publishing House",
   description: "Browse 2,500+ books we've published across every genre — from Amazon #1 bestsellers to debut authors finding their first readers.",
-  keywords: ["Amazon book portfolio", "published books", "bestselling authors", "book publishing examples", "Amazon Publisher House portfolio"],
+  keywords: ["Amazon book portfolio", "published books", "bestselling authors", "book publishing examples", "Kindle Direct Publishing House portfolio"],
   openGraph: {
-    title: "Portfolio — Published Books | Amazon Publisher House",
+    title: "Portfolio — Published Books | Kindle Direct Publishing House",
     description: "Browse 2,500+ books we've published across every genre — from Amazon #1 bestsellers to debut authors finding their first readers.",
     type: "website",
   }

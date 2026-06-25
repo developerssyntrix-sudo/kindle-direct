@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Children's Book Writing & Publishing Services | Amazon Publisher House",
+  title: "Children's Book Writing & Publishing Services | Kindle Direct Publishing House",
   description:
-    "Expert children's book writing, illustration coordination, and Amazon KDP publishing. From picture books to middle grade — we handle everything.",
-  keywords: ["children's book writing", "children's book publishing", "picture book layout", "hire children's author", "Amazon Publisher House children's books"],
+    "Expert children's book writing, illustration coordination, and Amazon kindle direct publishing house publishing. From picture books to middle grade — we handle everything.",
+  keywords: ["children's book writing", "children's book publishing", "picture book layout", "hire children's author", "Kindle Direct Publishing House children's books"],
   openGraph: {
-    title: "Children's Book Writing & Publishing Services | Amazon Publisher House",
-    description: "Expert children's book writing, illustration coordination, and Amazon KDP publishing. From picture books to middle grade.",
+    title: "Children's Book Writing & Publishing Services | Kindle Direct Publishing House",
+    description: "Expert children's book writing, illustration coordination, and Amazon kindle direct publishing house publishing. From picture books to middle grade.",
     type: "website",
   }
 };
@@ -32,9 +32,9 @@ const steps = [
     bullets: [
       "We write page spreads, dialogue, and narrative pacing for young readers.",
       "Illustration direction and layout are coordinated to make every spread pop.",
-      "Your book is formatted for KDP and print-ready specifications.",
+      "Your book is formatted for kindle direct publishing house and print-ready specifications.",
     ],
-    tags: ["Illustration", "Layout", "KDP"],
+    tags: ["Illustration", "Layout", "kindle direct publishing house"],
     image:
       "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200&auto=format&fit=crop",
   },
@@ -42,11 +42,11 @@ const steps = [
     step: "Step 3",
     title: "Publish and distribute to parents, schools, and libraries",
     bullets: [
-      "We publish your book on Amazon KDP and arrange print and eBook distribution.",
+      "We publish your book on Amazon kindle direct publishing house and arrange print and eBook distribution.",
       "Library and school-friendly channels are added through IngramSpark.",
       "Your story becomes available globally in the formats families prefer.",
     ],
-    tags: ["Amazon KDP", "IngramSpark", "Libraries"],
+    tags: ["Amazon kindle direct publishing house", "IngramSpark", "Libraries"],
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
   },
@@ -55,7 +55,7 @@ const steps = [
 const faqItems = [
   {
     q: "Do you write and publish illustrated children's books?",
-    a: "Yes. We write your story, provide illustration briefs, coordinate illustrators, and publish the final book on KDP and IngramSpark.",
+    a: "Yes. We write your story, provide illustration briefs, coordinate illustrators, and publish the final book on kindle direct publishing house and IngramSpark.",
   },
   {
     q: "Can you help with educational or school-market books?",

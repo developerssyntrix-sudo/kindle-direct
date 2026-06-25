@@ -23,7 +23,7 @@ const steps = [
     step: "Step 3",
     title: "Promote your book to readers",
     bullets: [
-      "Offer your eBook on Kindle Unlimited by enrolling in KDP Select.",
+      "Offer your eBook on Kindle Unlimited by enrolling in kindle direct publishing house Select.",
       "Create an author page to share information about yourself and your books.",
       "Set up advertising ads to reach more readers through Amazon Advertising.",
     ],
@@ -38,7 +38,7 @@ export default function BookWritingSteps() {
         <div className="max-w-2xl mb-10">
           <p className="text-[#008296] text-xs font-semibold uppercase tracking-widest mb-2">How it works</p>
           <h2 className="text-2xl md:text-3xl font-serif text-[#131a22] tracking-tight">
-            Publish with Kindle Direct Publishing in 3 simple steps
+            Publish with kindle direct publishing house in 3 simple steps
           </h2>
           <p className="mt-3 text-[#565959] text-sm leading-relaxed">
             We guide your book from manuscript preparation through publishing and promotion.

@@ -6,9 +6,9 @@ const categories = [
   {
     label: "General",
     faqs: [
-      { q: "What exactly does Amazon Publisher House do?", a: "We're a full-service book publishing agency specializing in the Amazon marketplace. We ghostwrite, edit, design, publish, and market books across every genre — handling every step so authors can focus on their ideas, not the mechanics of publishing." },
+      { q: "What exactly does Kindle Direct Publishing House do?", a: "We're a full-service book publishing agency specializing in the Amazon marketplace. We ghostwrite, edit, design, publish, and market books across every genre — handling every step so authors can focus on their ideas, not the mechanics of publishing." },
       { q: "Who are your typical clients?", a: "Our clients range from first-time authors with a great idea but no writing experience, to business owners wanting a book as a lead-generation tool, to seasoned authors looking to level up their production quality or marketing. Anyone with a story worth telling." },
-      { q: "Are you affiliated with Amazon?", a: "No — we're an independent publishing agency that specializes in Amazon KDP (Kindle Direct Publishing). We're one of a small number of agencies with Amazon KDP Partner status, but we're not owned by or formally affiliated with Amazon the company." },
+      { q: "Are you affiliated with Amazon?", a: "No — we're an independent publishing agency that specializes in Amazon kindle direct publishing house (kindle direct publishing house). We're one of a small number of agencies with Amazon kindle direct publishing house Partner status, but we're not owned by or formally affiliated with Amazon the company." },
       { q: "Do you work with international authors?", a: "Absolutely. We work with authors from six continents. All communication is in English, and we publish books globally through Amazon's worldwide marketplaces and partner distribution networks." },
       { q: "How do I get started?", a: "The first step is a free 30-minute consultation call. We'll learn about your project, answer your questions, and walk you through exactly what working with us looks like. No obligation, no pressure — just clarity." },
     ],
@@ -30,7 +30,7 @@ const categories = [
       { q: "Do I keep 100% of my royalties?", a: "Yes, without exception. We charge a one-time service fee. We never take a percentage of your royalties, never ask for a revenue share, and never hold your money. All royalties go directly from Amazon to your bank account." },
       { q: "What if my book gets rejected by Amazon?", a: "We've handled 2,500+ book submissions and know Amazon's content guidelines inside out. In the rare event of a rejection, we address the issue and resubmit at no additional charge — and we'll tell you exactly what caused it." },
       { q: "Can I publish on platforms other than Amazon?", a: "Yes — all of our publishing packages include distribution beyond Amazon. We publish to Apple Books, Google Play, Kobo, Barnes & Noble, Scribd, and IngramSpark (for bookstores and libraries) as part of our standard service." },
-      { q: "Do I need my own ISBN?", a: "All packages that include print (paperback or hardcover) include ISBN assignment. For eBook-only publishing, KDP provides a free ASIN. If you want a universal ISBN for your eBook, we include that in our Full Formats package." },
+      { q: "Do I need my own ISBN?", a: "All packages that include print (paperback or hardcover) include ISBN assignment. For eBook-only publishing, kindle direct publishing house provides a free ASIN. If you want a universal ISBN for your eBook, we include that in our Full Formats package." },
     ],
   },
   {

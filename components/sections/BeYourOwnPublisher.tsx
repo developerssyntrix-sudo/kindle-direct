@@ -17,7 +17,7 @@ export default function BeYourOwnPublisher() {
                 <>
                     Earn up to 70% royalty and offer your ebook on{" "}
                     <span className="text-cyan-600 underline cursor-pointer">Kindle Unlimited</span> by enrolling in{" "}
-                    <span className="text-cyan-600 underline cursor-pointer">KDP Select</span>.
+                    <span className="text-cyan-600 underline cursor-pointer">kindle direct publishing house Select</span>.
                 </>
             )
         },
@@ -49,7 +49,7 @@ export default function BeYourOwnPublisher() {
                     <header className="space-y-4">
                         <h2 className="text-4xl font-serif text-slate-800">Be your own publisher</h2>
                         <p className="text-xl text-slate-700 leading-snug">
-                            KDP gives you control over your book&apos;s content, design, price, audience, and advertising.
+                            kindle direct publishing house gives you control over your book&apos;s content, design, price, audience, and advertising.
                         </p>
                     </header>
 
@@ -70,7 +70,7 @@ export default function BeYourOwnPublisher() {
                             onClick={() => setShowModal(true)}
                             className="bg-[#FFA41C] hover:bg-[#F3A847] text-slate-900 font-medium py-2.5 px-8 rounded-md shadow-sm transition-colors text-sm cursor-pointer"
                         >
-                            Join KDP
+                            Join kindle direct publishing house
                         </button>
                         <Link href="/about" className="text-cyan-700 hover:text-orange-700 hover:underline text-sm font-medium">
                             Learn how to publish

@@ -12,12 +12,12 @@ import WhatWePublish from "@/components/sections/WhatWePublish";
 import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export const metadata: Metadata = {
-  title: "About Us | Amazon Publisher House",
-  description: "Publish with us. Explore our 3-step publishing process, author support, and free tools inspired by the KDP experience.",
-  keywords: ["about Amazon Publisher House", "book publishing process", "publishing history", "author support services"],
+  title: "About Us | Kindle Direct Publishing House",
+  description: "Publish with us. Explore our 3-step publishing process, author support, and free tools inspired by the kindle direct publishing house experience.",
+  keywords: ["about Kindle Direct Publishing House", "book publishing process", "publishing history", "author support services"],
   openGraph: {
-    title: "About Us | Amazon Publisher House",
-    description: "Publish with us. Explore our 3-step publishing process, author support, and free tools inspired by the KDP experience.",
+    title: "About Us | Kindle Direct Publishing House",
+    description: "Publish with us. Explore our 3-step publishing process, author support, and free tools inspired by the kindle direct publishing house experience.",
     type: "website",
   }
 };

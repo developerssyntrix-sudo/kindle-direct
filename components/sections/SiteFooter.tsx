@@ -47,15 +47,15 @@ const socials = [
 
 const footerLinks = [
   {
-    title: "KDP Select",
+    title: "kindle direct publishing house Select",
     desc: "Earn more money and reach new readers",
   },
   {
     title: "CreateSpace",
-    desc: "Link your existing account to KDP",
+    desc: "Link your existing account to kindle direct publishing house",
   },
   {
-    title: "KDP Community",
+    title: "kindle direct publishing house Community",
     desc: "Connect with experts and fellow authors",
   },
   {
@@ -76,11 +76,11 @@ export default function SiteFooter() {
 
           {/* Desktop: exact match to ref image — two side-by-side banner images */}
           <div className="hidden md:flex items-center justify-center gap-6">
-            {/* KDP Select banner */}
+            {/* kindle direct publishing house Select banner */}
             <a href="/contact" className="block shrink-0 relative">
               <img
                 src="https://images-na.ssl-images-amazon.com/images/G/01/otp/general/kdpselect-banner._V306389619_.png"
-                alt="KDP Select Banner"
+                alt="kindle direct publishing house Select Banner"
                 className="h-20 w-auto object-contain"
               />
               <div className="absolute top-1/2 right-0 transform -translate-y-1/2 pr-10">
@@ -103,7 +103,7 @@ export default function SiteFooter() {
               />
               <div className="absolute top-1/2 left-0 transform -translate-y-1/2 pl-10">
                 <p className="text-xs text-black tracking-tight leading-tighter text-center font-bold">
-                  Total KDP Select Author Earnings <br /> <span className="font-normal text-[#AC5C0C]">March 2026 • <span className="font-bold">$69.3 Million</span></span>
+                  Total kindle direct publishing house Select Author Earnings <br /> <span className="font-normal text-[#AC5C0C]">March 2026 • <span className="font-bold">$69.3 Million</span></span>
                 </p>
 
               </div>
@@ -115,7 +115,7 @@ export default function SiteFooter() {
             <a href="/contact" className="block shrink-0 relative">
               <img
                 src="https://images-na.ssl-images-amazon.com/images/G/01/otp/general/kdpselect-banner._V306389619_.png"
-                alt="KDP Select Banner"
+                alt="kindle direct publishing house Select Banner"
                 className="h-20 w-auto object-contain rounded"
               />
               <div className="absolute top-1/2 right-0 transform -translate-y-1/2 pr-10">
@@ -133,7 +133,7 @@ export default function SiteFooter() {
               />
               <div className="absolute top-1/2 left-0 transform -translate-y-1/2 pl-10">
                 <p className="text-xs text-black tracking-tight leading-tighter text-center font-bold">
-                  Total KDP Select Author Earnings <br /> <span className="font-normal text-[#AC5C0C]">March 2026 • <span className="font-bold">$69.3 Million</span></span>
+                  Total kindle direct publishing house Select Author Earnings <br /> <span className="font-normal text-[#AC5C0C]">March 2026 • <span className="font-bold">$69.3 Million</span></span>
                 </p>
 
               </div>
@@ -142,7 +142,7 @@ export default function SiteFooter() {
         </div>
       </div>
 
-      {/* ── Footer — KDP Style ── */}
+      {/* ── Footer — kindle direct publishing house Style ── */}
       <footer style={{ backgroundColor: "#232F3E" }}>
         {/* Main footer body */}
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-10 md:py-14">
@@ -150,7 +150,7 @@ export default function SiteFooter() {
             {/* Left: Brand + socials */}
             <div className="shrink-0 md:w-56">
               <Link href="/" className="flex items-center gap-2 mb-5">
-                <img src={Logo.src} alt="Amazon Publisher House Logo" className="h-13 md:h-17 w-auto" />
+                <img src={Logo.src} alt="Kindle Direct Publishing House Logo" className="h-13 md:h-17 w-auto" />
               </Link>
 
               {/* Social icons */}
@@ -184,7 +184,7 @@ export default function SiteFooter() {
               </ul>
             </div>
 
-            {/* Right: 2-col link grid — KDP style */}
+            {/* Right: 2-col link grid — kindle direct publishing house style */}
             <div className="flex-1 grid grid-cols-1 sm:grid-cols-2">
               {footerLinks.map((item) => (
                 <button
@@ -255,7 +255,7 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        {/* ── Bottom bar — KDP style ── */}
+        {/* ── Bottom bar — kindle direct publishing house style ── */}
         <div className="bg-[#222E3E] pb-5">
           <div className="max-w-7xl mx-auto">
             {/* Legal links row */}
@@ -273,7 +273,7 @@ export default function SiteFooter() {
             </div>
             {/* Copyright */}
             <p className="text-white text-xs text-center">
-              © 2026 Amazon Publisher House. All Rights Reserved.
+              © 2026 Kindle Direct Publishing House. All Rights Reserved.
             </p>
           </div>
         </div>

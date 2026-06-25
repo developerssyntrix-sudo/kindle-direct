@@ -13,7 +13,7 @@ import luluPressLogo from "@/app/assets/svgs/brands/Lulu-Press.svg";
 import koboLogo from "@/app/assets/svgs/brands/Kobo.svg";
 
 const brands: { name: string; src: string }[] = [
-  { name: "Amazon KDP", src: amazonKdpLogo.src },
+  { name: "Amazon kindle direct publishing house", src: amazonKdpLogo.src },
   { name: "Google Books", src: googleBooksLogo.src },
   { name: "IngramSpark", src: ingramSparkLogo.src },
   { name: "Draft2Digital", src: draft2digitalLogo.src },

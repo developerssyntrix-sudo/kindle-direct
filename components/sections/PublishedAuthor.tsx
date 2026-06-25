@@ -1,5 +1,5 @@
 import Image from "next/image"
-import SectionBackgroundImage from "@/app/assets/images/Section-Background.jpg"
+import SectionBackgroundImage from "@/app/assets/images/Group 10.png"
 import { ShoppingCart, Globe, Award } from "lucide-react"
 import Link from "next/link"
 

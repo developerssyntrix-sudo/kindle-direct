@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Poetry Publishing Services | Amazon Publisher House",
+  title: "Poetry Publishing Services | Kindle Direct Publishing House",
   description:
-    "Publish your poetry collection on Amazon KDP and globally. Editorial curation, interior typesetting, cover design, and marketing for poets who mean business.",
-  keywords: ["poetry publishing services", "publish poetry book", "poetry collection formatting", "Amazon KDP poetry", "Amazon Publisher House poetry"],
+    "Publish your poetry collection on Amazon kindle direct publishing house and globally. Editorial curation, interior typesetting, cover design, and marketing for poets who mean business.",
+  keywords: ["poetry publishing services", "publish poetry book", "poetry collection formatting", "Amazon kindle direct publishing house poetry", "Kindle Direct Publishing House poetry"],
   openGraph: {
-    title: "Poetry Publishing Services | Amazon Publisher House",
-    description: "Publish your poetry collection on Amazon KDP and globally. Editorial curation, interior typesetting, cover design, and marketing.",
+    title: "Poetry Publishing Services | Kindle Direct Publishing House",
+    description: "Publish your poetry collection on Amazon kindle direct publishing house and globally. Editorial curation, interior typesetting, cover design, and marketing.",
     type: "website",
   }
 };
@@ -32,7 +32,7 @@ const steps = [
     bullets: [
       "We create a cover that matches the mood of your poems and stands out on Amazon.",
       "Interior layout is designed for print and eBook readability while preserving poetic spacing.",
-      "We prepare the files for both KDP and global ebook distribution.",
+      "We prepare the files for both kindle direct publishing house and global ebook distribution.",
     ],
     tags: ["Cover", "Layout", "Formatting"],
     image:
@@ -46,7 +46,7 @@ const steps = [
       "Poetry-specific marketing notes help your book reach readers who love verse.",
       "You receive a polished, professional poetry book ready for launch."
     ],
-    tags: ["KDP", "eBook", "Print"],
+    tags: ["kindle direct publishing house", "eBook", "Print"],
     image:
       "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=1200&auto=format&fit=crop",
   },
@@ -54,7 +54,7 @@ const steps = [
 
 const faqItems = [
   {
-    q: "Can I publish a poetry collection on KDP?",
+    q: "Can I publish a poetry collection on kindle direct publishing house?",
     a: "Yes. We publish poetry collections as both eBook and paperback, formatted to preserve line breaks and page spacing.",
   },
   {
@@ -77,7 +77,7 @@ export default function PoetryPublishingPage() {
       badge="Poetry Publishing"
       title="Publish Your Poetry"
       highlight="With Precision"
-      description="We publish your poetry collection with care — editorial flow, cover design, formatting, and KDP publishing for readers who love verse."
+      description="We publish your poetry collection with care — editorial flow, cover design, formatting, and kindle direct publishing house publishing for readers who love verse."
       serviceName="Poetry Publishing"
       bgImage="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1170&auto=format&fit=crop"
       symbolVariant="wave"

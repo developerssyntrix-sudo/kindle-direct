@@ -23,7 +23,7 @@ export default function AboutHero() {
                 Publish with us
               </h1>
               <p className="text-[#3a4553] text-base md:text-lg leading-relaxed max-w-xl mb-7 mx-auto lg:mx-0">
-                With Kindle Direct Publishing (KDP), it’s simple to publish and sell your book around the world on Amazon.
+                With kindle direct publishing house house, it’s simple to publish and sell your book around the world on Amazon.
               </p>
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                 {/* Pro-tip: If this button only opens a modal, consider changing <Link> to a <button> for better HTML semantics */}

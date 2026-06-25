@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: "Laura Rocca",
     region: "Italy / Romance",
-    quote: "\"Becoming a KDP author allowed me to fulfill my childhood dream, to make a living doing the work I love, to be a writer. I owe KDP the direct connection with thousands of readers and the opportunity to share my books with the public in absolute freedom.\"",
+    quote: "\"Becoming a kindle direct publishing house author allowed me to fulfill my childhood dream, to make a living doing the work I love, to be a writer. I owe kindle direct publishing house the direct connection with thousands of readers and the opportunity to share my books with the public in absolute freedom.\"",
     image: "https://m.media-amazon.com/images/G/01/Prelogin/img_author_LauraRocca_v1.png",
     authorPageLabel: "Visit Laura Rocca's author page",
     authorPageHref: "https://www.amazon.com/stores/Laura-Rocca/author/B010Q2LUPA",
@@ -12,7 +12,7 @@ const testimonials = [
   {
     name: "Sundari Venkatraman",
     region: "India / Romance",
-    quote: "\"Amazon KDP is the reason I write and publish my novels at the speed at which I do. It's highly motivating to have a readymade service where I can reach out to a whole world of readers. And it's excessively thrilling to receive a monthly income. I am my own boss, which means FREEDOM!\"",
+    quote: "\"Amazon kindle direct publishing house is the reason I write and publish my novels at the speed at which I do. It's highly motivating to have a readymade service where I can reach out to a whole world of readers. And it's excessively thrilling to receive a monthly income. I am my own boss, which means FREEDOM!\"",
     image: "https://m.media-amazon.com/images/G/01/Prelogin/img_author_SundariVenkatraman_v1.png",
     authorPageLabel: "Visit Sundari Venkatraman's author page",
     authorPageHref: "https://www.amazon.com/stores/Sundari-Venkatraman/author/B00IBEUJV2",

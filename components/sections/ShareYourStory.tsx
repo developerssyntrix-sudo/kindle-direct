@@ -25,7 +25,7 @@ export default function ShareYourStory() {
                             <span className="absolute left-0 top-2 h-3 w-3 bg-orange-400 rounded-full" />
                             <h3 className="font-bold text-lg font-sans">Print books</h3>
                             <p className="text-slate-600">
-                                Bring your book to life in <span className="font-semibold text-slate-700">paperback</span> and <span className="font-semibold text-slate-700">hardcover</span> formats. KDP will print your books on demand and ship them to customers around the world.
+                                Bring your book to life in <span className="font-semibold text-slate-700">paperback</span> and <span className="font-semibold text-slate-700">hardcover</span> formats. kindle direct publishing house will print your books on demand and ship them to customers around the world.
                             </p>
                         </li>
                     </ul>

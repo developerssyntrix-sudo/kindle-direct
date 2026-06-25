@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     }
 
     const adminTo = process.env.CONTACT_EMAIL!;
-    const from = `"Amazon Publisher House" <${process.env.SMTP_USER}>`;
+    const from = `"Kindle Direct Publishing House" <${process.env.SMTP_USER}>`;
     const submittedAt = new Date().toLocaleString("en-US", {
       timeZone: "America/New_York",
       dateStyle: "medium",
@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto">
           <div style="background:#222E3E;padding:20px 28px;border-radius:6px 6px 0 0">
             <h2 style="color:#FF9900;margin:0;font-size:18px">New Contact Form Submission</h2>
-            <p style="color:#ffffff80;margin:4px 0 0;font-size:12px">Amazon Publisher House Website</p>
+            <p style="color:#ffffff80;margin:4px 0 0;font-size:12px">Kindle Direct Publishing House Website</p>
           </div>
           <div style="border:1px solid #d5d9d9;border-top:none;padding:24px 28px;background:#fff;border-radius:0 0 6px 6px">
             <table style="border-collapse:collapse;width:100%;font-size:14px">
@@ -70,11 +70,11 @@ export async function POST(req: NextRequest) {
     await transporter.sendMail({
       from,
       to: email,
-      subject: "We've Received Your Inquiry — Amazon Publisher House",
+      subject: "We've Received Your Inquiry — Kindle Direct Publishing House",
       html: `
         <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto">
           <div style="background:#222E3E;padding:24px 32px;text-align:center;border-radius:6px 6px 0 0">
-            <h1 style="color:#FF9900;margin:0;font-size:20px;letter-spacing:-0.3px">Amazon Publisher House</h1>
+            <h1 style="color:#FF9900;margin:0;font-size:20px;letter-spacing:-0.3px">Kindle Direct Publishing House</h1>
             <p style="color:#ffffff60;margin:4px 0 0;font-size:12px">Professional Book Publishing Services</p>
           </div>
           <div style="padding:32px;background:#fff;border:1px solid #e5e7eb;border-top:none;border-radius:0 0 6px 6px">
@@ -93,14 +93,14 @@ export async function POST(req: NextRequest) {
                   </a>
                 </td>
                 <td>
-                  <a href="mailto:info@amazonpublisherhouse.com" style="background:#008296;color:#fff;padding:11px 22px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;display:inline-block">
+                  <a href="mailto:info@directpublishinghouse.com" style="background:#008296;color:#fff;padding:11px 22px;border-radius:6px;text-decoration:none;font-weight:700;font-size:13px;display:inline-block">
                     Email Us
                   </a>
                 </td>
               </tr>
             </table>
             <p style="color:#9ca3af;font-size:11px;border-top:1px solid #e5e7eb;padding-top:16px;margin-bottom:0">
-              © 2026 Amazon Publisher House · info@amazonpublisherhouse.com · Mon–Fri 9 AM–6 PM EST
+              © 2026 Kindle Direct Publishing House · info@amazonpublisherhouse.com · Mon–Fri 9 AM–6 PM EST
             </p>
           </div>
         </div>

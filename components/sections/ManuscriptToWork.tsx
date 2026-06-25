@@ -3,7 +3,7 @@
 import Image from "next/image"
 import ArrowLeftToRight from "@/app/assets/images/mauscipt-to-work-arrow-left-to-right.webp"
 import ArrowRightToLeft from "@/app/assets/images/mauscipt-to-work-arrow-right-to-left.webp"
-import SectionBg from "@/app/assets/images/turn-your-manuscript-into-a-published-work.jpg"
+import SectionBg from "@/app/assets/images/Group 12.png"
 import { ClipboardList, FileText, CheckSquare, BookCheck, BookOpen, Megaphone } from "lucide-react"
 
 const steps = [

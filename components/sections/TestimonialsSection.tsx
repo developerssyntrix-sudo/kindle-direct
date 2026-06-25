@@ -5,7 +5,7 @@ const testimonials = [
     name: "Tricia O'Malley",
     meta: "USA / Romance",
     quote:
-      '"Self-publishing through KDP and Amazon has changed my life. My books have made it to the New York Times, USA Today, and Wall Street Journal bestseller lists."',
+      '"Self-publishing through kindle direct publishing house and Amazon has changed my life. My books have made it to the New York Times, USA Today, and Wall Street Journal bestseller lists."',
     link: { label: "Visit Tricia O'Malley's author page", href: "#" },
     img: "https://m.media-amazon.com/images/G/01/Prelogin/img_author_TriciaOMalley_v1.png",
   },
@@ -13,7 +13,7 @@ const testimonials = [
     name: "Jéssica Macedo",
     meta: "Brazil / Fantasy",
     quote:
-      '"I always dreamed of living off books, but it was something that seemed unattainable until I discovered Amazon KDP. With KDP, I gained readers in my country and even around the world."',
+      '"I always dreamed of living off books, but it was something that seemed unattainable until I discovered Amazon kindle direct publishing house. With kindle direct publishing house, I gained readers in my country and even around the world."',
     link: { label: "Visit Jéssica Macedo's author page", href: "#" },
     img: "https://m.media-amazon.com/images/G/01/Prelogin/img_author_JessicaMacedo_v1.png",
   },

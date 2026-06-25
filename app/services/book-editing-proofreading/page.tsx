@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Book Editing & Proofreading Services | Amazon Publisher House",
+  title: "Book Editing & Proofreading Services | Kindle Direct Publishing House",
   description:
     "Professional book editing and proofreading — developmental, line, copy editing, and final proofread. Genre-matched editors. Turnaround in 14–21 days.",
-  keywords: ["book editing services", "proofreading services", "copy editing", "developmental editing", "Amazon Publisher House editing"],
+  keywords: ["book editing services", "proofreading services", "copy editing", "developmental editing", "Kindle Direct Publishing House editing"],
   openGraph: {
-    title: "Book Editing & Proofreading Services | Amazon Publisher House",
+    title: "Book Editing & Proofreading Services | Kindle Direct Publishing House",
     description: "Professional book editing and proofreading — developmental, line, copy editing, and final proofread. Genre-matched editors.",
     type: "website",
   }

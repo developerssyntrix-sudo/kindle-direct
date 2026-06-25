@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Will my book actually rank on Amazon?",
-    a: "We can't guarantee rankings (no one ethically can), but our KDP metadata optimization, category selection, keyword strategy, and Amazon Ads expertise consistently land our clients on bestseller lists. We have a track record to prove it.",
+    a: "We can't guarantee rankings (no one ethically can), but our kindle direct publishing house metadata optimization, category selection, keyword strategy, and Amazon Ads expertise consistently land our clients on bestseller lists. We have a track record to prove it.",
   },
   {
     q: "Can I see samples of your ghostwriters' work?",

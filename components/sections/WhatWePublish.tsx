@@ -12,50 +12,138 @@ import {
     CarouselNext,
 } from "@/components/ui/carousel"
 
-// Services Images
-import SongImg from "@/app/assets/images/services/song.webp"
-import AutobiographyImg from "@/app/assets/images/services/autobiography.webp"
-import ComedyImg from "@/app/assets/images/services/comedy.webp"
-import WikiImg from "@/app/assets/images/services/wiki.webp"
-import BusinessImg from "@/app/assets/images/services/business.webp"
-import BiographyImg from "@/app/assets/images/services/biography.webp"
-import ChildrensImg from "@/app/assets/images/services/children.webp"
-import CrimeFictionImg from "@/app/assets/images/services/crime-fiction.webp"
-import ComicsImg from "@/app/assets/images/services/comic.webp"
-import FictionImg from "@/app/assets/images/services/fiction.webp"
-import HipHopImg from "@/app/assets/images/services/hip-hop.webp"
-import MemoirImg from "@/app/assets/images/services/memoir.webp"
-import NovelImg from "@/app/assets/images/services/novel.webp"
-import MilitaryFictionImg from "@/app/assets/images/services/military-fiction.webp"
-import NarrativeImg from "@/app/assets/images/services/narrative.webp"
-import RhymeImg from "@/app/assets/images/services/rhyme.webp"
-import SpeechImg from "@/app/assets/images/services/speech.webp"
-import ScreenPlayImg from "@/app/assets/images/services/screen-play.webp"
+import SongIcon from "@/app/assets/images/Group 1.png"
+import AutobiographyIcon from "@/app/assets/images/Group 3.png"
+import ComedyIcon from "@/app/assets/images/Group 3 (1).png"
+import WikiIcon from "@/app/assets/images/Group 4 (1).png"
+import BusinessIcon from "@/app/assets/images/Group 5.png"
+import BiographyIcon from "@/app/assets/images/Group 2 (1).png"
+import ChildrensIcon from "@/app/assets/images/Group 7.png"
+import CrimeFictionIcon from "@/app/assets/images/Group 12 (1).png"
+import ComicsIcon from "@/app/assets/images/Group 13.png"
+import FictionIcon from "@/app/assets/images/Group 14.png"
+import HipHopIcon from "@/app/assets/images/Group 15.png"
+import MemoirIcon from "@/app/assets/images/Group 16.png"
+import NovelIcon from "@/app/assets/images/Group 17.png"
+import MilitaryIcon from "@/app/assets/images/Group 18.png"
+import NarrativeIcon from "@/app/assets/images/Group 19 (2).png"
+import RhymeIcon from "@/app/assets/images/Group 20.png"
+import SpeechIcon from "@/app/assets/images/Group 21.png"
+import ScreenplayIcon from "@/app/assets/images/Group 22.png"
 
 const genres = [
-    { label: "Song", img: SongImg, filter: "All" },
-    { label: "Autobiography", img: AutobiographyImg, filter: "Biography" },
-    { label: "Comedy", img: ComedyImg, filter: "All" },
-    { label: "Wiki", img: WikiImg, filter: "Non-Fiction" },
-    { label: "Business", img: BusinessImg, filter: "Non-Fiction" },
-    { label: "Biography", img: BiographyImg, filter: "Biography" },
-    { label: "Children's", img: ChildrensImg, filter: "Children's" },
-    { label: "Crime Fiction", img: CrimeFictionImg, filter: "Sci-Fi & Fantasy" },
-    { label: "Comics", img: ComicsImg, filter: "All" },
-    { label: "Fiction", img: FictionImg, filter: "Sci-Fi & Fantasy" },
-    { label: "Hip Hop", img: HipHopImg, filter: "All" },
-    { label: "Memoir", img: MemoirImg, filter: "Biography" },
-    { label: "Novel", img: NovelImg, filter: "All" },
-    { label: "Military Fiction", img: MilitaryFictionImg, filter: "Sci-Fi & Fantasy" },
-    { label: "Narrative", img: NarrativeImg, filter: "Non-Fiction" },
-    { label: "Rhyme", img: RhymeImg, filter: "All" },
-    { label: "Speech", img: SpeechImg, filter: "All" },
-    { label: "Screen Play", img: ScreenPlayImg, filter: "All" },
+    {
+        label: "Song",
+        icon: SongIcon,
+        description: "A great song can't just haunt it's felt. Put your thoughts into words, and let the music tell the story. Words become lyrics, Lyrics become songs become memories.",
+        filter: "All",
+    },
+    {
+        label: "Autobiography",
+        icon: AutobiographyIcon,
+        description: "An autobiography is more than a story. It's a journey through your life, your struggles, your achievements, and the lessons that shaped you every life has a story worth telling.",
+        filter: "Biography",
+    },
+    {
+        label: "Comedy",
+        icon: ComedyIcon,
+        description: "Life is better when you're laughing. Comedy turns ordinary moments into unforgettable memories, bringing smiles, joy, and connection.",
+        filter: "All",
+    },
+    {
+        label: "Wiki",
+        icon: WikiIcon,
+        description: "Knowledge starts with curiosity, most history and science or people and places. Discover reliable information and expand your understanding of the world.",
+        filter: "Non-Fiction",
+    },
+    {
+        label: "Business",
+        icon: BusinessIcon,
+        description: "Business is more than making money, it's about creating value, solving problems, and building something that lasts. Turn ideas and opportunities into a close.",
+        filter: "Non-Fiction",
+    },
+    {
+        label: "Biography",
+        icon: BiographyIcon,
+        description: "Every remarkable life has a story. A biography explores the journey, achievements, challenges, and legacy of an individual, bringing history through live experiences.",
+        filter: "Biography",
+    },
+    {
+        label: "Children's",
+        icon: ChildrensIcon,
+        description: "Children's books are fun, learning, and creativity through engaging stories, educational activities, cartoons, songs, and interactive experiences.",
+        filter: "Children's",
+    },
+    {
+        label: "Crime Fiction",
+        icon: CrimeFictionIcon,
+        description: "Crime fiction is a genre that revolves around mysteries, investigations, and criminal activities. It follows detectives, investigators through gripping storylines.",
+        filter: "Sci-Fi & Fantasy",
+    },
+    {
+        label: "Comics",
+        icon: ComicsIcon,
+        description: "Comics combines storytelling and artwork to create engaging visual narratives. Through colorful illustrations, characters, and dialogue, comics entertain readers with bold art.",
+        filter: "All",
+    },
+    {
+        label: "Fiction",
+        icon: FictionIcon,
+        description: "Fiction is a literary genre based on imaginative stories and invented narratives. It immerses readers in creative worlds filled with alternate realities and fantastic adventures.",
+        filter: "Sci-Fi & Fantasy",
+    },
+    {
+        label: "Hip Hop",
+        icon: HipHopIcon,
+        description: "Hip Hop is a dynamic music and cultural genre known for its rhythmic patterns, powerful lyrics, and creative expression. It blends storytelling, poetry, fashion influences to entertain.",
+        filter: "All",
+    },
+    {
+        label: "Memoir",
+        icon: MemoirIcon,
+        description: "Memoir is a personal narrative that shares real events, experiences, and reflections from the author's life. It offers readers an intimate look into true-life experiences.",
+        filter: "Biography",
+    },
+    {
+        label: "Novel",
+        icon: NovelIcon,
+        description: "A novel is a long-form fictional narrative that explores characters, events, and themes in depth. It immerses readers in compelling stories filled with emotion, adventure.",
+        filter: "All",
+    },
+    {
+        label: "Military",
+        icon: MilitaryIcon,
+        description: "Military content explores armed forces, warfare strategy, and historical conflicts. It covers stories, military operations, leadership, technology, and the experiences of service.",
+        filter: "Sci-Fi & Fantasy",
+    },
+    {
+        label: "Narrative",
+        icon: NarrativeIcon,
+        description: "Narrative is a form of storytelling that presents events, experiences, or ideas through a structured sequence. It engages readers by conveying characters, actions.",
+        filter: "Non-Fiction",
+    },
+    {
+        label: "Rhyme",
+        icon: RhymeIcon,
+        description: "Rhyme is a creative form of expression that uses words with similar ending sounds to create rhythm and musicality. Often found in poetry, songs, and children's literature.",
+        filter: "All",
+    },
+    {
+        label: "Speech",
+        icon: SpeechIcon,
+        description: "Speech is a spoken form of communication that delivers ideas, information, or emotions. With an audience, it can inform, inspire, persuade, or entertain.",
+        filter: "All",
+    },
+    {
+        label: "Screenplay",
+        icon: ScreenplayIcon,
+        description: "A screenplay is a written script for films, TV shows, plays, and other visual productions. It outlines dialogue, actions, scenes, and characters, serving as the blueprint.",
+        filter: "All",
+    },
 ]
 
 const PER_PAGE = 6
 
-// Split genres into pages of PER_PAGE
 const pages = Array.from({ length: Math.ceil(genres.length / PER_PAGE) }, (_, i) =>
     genres.slice(i * PER_PAGE, i * PER_PAGE + PER_PAGE)
 )
@@ -87,21 +175,33 @@ export default function WhatWePublish() {
                     <CarouselContent>
                         {pages.map((pageGenres, pageIdx) => (
                             <CarouselItem key={pageIdx}>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                                    {pageGenres.map(({ label, img, filter }) => (
-                                        <Link href={`/portfolio?genre=${encodeURIComponent(filter)}#portfolio-grid`} key={label}>
-                                            <div className="group flex flex-col items-center gap-3">
-                                                <div className="relative w-full h-[220px] aspect-5/2 rounded-xl overflow-hidden">
-                                                    <Image
-                                                        src={img}
-                                                        alt={label}
-                                                        fill
-                                                        className="h-[500px] object-cover object-center scale-100 group-hover:scale-105 transition-transform duration-300"
-                                                    />
-                                                    {/* Dark overlay: visible by default, fades out on hover */}
-                                                    <div className="absolute inset-0 bg-black/45 group-hover:bg-black/0 transition-colors duration-300 rounded-xl" />
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                    {pageGenres.map(({ label, icon, description, filter }) => (
+                                        <Link
+                                            href={`/portfolio?genre=${encodeURIComponent(filter)}#portfolio-grid`}
+                                            key={label}
+                                            className="group block"
+                                        >
+                                            <div className="bg-transparent transition-all duration-300 rounded-lg p-5 h-full flex flex-col gap-3 border border-gray-300 shadow-md hover:shadow-amazon-orange/40 hover:border-amazon-orange">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="relative w-10 h-10 flex-shrink-0">
+                                                        <Image
+                                                            src={icon}
+                                                            alt={label}
+                                                            fill
+                                                            className="object-contain"
+                                                        />
+                                                    </div>
+                                                    <h3 className="text-secondary font-bold text-sm uppercase tracking-wide">
+                                                        {label}
+                                                    </h3>
                                                 </div>
-                                                <span className="text-amazon-dark font-bold text-base">{label}</span>
+                                                <p className="text-muted-foreground text-xs leading-relaxed flex-1">
+                                                    {description}
+                                                </p>
+                                                <span className="text-amazon-orange text-xs font-semibold uppercase tracking-wider group-hover:underline">
+                                                    View More
+                                                </span>
                                             </div>
                                         </Link>
                                     ))}

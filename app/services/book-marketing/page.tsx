@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import ServicePageLayout from "@/components/service-page/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Book Marketing Services — Amazon Ads & Launch Strategy | Amazon Publisher House",
+  title: "Book Marketing Services — Amazon Ads & Launch Strategy | Kindle Direct Publishing House",
   description:
     "Data-driven Amazon book marketing — AMS ads, ARC campaigns, BookTok strategy, and launch week execution. Turn your book into a bestseller.",
-  keywords: ["book marketing services", "Amazon ads for books", "AMS ads", "book launch strategy", "Amazon Publisher House marketing"],
+  keywords: ["book marketing services", "Amazon ads for books", "AMS ads", "book launch strategy", "Kindle Direct Publishing House marketing"],
   openGraph: {
-    title: "Book Marketing Services — Amazon Ads & Launch Strategy | Amazon Publisher House",
+    title: "Book Marketing Services — Amazon Ads & Launch Strategy | Kindle Direct Publishing House",
     description: "Data-driven Amazon book marketing — AMS ads, ARC campaigns, BookTok strategy, and launch week execution.",
     type: "website",
   }

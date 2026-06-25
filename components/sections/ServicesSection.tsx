@@ -38,8 +38,8 @@ const services = [
     num: "03",
     icon: AlignJustify,
     title: "Book Formatting",
-    desc: "Interior layout designed for KDP, IngramSpark, and Lulu — eBook (EPUB/MOBI) and print-ready PDF. Every genre, every trim size.",
-    tags: ["Print Layout", "eBook", "KDP-Ready"],
+    desc: "Interior layout designed for kindle direct publishing house, IngramSpark, and Lulu — eBook (EPUB/MOBI) and print-ready PDF. Every genre, every trim size.",
+    tags: ["Print Layout", "eBook", "kindle direct publishing house-Ready"],
     href: "/services/book-publishing",
   },
   {

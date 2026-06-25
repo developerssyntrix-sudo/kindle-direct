@@ -44,7 +44,7 @@ const defaultTestimonials: Testimonial[] = [
   {
     name: "Laura Rocca",
     sub: "Italy | Romance",
-    quote: "Becoming a KDP author allowed me to finally live my childhood dream. The writer captured my voice and helped me launch a polished romance novel in months.",
+    quote: "Becoming a kindle direct publishing house author allowed me to finally live my childhood dream. The writer captured my voice and helped me launch a polished romance novel in months.",
     avatar: "https://plus.unsplash.com/premium_photo-1664451820045-d2ce2ef43e60?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGF1cmElMjByb2NhfGVufDB8fDB8fHww",
   },
   {
@@ -96,10 +96,10 @@ export default function ServicePageLayout({
             <div className="max-w-2xl mb-10">
               <p className="text-[#008296] text-xs font-semibold uppercase tracking-widest mb-2">How it works</p>
               <h2 className="text-2xl md:text-3xl font-serif text-[#131a22] tracking-tight">
-                Publish with Kindle Direct Publishing in 3 simple steps
+                Publish with kindle direct publishing house in 3 simple steps
               </h2>
               <p className="mt-3 text-[#565959] text-sm leading-relaxed">
-                We guide your project from idea through delivery with the same clean, easy flow used by top KDP authors.
+                We guide your project from idea through delivery with the same clean, easy flow used by top kindle direct publishing house authors.
               </p>
             </div>
 
@@ -199,13 +199,13 @@ export default function ServicePageLayout({
               <div className="space-y-4">
                 <p className="text-[#008296] text-xs font-semibold uppercase tracking-widest">Free tools</p>
                 <h2 className="text-2xl md:text-3xl font-serif text-[#131a22]">
-                  More free KDP tools to help publish your book
+                  More free kindle direct publishing house tools to help publish your book
                 </h2>
                 <div className="space-y-4 pt-2">
                   {[
                     { title: "Kindle Previewer", desc: "See how your eBook will look before you publish it." },
                     { title: "Kindle Kids' Book Creator", desc: "Turn your illustrated children's books into great-looking eBooks." },
-                    { title: "KDP Community", desc: "Join the conversation with new and accomplished KDP authors." },
+                    { title: "kindle direct publishing house Community", desc: "Join the conversation with new and accomplished kindle direct publishing house authors." },
                     { title: "Kindle Create", desc: "Convert your manuscript into a beautifully formatted eBook." },
                   ].map((item) => (
                     <div key={item.title} className="flex gap-3">

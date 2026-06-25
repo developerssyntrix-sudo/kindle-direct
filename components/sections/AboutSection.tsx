@@ -8,7 +8,7 @@ import AboutLady from "@/app/assets/images/about-lady.png"
 const features = [
   "Dedicated publishing consultant assigned to every project",
   "End-to-end service from manuscript to global distribution",
-  "Amazon KDP certified — first-to-market expertise",
+  "Amazon kindle direct publishing house certified — first-to-market expertise",
   "Full rights retained by the author, always",
   "Royalty-maximizing pricing & metadata strategy",
 ];
@@ -49,7 +49,7 @@ export default function AboutSection() {
               <span className="text-amazon-orange">Authors Actually Trust</span>
             </h2>
             <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-              Over a decade helping authors publish professionally on Amazon — our team of 50+ editors, ghostwriters, and KDP experts handles everything so you can focus on your story.
+              Over a decade helping authors publish professionally on Amazon — our team of 50+ editors, ghostwriters, and kindle direct publishing house experts handles everything so you can focus on your story.
             </p>
 
             <ul className="space-y-2 mb-5">

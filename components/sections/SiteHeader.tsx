@@ -33,7 +33,7 @@ import Logo from "@/app/assets/images/Logo.png";
 
 const services = [
   { label: "Book Writing", href: "/services/book-writing", icon: PenLine, desc: "Professional ghostwriting in any genre" },
-  { label: "Book Publishing", href: "/services/book-publishing", icon: BookOpen, desc: "Amazon KDP & global distribution" },
+  { label: "Book Publishing", href: "/services/book-publishing", icon: BookOpen, desc: "Amazon kindle direct publishing house & global distribution" },
   { label: "Book Editing", href: "/services/book-editing-proofreading", icon: FileEdit, desc: "Developmental, copy & proofread" },
   { label: "Book Marketing", href: "/services/book-marketing", icon: TrendingUp, desc: "AMS ads, ARC & launch strategy" },
   { label: "Book Trailer", href: "/services/book-trailer", icon: Headphones, desc: "Cinematic video for social media" },
@@ -307,7 +307,7 @@ export default function SiteHeader() {
           <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-6">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 shrink-0">
-              <img src={Logo.src} alt="Amazon Publisher House Logo" className="h-13 md:h-15 w-auto" />
+              <img src={Logo.src} alt="Kindle Direct Publishing House Logo" className="h-13 md:h-15 w-auto" />
             </Link>
 
             {/* CTA Buttons — desktop */}

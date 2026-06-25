@@ -49,7 +49,7 @@ const steps = [
     bullets: [
       {
         text: "Offer your eBook on Kindle Unlimited by enrolling in ",
-        link: { label: "KDP Select", href: "" },
+        link: { label: "kindle direct publishing house Select", href: "" },
         linkSuffix: ".",
       },
       {
@@ -74,7 +74,7 @@ export default function AboutSteps() {
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-4xl font-serif text-[#131a22] tracking-tight mb-3">
-            Publish with Amazon Publisher House in 3 simple steps
+            Publish with Kindle Direct Publishing House in 3 simple steps
           </h2>
         </div>
 

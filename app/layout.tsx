@@ -19,14 +19,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Amazon Publisher House | Professional Book Publishing Services",
-    template: "%s | Amazon Publisher House"
+    default: "Kindle Direct Publishing House | Professional Book Publishing Services",
+    template: "%s | Kindle Direct Publishing House"
   },
-  description: "Amazon Publisher House provides professional book publishing, writing, editing, formatting, and marketing services to help authors publish on Amazon KDP.",
+  description: "Kindle Direct Publishing House provides professional book publishing, writing, editing, formatting, and marketing services to help authors publish on Amazon kindle direct publishing house.",
   keywords: [
-    "Amazon Publisher House",
+    "Kindle Direct Publishing House",
     "book publishing services",
-    "Amazon KDP publishing",
+    "Amazon kindle direct publishing house publishing",
     "book writing services",
     "ghostwriting",
     "book marketing",
@@ -34,17 +34,17 @@ export const metadata: Metadata = {
     "proofreading",
     "publish a book on Amazon"
   ],
-  authors: [{ name: "Amazon Publisher House" }],
+  authors: [{ name: "Kindle Direct Publishing House" }],
   openGraph: {
-    title: "Amazon Publisher House | Professional Book Publishing Services",
+    title: "Kindle Direct Publishing House | Professional Book Publishing Services",
     description: "Professional book publishing services — from manuscript to market. We write, edit, design, format, publish, and market your book.",
     type: "website",
     locale: "en_US",
-    siteName: "Amazon Publisher House",
+    siteName: "Kindle Direct Publishing House",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amazon Publisher House | Professional Book Publishing & Writing Services",
+    title: "Kindle Direct Publishing House | Professional Book Publishing & Writing Services",
     description: "Professional book publishing services — from manuscript to market. We write, edit, design, format, publish, and market your book.",
   },
   robots: {

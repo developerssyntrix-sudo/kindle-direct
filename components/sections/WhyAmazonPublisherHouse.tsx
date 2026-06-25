@@ -1,5 +1,5 @@
 import Image from "next/image"
-import SectionBg from "@/app/assets/images/why-amz-kindle-publishers.jpg"
+import SectionBg from "@/app/assets/images/Group 11 (1).png"
 import { BadgeCheck, BookOpen, Crown, Globe } from "lucide-react"
 
 const stats = [
@@ -34,7 +34,7 @@ export default function WhyAmazonPublisherHouse() {
             {/* BG Image */}
             <Image
                 src={SectionBg}
-                alt="Why Amazon Publisher House background"
+                alt="Why Kindle Direct Publishing House background"
                 fill
                 className="object-cover object-center"
                 priority
@@ -45,7 +45,7 @@ export default function WhyAmazonPublisherHouse() {
             <div className="relative z-10 max-w-6xl mx-auto flex flex-col gap-10">
                 {/* Heading */}
                 <h2 className="font-serif text-4xl text-white text-center ">
-                    Why Amazon Publisher House?
+                    Why Kindle Direct Publishing House?
                 </h2>
 
                 {/* Dark card */}

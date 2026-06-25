@@ -1,7 +1,7 @@
 const tools = [
   { title: "Kindle Previewer", desc: "See how your eBook will look before you publish it." },
   { title: "Kindle Kids' Book Creator", desc: "Turn your illustrated children's books into great-looking eBooks." },
-  { title: "KDP Community", desc: "Join the conversation with new and accomplished KDP authors." },
+  { title: "kindle direct publishing house Community", desc: "Join the conversation with new and accomplished kindle direct publishing house authors." },
   { title: "Kindle Create", desc: "Convert your manuscript into a beautifully formatted eBook." },
 ];
 
@@ -20,7 +20,7 @@ export default function BookWritingTools() {
           <div className="space-y-4">
             <p className="text-[#008296] text-xs font-semibold uppercase tracking-widest">Free tools</p>
             <h2 className="text-2xl md:text-3xl font-serif text-[#131a22]">
-              More free KDP tools to help publish your book
+              More free kindle direct publishing house tools to help publish your book
             </h2>
             <div className="space-y-4 pt-2">
               {tools.map((item) => (

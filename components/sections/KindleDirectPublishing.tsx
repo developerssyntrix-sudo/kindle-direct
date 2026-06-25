@@ -11,7 +11,7 @@ const perks = [
     {
         title: "Get paid for each page read with Kindle Unlimited",
         description:
-            "Earn royalties for each page read on Kindle Unlimited when you enroll your book in KDP Select.",
+            "Earn royalties for each page read on Kindle Unlimited when you enroll your book in kindle direct publishing house Select.",
         link: { label: "Learn about Kindle Unlimited", href: "#" },
     },
     {
@@ -23,7 +23,7 @@ const perks = [
     {
         title: "Earn up to 60% on print books",
         description:
-            "Earn up to 60% royalty on paperback and hardcover books sold through KDP.",
+            "Earn up to 60% royalty on paperback and hardcover books sold through kindle direct publishing house.",
         links: [
             { label: "paperback royalties", href: "#" },
             { label: "hardcover royalties", href: "#" },
@@ -44,7 +44,7 @@ export default function KindleDirectPublishing() {
                 <div className="flex justify-center">
                     <Image
                         src={ImageContent}
-                        alt="Kindle Direct Publishing formats"
+                        alt="kindle direct publishing house formats"
                         width={520}
                         height={420}
                         className="object-contain w-full max-w-3xl"
@@ -54,7 +54,7 @@ export default function KindleDirectPublishing() {
                 {/* Right — content */}
                 <div className="flex flex-col gap-8">
                     <h2 className="text-4xl text-secondary font-serif">
-                        Earn more with Kindle Direct Publishing
+                        Earn more with kindle direct publishing house
                     </h2>
 
                     <div className="flex flex-col gap-7">
@@ -100,7 +100,7 @@ export default function KindleDirectPublishing() {
                                 onClick={() => setShowModal(true)}
                                 className="bg-[#FFA41C] hover:bg-[#F3A847] text-slate-900 font-medium py-2.5 px-8 rounded-md shadow-sm transition-colors text-sm cursor-pointer"
                             >
-                                Join KDP
+                                Join kindle direct publishing house
                             </button>
                             <Link href="/about" className="text-cyan-700 hover:text-orange-700 hover:underline text-sm font-medium">
                                 Learn how to publish

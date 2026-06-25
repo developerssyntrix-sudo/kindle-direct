@@ -8,8 +8,7 @@ export default function CtaSection() {
       id="contact"
       className="relative py-16 md:py-24 overflow-hidden"
       style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1637681068516-2b22116e68cf?q=80&w=1920&auto=format&fit=crop')",
+        backgroundImage: "url('/cta-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

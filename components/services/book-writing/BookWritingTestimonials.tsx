@@ -2,7 +2,7 @@ const authors = [
   {
     name: "Laura Rocca",
     sub: "Italy | Romance",
-    quote: "Becoming a KDP author allowed me to finally live my childhood dream. The writer captured my voice and helped me launch a polished romance novel in months.",
+    quote: "Becoming a kindle direct publishing house author allowed me to finally live my childhood dream. The writer captured my voice and helped me launch a polished romance novel in months.",
     avatar: "https://m.media-amazon.com/images/G/01/Kindle/dp/design/author/img_author_LauraRocca_v1.png",
     href: "https://www.amazon.com/Laura-Rocca/e/B00FU7NTEA",
   },

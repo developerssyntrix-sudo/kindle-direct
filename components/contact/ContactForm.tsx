@@ -5,7 +5,7 @@ import { validateName, validateEmail, validatePhone, validateRequired, validateM
 
 const services = [
   "Book Writing / Ghostwriting",
-  "Book Publishing (KDP)",
+  "Book Publishing (kindle direct publishing house)",
   "Book Editing & Proofreading",
   "Book Marketing",
   "Book Trailer",

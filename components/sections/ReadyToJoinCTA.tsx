@@ -21,7 +21,7 @@ export default function ReadyToJoinCTA() {
                         onClick={() => setShowModal(true)}
                         className="bg-amazon-orange hover:bg-amazon-orange-hover text-amazon-dark font-semibold px-6 py-2.5 rounded-sm transition-colors duration-150 cursor-pointer"
                     >
-                        Join KDP
+                        Join kindle direct publishing house
                     </button>
 
                     <div>

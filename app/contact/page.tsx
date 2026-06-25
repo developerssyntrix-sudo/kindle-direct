@@ -8,11 +8,11 @@ import BrandsSection from "@/components/sections/BrandsSection";
 import WhyAmazonPublisherHouse from "@/components/sections/WhyAmazonPublisherHouse";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Free Consultation | Amazon Publisher House",
+  title: "Contact Us — Free Consultation | Kindle Direct Publishing House",
   description: "Book your free 30-minute publishing consultation. We respond within 1 business hour. No pressure, no commitment — just clarity on your publishing path.",
-  keywords: ["contact Amazon Publisher House", "book publishing consultation", "free publishing quote", "hire book publisher", "publish a book"],
+  keywords: ["contact Kindle Direct Publishing House", "book publishing consultation", "free publishing quote", "hire book publisher", "publish a book"],
   openGraph: {
-    title: "Contact Us — Free Consultation | Amazon Publisher House",
+    title: "Contact Us — Free Consultation | Kindle Direct Publishing House",
     description: "Book your free 30-minute publishing consultation. We respond within 1 business hour. No pressure, no commitment — just clarity on your publishing path.",
     type: "website",
   }

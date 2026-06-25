@@ -1,4 +1,4 @@
-# Amazon Publisher House
+# Kindle Direct Publishing House
 
 A professional full-service book publishing agency website built with Next.js 16, React 19, and Tailwind CSS v4. Designed with the Amazon color palette and a compact, conversion-focused layout.
 
@@ -8,7 +8,7 @@ A professional full-service book publishing agency website built with Next.js 16
 |---|---|
 | `/` | Homepage — Hero, Brands, About, Services, Portfolio, Process, Testimonials, CTA, FAQs, Footer |
 | `/services/book-writing` | Ghostwriting service page |
-| `/services/book-publishing` | KDP publishing service page |
+| `/services/book-publishing` | kindle direct publishing house publishing service page |
 | `/services/book-editing-proofreading` | Editing & proofreading service page |
 | `/services/book-marketing` | Book marketing service page |
 | `/services/book-trailer` | Book trailer production service page |
