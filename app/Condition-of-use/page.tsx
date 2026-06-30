@@ -154,16 +154,16 @@ function LegalCenterInner() {
     <>
       <SiteHeader />
     <div className="w-full min-h-screen bg-white text-gray-900 font-sans px-4 sm:px-6 lg:px-8 py-8">
-      <div className="max-w-7xl mx-auto mb-4">
+      <div className="max-w-8xl mx-auto mb-4">
         <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
           Help & Customer Service
         </h2>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <div className="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         {/* SIDEBAR */}
-        <aside className="lg:col-span-3 bg-[#f3f3f3] border border-gray-200 rounded-lg p-5 w-full">
+        <aside className="lg:col-span-3 bg-[#f3f3f3] border border-gray-200 rounded-lg p-5 w-full h-full">
           <h2 className="text-xl font-bold text-black mb-4">
             Help Topics
           </h2>
@@ -200,16 +200,22 @@ function LegalCenterInner() {
         <main className="lg:col-span-9 space-y-6 w-full">
           <div className="w-full flex flex-col space-y-2">
             <label className="text-sm font-bold text-black">Find more solutions</label>
-            <div className="w-full relative flex items-center bg-white border border-gray-400 rounded-md focus-within:ring-1 focus-within:ring-[#e77600] focus-within:border-[#e77600] transition-shadow max-w-xl">
-              <span className="pl-3 pr-2 text-gray-500 text-sm">🔍</span>
-              <input
-                type="text"
-                placeholder="Search topics or keywords..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full py-1.5 bg-transparent text-gray-900 text-sm focus:outline-none placeholder-gray-400"
-              />
-            </div>
+            <div className="w-full bg-[#f3f3f3] border border-gray-200 rounded-md p-4 flex flex-col sm:flex-row items-center gap-3">
+                            <div className="w-full relative flex items-center bg-white border border-gray-400 rounded focus-within:ring-1 focus-within:ring-[#e77600] focus-within:border-[#e77600] transition-shadow">
+                                {/* Search Glass Indicator */}
+                                <span className="pl-3 pr-2 text-gray-400 text-sm">🔍</span>
+                                <input
+                                    type="text"
+                                    placeholder="Topic or Keyword"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                    className="w-full py-2 bg-transparent text-gray-900 text-sm focus:outline-none placeholder-gray-400"
+                                />
+                            </div>
+                            <button className="w-full sm:w-auto bg-[#333333] hover:bg-black text-white font-medium text-sm px-6 py-2 rounded shadow-sm whitespace-nowrap transition-colors">
+                                Search Help
+                            </button>
+                        </div>
           </div>
 
           <div className="w-full bg-white pt-2">

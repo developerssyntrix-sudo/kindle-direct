@@ -14,7 +14,7 @@ export default function KDPHelpCenterComplete() {
       title: 'Help',
       items: [
         { label: 'Terms and Conditions', href: '/terms' },
-        { label: 'Privacy Notice', href: '/Condition-of-use?tab=privacy' },
+        { label: 'Privacy Notice', href: '/privacy-notice' },
         { label: 'Conditions of Use', href: '/Condition-of-use?tab=conditions' },
         { label: 'Help', href: '/help' },
       ]
@@ -79,7 +79,7 @@ export default function KDPHelpCenterComplete() {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-8">
         
         {/* LEFT SIDEBAR PANEL */}
-        <aside className="lg:col-span-3 bg-[#f6f6f6] border border-gray-200 rounded-lg p-5 w-full">
+        <aside className="lg:col-span-3 bg-[#f6f6f6] border border-gray-200 rounded-lg p-5 w-full h-full">
           <h2 className="text-lg font-bold text-gray-900 mb-4">
             Help Topics
           </h2>

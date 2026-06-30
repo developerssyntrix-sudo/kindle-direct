@@ -13,7 +13,7 @@ export default function KdpHelpCenter() {
             category: "Help",
             links: [
                 { label: "Terms & Condition", href: "/terms" },
-                { label: "Privacy notice", href: "/Condition-of-use?tab=privacy" },
+                { label: "Privacy notice", href: "/privacy-notice" },
                 { label: "Conditions of Use", href: "/Condition-of-use?tab=conditions" },
                 { label: "Help", href: "/help" },
             ]
@@ -50,7 +50,7 @@ export default function KdpHelpCenter() {
                 <div className="max-w-9xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
                     {/* LEFT SIDEBAR: HELP TOPICS PANELS (3 Columns on Desktop) */}
-                    <aside className="lg:col-span-3 bg-[#f3f3f3] border border-gray-200 rounded-lg p-5 w-full">
+                    <aside className="lg:col-span-3 bg-[#f3f3f3] border border-gray-200 rounded-lg p-5 w-full h-full">
                         <h2 className="text-xl font-bold border-b border-gray-300 pb-3 mb-4 text-gray-950">
                             Help Topics
                         </h2>
